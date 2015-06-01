@@ -1,0 +1,18 @@
+{
+  "all": {
+    "src": [
+      "*.js",
+      "lib/**.js",
+      "spec/**.js"
+    ],
+    "ignore": [
+      "node_modules/"
+    ]
+  },
+  "options": {
+    "jquery": true,
+    "devel": true,
+    "node": true,
+    "jasmine": true
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "node-demo",
+  "version": "0.0.1",
+  "description": "A simple project to demonstrate node.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Charlton Wilbur",
+  "license": "BSD",
+  "dependencies": {
+    "async": "^1.0.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-blanket": "0.0.8",
+    "grunt-concurrent": "^1.0.0",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-jasmine-nodejs": "^1.4.0",
+    "grunt-jsonlint": "^1.0.4",
+    "grunt-node-inspector": "^0.2.0",
+    "grunt-nodemon": "^0.4.0",
+    "grunt-open": "^0.2.3",
+    "load-grunt-config": "^0.17.1",
+    "time-grunt": "^1.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cwilbur/node_demo.git"
+  },
+  "keywords": [
+    "tictactoe",
+    "node",
+    "demo",
+    "grunt",
+    "configuration"
+  ],
+  "bugs": {
+    "url": "https://github.com/cwilbur/node_demo/issues"
+  },
+  "homepage": "https://github.com/cwilbur/node_demo#readme"
+}

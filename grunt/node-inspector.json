@@ -1,0 +1,15 @@
+{
+  "debug": {
+    "options": {
+      "web-port": 8080,
+      "web-host": "localhost",
+      "debug-port": 5858,
+      "save-live-edit": true,
+      "no-preload": false,
+      "stack-trace-limit": 20,
+      "hidden": [
+        "node_modules"
+      ]
+    }
+  }
+}

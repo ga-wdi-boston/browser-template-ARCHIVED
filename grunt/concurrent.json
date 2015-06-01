@@ -1,0 +1,13 @@
+{
+  "debug": {
+    "tasks": [
+      "nodemon:debug",
+      "node-inspector:debug",
+      "open:debug"
+    ],
+    "options": {
+      "limit": 5,
+      "logConcurrentOutput": true
+    }
+  }
+}

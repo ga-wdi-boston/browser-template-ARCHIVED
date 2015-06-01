@@ -1,0 +1,19 @@
+{
+  "debug": {
+    "script": "app.js",
+    "options": {
+      "nodeArgs": [
+        "--debug-brk"
+      ],
+      "ignore": [
+        "node_modules/**",
+        "*.spec.js"
+      ],
+      "ext": "js",
+      "watch": [
+        "/Users/cwilbur/GeneralAssembly/node-demo"
+      ],
+      "delay": 5
+    }
+  }
+}

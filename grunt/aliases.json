@@ -1,0 +1,5 @@
+{
+  "default": [],
+  "debug": ["concurrent:debug"],
+  "test": ["jshint", "jasmine_nodejs"]
+}
