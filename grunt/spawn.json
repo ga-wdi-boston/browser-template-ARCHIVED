@@ -1,0 +1,12 @@
+{
+  "debug_tests": {
+    "directory": ".",
+    "command": "node",
+    "commandArgs": [
+      "--debug=brk",
+      "--",
+      "JASMINE_CONFIG_PATH=grunt/jasmine.json",
+      "node_modules/jasmine/bin/jasmine.js"
+    ]
+  }
+}

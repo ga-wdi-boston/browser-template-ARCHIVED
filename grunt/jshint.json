@@ -10,9 +10,20 @@
     ]
   },
   "options": {
+
+    "curly": true,
+    "eqeqeq": true,
+    "strict": true,
+    "undef": true,
+    "sub": true,
+    "esnext": true,
+    "globalstrict": true,
+    "quotmark": true,
+
     "jquery": true,
     "devel": true,
     "node": true,
     "jasmine": true
+
   }
 }

@@ -1,6 +1,22 @@
-var Game = require('../tic-tac-toe.js');
+``
+'use strict';
+
+var Game = require('../lib/tic-tac-toe.js');
 
 var containsSet = Game.containsSet;
+
+var fixtureGames = {
+  wonX: [1, 2, 5, 3, 9],
+  wonO: [1, 3, 2, 7, 4, 5],
+  tied: [1, 2, 3, 5, 4, 6, 8, 7, 9],
+  legalMovesX: [1, 3, 5, 9],
+  legalMovesO: [1, 3, 5, 9, 7]
+};
+
+debugger;
+
+var vivifyFixture = Game.vivifyGame;
+
 
 describe('support functions', function() {
 
@@ -70,34 +86,15 @@ describe('the tic-tac-toe game object', function() {
     var gameXWin, gameOWin, gameTie;
 
     beforeEach(function() {
-      gameXWin = new Game();
+      gameXWin = vivifyFixture(fixtureGames.wonX);
+      gameOWin = vivifyFixture(fixtureGames.wonO);
+      gameTie = vivifyFixture(fixtureGames.tied);
+    });
 
-      gameXWin.move('X', 1);
-      gameXWin.move('O', 2);
-      gameXWin.move('X', 5);
-      gameXWin.move('O', 3);
-      gameXWin.move('X', 9);
-
-      gameOWin = new Game();
-
-      gameOWin.move('X', 1);
-      gameOWin.move('O', 3);
-      gameOWin.move('X', 2);
-      gameOWin.move('O', 7);
-      gameOWin.move('X', 4);
-      gameOWin.move('O', 5);
-
-      gameTie = new Game();
-
-      gameTie.move('X', 1);
-      gameTie.move('O', 2);
-      gameTie.move('X', 3);
-      gameTie.move('O', 5);
-      gameTie.move('X', 4);
-      gameTie.move('O', 6);
-      gameTie.move('X', 8);
-      gameTie.move('O', 7);
-      gameTie.move('X', 9);
+    afterAll(function() {
+      console.log('game X win:\n' + gameXWin.drawBoard());
+      console.log('game O win:\n' + gameOWin.drawBoard());
+      console.log('game tie:\n' + gameTie.drawBoard());
     });
 
     it('correctly detects when a player has won', function() {
@@ -131,4 +128,70 @@ describe('the tic-tac-toe game object', function() {
     });
   });
 
+  describe('boardIsFull() method', function() {
+
+    var gameXWin, gameOWin, gameTie;
+
+    beforeEach(function() {
+      gameXWin = vivifyFixture(fixtureGames.wonX);
+      gameOWin = vivifyFixture(fixtureGames.wonO);
+      gameTie = vivifyFixture(fixtureGames.tied);
+    });
+
+    it('correctly detects when the board is full', function() {
+      expect(gameTie.boardIsFull()).toBeTruthy();
+    });
+
+    it('marks the game as over when it discovers the board is full', function() {
+      var isGameTied = gameTie.boardIsFull();
+      expect(gameTie.isOver()).toBeTruthy();
+    });
+
+    it('does not detect that the board is full when it is not', function() {
+      expect(gameOWin.boardIsFull()).toBeFalsy();
+      expect(gameXWin.boardIsFull()).toBeFalsy();
+    });
+
+  });
+
+  describe('whoseTurn() method', function() {
+
+    it('correctly reports whose turn it is at the beginning of the game', function() {
+      var g = new Game();
+      expect(g.whoseTurn()).toBe('X');
+    });
+
+    it('correctly reports whose turn it is after one legal move', function() {
+      var g = new Game();
+      g.move('X', 1);
+      expect(g.whoseTurn()).toBe('O');
+    });
+
+    it('correctly reports whose turn it is after an invalid move is attempted');
+
+  });
+
+  describe('isOver() method', function() {
+    it('should be tested');
+  });
+
+  describe('isMoveLegal() method', function() {
+
+    var gameLegalXMove, gameLegalOMove;
+
+    beforeEach(function() {
+
+      // a game where all odd squares but 7 are taken and it is X's turn
+      gameLegalXMove = vivifyFixture(fixtureGames.legalMovesX);
+
+      // a game where all odd squares are taken and it is O's turn
+      gameLegalOMove = vivifyFixture(fixtureGames.legalMovesO);
+
+    });
+
+    it('identifies moves as illegal when it is the wrong player', function() {
+      expect(gameLegalXMove.isMoveLegal('O', 2)).toBeFalsy();
+      expect(gameLegalOMove.isMoveLegal('X', 2)).toBeFalsy();
+    });
+  });
 });
