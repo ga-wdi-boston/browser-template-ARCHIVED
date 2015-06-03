@@ -4,10 +4,10 @@
   "description": "A simple project to demonstrate node.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "grunt jasmine-nodejs"
   },
   "author": "Charlton Wilbur",
-  "license": "BSD",
+  "license": "BSD-3-clause",
   "dependencies": {
     "async": "^1.0.0"
   },
@@ -17,12 +17,15 @@
     "grunt-concurrent": "^1.0.0",
     "grunt-contrib-jshint": "^0.11.2",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-env": "^0.4.4",
     "grunt-jasmine-nodejs": "^1.4.0",
     "grunt-jsonlint": "^1.0.4",
     "grunt-node-inspector": "^0.2.0",
     "grunt-nodemon": "^0.4.0",
     "grunt-open": "^0.2.3",
-    "load-grunt-config": "^0.17.1",
+    "grunt-spawn": "^1.1.72",
+    "jasmine": "^2.3.1",
+    "jasmine-core": "^2.3.4",
     "time-grunt": "^1.2.1"
   },
   "repository": {

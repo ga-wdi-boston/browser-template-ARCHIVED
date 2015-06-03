@@ -14,9 +14,21 @@
       }
     }
   },
+
   "test": {
     "specs": [
       "spec/**"
     ]
+  },
+
+  "for_sublime_text": {
+    "specs": [
+      "spec/**"
+    ],
+    "options": {
+      "reporters": {
+        "tap": true
+      }
+    }
   }
 }

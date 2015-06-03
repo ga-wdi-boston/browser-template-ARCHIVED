@@ -1,7 +1,9 @@
+'use strict';
+
 var readline = require('readline');
 var async = require('async');
 
-var TTT = require('./tic-tac-toe.js');
+var TTT = require('./lib/tic-tac-toe.js');
 var game = new TTT();
 
 var io = readline.createInterface({
@@ -13,11 +15,11 @@ io.setPrompt('> ');
 
 console.log('Welcome to Tic-Tac-Toe');
 
-var gameShouldContinue = function () {
+var gameShouldContinue = function() {
   return !game.isOver();
 };
 
-var playTurn = function(callback) {
+var playTurn = function(done) {
   var player = game.whoseTurn();
 
   process.stdout.write(game.drawBoard());
@@ -25,16 +27,16 @@ var playTurn = function(callback) {
 
   io.question('Where do you wish to play?', function(answer) {
     var squareNum = parseInt(answer, 10);
-    
-    console.log('You chose ' + squareNum);
-    
-    if(game.legalMove(player, squareNum)) {
+
+    // console.log('You chose ' + squareNum);
+
+    if (game.legalMove(player, squareNum)) {
       game.move(player, squareNum);
     } else {
       process.stdout.write('That is not a legal move.\n');
     }
 
-    callback();
+    done();
   });
 };
 
@@ -43,9 +45,10 @@ var handleError = function(error) {
 };
 
 async.until(
-  game.isOver.bind(game),
+  gameShouldContinue,
   playTurn,
   handleError);
+
 
 
 //       if (game.legalMove(player, squareNum)) {

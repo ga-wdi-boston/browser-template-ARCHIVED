@@ -4,10 +4,19 @@
       "nodemon:debug",
       "node-inspector:debug",
       "open:debug"
-    ],
-    "options": {
-      "limit": 5,
-      "logConcurrentOutput": true
-    }
+    ]
+  },
+
+  "debug-test": {
+    "tasks": [
+      "spawn::debug-tests",
+      "node-inspector:debug",
+      "open:debug"
+    ]
+  },
+
+  "options": {
+    "limit": 5,
+    "logConcurrentOutput": true
   }
 }

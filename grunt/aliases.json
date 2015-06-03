@@ -1,5 +1,7 @@
 {
   "default": [],
   "debug": ["concurrent:debug"],
-  "test": ["jshint", "jasmine_nodejs"]
+  "test": ["jshint", "jasmine_nodejs:test"],
+  "debug_test": ["concurrent:debug-test"],
+  "sublime_text": ["jasmine_nodejs:for_sublime_text"]
 }
