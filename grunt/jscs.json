@@ -1,0 +1,24 @@
+{
+  "status": {
+    "src": ["<%= paths.project %>"],
+    "options": {
+      "preset": "airbnb",
+      "requirePaddingNewLinesAfterBlocks": {
+        "allExcept": ["inCallExpressions", "inArrayExpressions", "inProperties"]
+      },
+      "disallowMultipleVarDecl": "exceptUndefined",
+      "force": true
+    }
+  },
+  "write": {
+    "src": ["<%= paths.project %>"],
+    "options": {
+      "preset": "airbnb",
+      "requirePaddingNewLinesAfterBlocks": {
+        "allExcept": ["inCallExpressions", "inArrayExpressions", "inProperties"]
+      },
+      "disallowMultipleVarDecl": "exceptUndefined",
+      "fix": true
+    }
+  }
+}

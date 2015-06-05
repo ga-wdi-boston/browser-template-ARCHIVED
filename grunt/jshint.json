@@ -1,10 +1,6 @@
 {
   "all": {
-    "src": [
-      "*.js",
-      "lib/**.js",
-      "spec/**.js"
-    ],
+    "src": ["<%= paths.project %>"],
     "ignore": [
       "node_modules/"
     ]

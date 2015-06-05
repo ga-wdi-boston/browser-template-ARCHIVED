@@ -1,0 +1,11 @@
+{
+  "all": {
+    "src": ["<%= paths.project_json"]
+  },
+  "source": {
+    "src": ["<%= paths.source_json"]
+  },
+  "tests": {
+    "src": ["<%= paths.tests_json"]
+  }
+}

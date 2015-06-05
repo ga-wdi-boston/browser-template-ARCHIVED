@@ -1,7 +1,8 @@
 {
   "default": [],
   "debug": ["concurrent:debug"],
-  "test": ["jshint", "jasmine_nodejs:test"],
-  "debug_test": ["concurrent:debug-test"],
+  "nag": ["jshint", "jsonlint:all", "jscs:status", "jsbeautifier:status"],
+  "test": ["jasmine_nodejs:test"],
+  "reformat": ["jsbeautifier:write"],
   "sublime_text": ["jasmine_nodejs:for_sublime_text"]
 }

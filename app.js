@@ -11,7 +11,6 @@ var io = readline.createInterface({
   output: process.stdout
 });
 
-
 console.log('Welcome to Tic-Tac-Toe');
 
 var gameShouldContinue = function() {
@@ -42,6 +41,6 @@ var handleError = function(error) {
 };
 
 async.until(
-  gameShouldContinue,
-  playTurn,
-  handleError);
+    gameShouldContinue,
+    playTurn,
+    handleError);

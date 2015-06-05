@@ -16,15 +16,11 @@
   },
 
   "test": {
-    "specs": [
-      "spec/**"
-    ]
+    "specs": ["<%=  paths.tests %> "]
   },
 
   "for_sublime_text": {
-    "specs": [
-      "spec/**"
-    ],
+    "specs": ["<%=  paths.tests %> "],
     "options": {
       "reporters": {
         "tap": true

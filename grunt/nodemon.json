@@ -5,16 +5,14 @@
     ],
     "ignore": [
       "node_modules/**",
-      "*.spec.js"
+      "<%= paths.tests =>"
     ],
     "ext": "js",
-    "watch": [
-      "/Users/cwilbur/GeneralAssembly/node-demo"
-    ],
+    "watch": ["<%= paths.source %>"],
     "delay": 5
   },
 
   "debug": {
-    "script": "app.js"
+    "script": "<%= package.main %>"
   }
 }

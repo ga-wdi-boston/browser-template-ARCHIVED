@@ -185,7 +185,6 @@ describe('the tic-tac-toe game object', function() {
 
       // a game where all odd squares are taken and it is O's turn
       gameLegalOMove = vivifyGame(fixtureGames.legalMovesO);
-
     });
 
     it('identifies moves as illegal when it is the wrong player', function() {
@@ -202,5 +201,18 @@ describe('the tic-tac-toe game object', function() {
       expect(gameLegalOMove.isMoveLegal('O', -1)).toBeFalsy();
       expect(gameLegalXMove.isMoveLegal('X', 12)).toBeFalsy();
     });
+
   });
+
+  describe('the method', function() {
+    var gameXWin, gameOWin, gameTie;
+
+    beforeEach(function() {
+      gameXWin = vivifyGame(fixtureGames.wonX);
+      gameOWin = vivifyGame(fixtureGames.wonO);
+      gameTie = vivifyGame(fixtureGames.tied);
+    });
+
+  });
+
 });

@@ -1,0 +1,13 @@
+{
+  "status": {
+    "src": ["<%= paths.project %>"],
+    "options": {
+      "mode": "VERIFY_ONLY"
+    }
+  },
+
+  "write": {
+    "src": ["<%= paths.project %>"]
+
+  }
+}
