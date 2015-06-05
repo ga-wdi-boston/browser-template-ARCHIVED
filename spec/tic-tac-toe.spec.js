@@ -50,6 +50,10 @@ describe('support functions', function() {
 
   describe('vivifyGame', function() {
 
+    it('should correctly reinstate a game', function() {
+      var g = new Game();
+      expect(vivifyGame([])).toEqual(g);
+    })
   });
 
 });
@@ -89,9 +93,6 @@ describe('the tic-tac-toe game object', function() {
       gameXWin = vivifyGame(fixtureGames.wonX);
       gameOWin = vivifyGame(fixtureGames.wonO);
       gameTie = vivifyGame(fixtureGames.tied);
-    });
-
-    afterAll(function() {
       console.log('game X win:\n' + gameXWin.drawBoard());
       console.log('game O win:\n' + gameOWin.drawBoard());
       console.log('game tie:\n' + gameTie.drawBoard());
