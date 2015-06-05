@@ -53,9 +53,10 @@ describe('support functions', function() {
     it('should correctly reinstate a game', function() {
       var g = new Game();
       expect(vivifyGame([])).toEqual(g);
-    })
+    });
   });
 
+  it('needs more thorough testing');
 });
 
 describe('the tic-tac-toe game object', function() {
@@ -79,7 +80,7 @@ describe('the tic-tac-toe game object', function() {
       expect(g.moves.X).toEqual([]);
       expect(g.moves.O).toEqual([]);
       expect(g.moves.all).toEqual([]);
-      expect(g.turn).toBe('X');
+      expect(g.nextPlayer).toBe('X');
       expect(g.gameOver).toBeFalsy();
     });
 
@@ -93,9 +94,6 @@ describe('the tic-tac-toe game object', function() {
       gameXWin = vivifyGame(fixtureGames.wonX);
       gameOWin = vivifyGame(fixtureGames.wonO);
       gameTie = vivifyGame(fixtureGames.tied);
-      console.log('game X win:\n' + gameXWin.drawBoard());
-      console.log('game O win:\n' + gameOWin.drawBoard());
-      console.log('game tie:\n' + gameTie.drawBoard());
     });
 
     it('correctly detects when a player has won', function() {
@@ -193,6 +191,16 @@ describe('the tic-tac-toe game object', function() {
     it('identifies moves as illegal when it is the wrong player', function() {
       expect(gameLegalXMove.isMoveLegal('O', 2)).toBeFalsy();
       expect(gameLegalOMove.isMoveLegal('X', 2)).toBeFalsy();
+    });
+
+    it('identifies moves as illegal when the square has been taken', function() {
+      expect(gameLegalXMove.isMoveLegal('X', 1)).toBeFalsy();
+      expect(gameLegalOMove.isMoveLegal('O', 1)).toBeFalsy();
+    });
+
+    it('identifies moves as illegal when the move is off the board', function() {
+      expect(gameLegalOMove.isMoveLegal('O', -1)).toBeFalsy();
+      expect(gameLegalXMove.isMoveLegal('X', 12)).toBeFalsy();
     });
   });
 });
