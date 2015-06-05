@@ -1,4 +1,4 @@
-'use strict';
+x `'use strict';
 
 var containsSet = function(array, set) {
   var unmatched = set.filter(function(e) {

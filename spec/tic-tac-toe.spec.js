@@ -1,4 +1,3 @@
-``
 'use strict';
 
 var Game = require('../lib/tic-tac-toe.js');
@@ -13,10 +12,7 @@ var fixtureGames = {
   legalMovesO: [1, 3, 5, 9, 7]
 };
 
-debugger;
-
-var vivifyFixture = Game.vivifyGame;
-
+var vivifyGame = Game.vivifyGame;
 
 describe('support functions', function() {
 
@@ -49,6 +45,10 @@ describe('support functions', function() {
       expect(containsSet(primes, [8, 23, 7])).toBeFalsy();
       expect(containsSet(cats, ['Domino', 'Manfred', 'Julian', 'Rin Tin Tin'])).toBeFalsy();
     });
+
+  });
+
+  describe('vivifyGame', function() {
 
   });
 
@@ -86,9 +86,9 @@ describe('the tic-tac-toe game object', function() {
     var gameXWin, gameOWin, gameTie;
 
     beforeEach(function() {
-      gameXWin = vivifyFixture(fixtureGames.wonX);
-      gameOWin = vivifyFixture(fixtureGames.wonO);
-      gameTie = vivifyFixture(fixtureGames.tied);
+      gameXWin = vivifyGame(fixtureGames.wonX);
+      gameOWin = vivifyGame(fixtureGames.wonO);
+      gameTie = vivifyGame(fixtureGames.tied);
     });
 
     afterAll(function() {
@@ -133,9 +133,9 @@ describe('the tic-tac-toe game object', function() {
     var gameXWin, gameOWin, gameTie;
 
     beforeEach(function() {
-      gameXWin = vivifyFixture(fixtureGames.wonX);
-      gameOWin = vivifyFixture(fixtureGames.wonO);
-      gameTie = vivifyFixture(fixtureGames.tied);
+      gameXWin = vivifyGame(fixtureGames.wonX);
+      gameOWin = vivifyGame(fixtureGames.wonO);
+      gameTie = vivifyGame(fixtureGames.tied);
     });
 
     it('correctly detects when the board is full', function() {
@@ -182,10 +182,10 @@ describe('the tic-tac-toe game object', function() {
     beforeEach(function() {
 
       // a game where all odd squares but 7 are taken and it is X's turn
-      gameLegalXMove = vivifyFixture(fixtureGames.legalMovesX);
+      gameLegalXMove = vivifyGame(fixtureGames.legalMovesX);
 
       // a game where all odd squares are taken and it is O's turn
-      gameLegalOMove = vivifyFixture(fixtureGames.legalMovesO);
+      gameLegalOMove = vivifyGame(fixtureGames.legalMovesO);
 
     });
 
