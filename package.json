@@ -23,6 +23,7 @@
     "grunt-node-inspector": "^0.2.0",
     "grunt-nodemon": "^0.4.0",
     "grunt-open": "^0.2.3",
+    "grunt-plato": "^1.2.1",
     "load-grunt-config": "^0.17.1",
     "time-grunt": "^1.2.1"
   },
