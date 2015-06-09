@@ -42,7 +42,6 @@ var playTurn = function(done) {
   process.stdout.write(drawBoard(game));
   process.stdout.write('\n\nIt is ' + player + '\'s turn\n\n');
 
-
   io.question('Where do you wish to play?', function(answer) {
     var num = parseInt(answer, 10);
 
@@ -57,6 +56,7 @@ var playTurn = function(done) {
     } else if (game.boardIsFull()) {
       process.stdout.write('The game is a tie.\n\n');
     }
+
     done();
   });
 };
