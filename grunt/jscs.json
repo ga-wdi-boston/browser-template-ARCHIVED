@@ -7,7 +7,7 @@
         "allExcept": ["inCallExpressions", "inArrayExpressions", "inProperties"]
       },
       "disallowMultipleVarDecl": "exceptUndefined",
-      "validateIndentation": 4,
+      "validateIndentation": 2,
       "force": true
     }
   },
@@ -19,8 +19,7 @@
         "allExcept": ["inCallExpressions", "inArrayExpressions", "inProperties"]
       },
       "disallowMultipleVarDecl": "exceptUndefined",
-      "validateIndentation": 4,
-
+      "validateIndentation": 2,
       "fix": true
     }
   }
