@@ -46,4 +46,11 @@ Type these at the command line to see useful things happen.
 
 * `grunt nag` - runs code quality analysis tools on your code and complains
 
+    * `grunt jshint` - runs jshint on your <code>
+    * `grunt jsonlint` - runs jsonlint on your json files 
+    * `grunt jscs:status` - runs jscs (Javascript Code Style) on your files
+    * `grunt jsbeautifier:status` finds parts of your code that could be beautified
+ 
 * `grunt reformat` - reformats all your code in a standard style
+
+
