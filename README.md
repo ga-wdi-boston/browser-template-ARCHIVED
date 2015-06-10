@@ -1,5 +1,13 @@
 # Template Node Project Repository
 
+## Installation
+
+At the top level:
+
+```
+npm install
+```
+
 ## This repository assumes the following layout of files:
 
 ```
