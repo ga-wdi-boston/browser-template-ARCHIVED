@@ -1,64 +1,256 @@
-# Template Node Project Repository
+# Installing MongoDB
 
-## Installation
+Relational databases like PostgreSQL are good at modeling data that fits nicely into tables.  What do you do if your data doesn't fit that mold?
 
-At the top level:
+## Objectives
+
+By the end of the lesson, students will be able to do the following:
+
+* Describe and explain the tradeoffs involved in using a NoSQL database like MongoDB instead of a relational database like PostgreSQL 
+* Create a MongoDB database
+* Create a MongoDB collection using the Mongo shell
+* Create, Read, Update, and Destroy documents in a MongoDB collection using the Mongo shell
+* Create, Read, Update, and Destroy documents in a MongoDB collection using Javascript and Node
+
+## Before we begin: installation
+
+If you don't have MongoDB installed on your computer, you can follow the instructions in INSTALL.md to install it.
+
+## Vocabulary
+
+MongoDB uses its own particular vocabulary:
+
+|**Relational Database Term**|**MongoDB Term**|
+|:-------|:------|
+| database | database |
+| table | collection | 
+| row | document | 
+| column | field | 
+
+## Creating a MongoDB database and a collection
+
+We're going to start with practical matters and then move to theoretical ones.  
+Start the mongo shell by typing 'mongo' and see:
 
 ```
-npm install
+Tiresias:wdi_8_mongo_intro cwilbur$ mongo
+MongoDB shell version: 3.0.3
+connecting to: test
+> 
 ```
 
-## This repository assumes the following layout of files:
+The command to switch a new database is `use` -- and if you don't yet have a database named that, it will still let you switch to that database.  When you add data, it will create it.
+
+(Our example today will be building a contacts database, using the database `contacts`.)
+
+The command to list databases is `show databases`
+
+For example:
 
 ```
-.
-├── ./package.json
-├── ./Gruntfile.js
-├── ./grunt
-│   ├── ./grunt/aliases.json
-│   ├── ./grunt/paths.json
-│   └── ...
-├── ./node_modules
-│   └── ...
-├── ./README.md
-├── ./app.js
-├── ./lib
-│   └── ./lib/tic-tac-toe.js
-└── ./spec
-    └── ./spec/tic-tac-toe.spec.js
+> show databases
+local  0.078GB
+> use contacts
+switched to db contacts
+> show databases
+local  0.078GB
+> 
 ```
 
-This is where everyhing is stored:
+Note that I have switched to the `contacts` database, but because I haven't put any data into it yet, it doesn't show up in the database list.
 
-* Overall package configuration is stored in `package.json`.  
+Our collection will also be called `contacts`. It has no entries in it yet, which you can see by saying `db.contacts.count()`
 
-* Configuration files for **grunt**, our task runner: `./Gruntfile.js` and `./grunt` directory.  This is our task runner, like rake in Ruby.  If you follow the layout guidelines here, you won't need to change anything in here.
+```
+> db.contacts.count()
+0
+```
 
-* Node packages you install from elsewhere are stored in `./node_modules` 
+This is a common pattern in Mongo: you can refer to anything you like, and Mongo will cooperate, but things are not actually created until you give Mongo something to remember.
 
-* The documentation you provide for users (like the documentation you're reading right now!) is included in `./README.md` 
+## Creating data
 
-* The entry point into your application should be the only Javascript file at the top level.  By convention it's called `index.js`, `app.js`, `main.js`, or `server.js`, and is named in the `package.json` file.
+We're going to start keeping a contacts database for our job search.  (All these people are fictional.)
 
-* All of your other code goes into the `./lib` (library) directory.
+Our first contact is Joe Recruiter, with Staffing Inc.  So we create his record this way:
 
-* All of your tests go into the `./spec` (specification) directory.
+```
+db.contacts.insert({
+    name: 'Joe Recruiter',
+    company: 'Staffing Inc.',
+    phone: {
+        office: '617-555-1991 ext. 311',
+        cell: '508-555-9215'
+    },
+    email: 'joe.recruiter@staffinginc.com'
+});
+```
 
-## Grunt automations
+MongoDB uses JSON natively, which makes it convenient for Javascript web applications.
 
-Type these at the command line to see useful things happen.
+Also, the `contacts` database exists now that we have inserted data into it:
 
-* `grunt debug` - runs your application in debug mode, fires up a `node-inspector` translation process, and opens a Chrome window to access `node-inspector`.
+```
+>  show databases;
+contacts  0.078GB
+local     0.078GB
+> 
+```
 
-* `grunt test` - runs your test suite
+Let's add these people to the contacts database:
 
-* `grunt nag` - runs code quality analysis tools on your code and complains
+Ann Placement-Manager, Staffing Inc.
+    office phone 617-555-1991 ext. 315,
+    cell phone 718-555-9151,
+    email ann.placementmanager@staffinginc.com
 
-    * `grunt jshint` - runs jshint on your <code>
-    * `grunt jsonlint` - runs jsonlint on your json files 
-    * `grunt jscs:status` - runs jscs (Javascript Code Style) on your files
-    * `grunt jsbeautifier:status` finds parts of your code that could be beautified
- 
-* `grunt reformat` - reformats all your code in a standard style
+Martine H. R. Manager, TechCorp LLC
+    title Director of Human Resources
+    office phone 617-555-7123,
+    cell phone 617-555-9918,
+    home phone 617-555-1122,
+    work email martine.h.r.manager@techcorpllc.com
+    home email martinemanager@gmail.com
+
+Consider the JSON representation first: think before you type!
+
+<!--
+
+db.contacts.insert({
+    name: 'Ann Placement-Manager',
+    company: 'Staffing Inc.',
+    phone: {
+        office: '617-555-1991 ext. 315',
+        cell: '718-555-9151'
+    },
+    email: 'ann.placementmanager@staffinginc.com'
+});
+
+db.contacts.insert({
+    name: 'Martine H. R. Manager',
+    title: 'Director of Human Resources',
+    company: 'TechCorp LLC',
+    phone: {
+        office: '617-555-7123',
+        cell: '617-555-9918',
+        home: '617-555-1122'
+    },
+    email: {
+        work: 'martine.h.r.manager@techcorpllc.com',
+        home: 'martinemanager@gmail.com'
+    }
+});
+
+-->
+
+## Retrieving and Reading Data
+
+Let's start by looking at the entire database so far.
+
+```
+> db.contacts.find();
+{ "_id" : ObjectId("5579a06aaa2cdce4a1f15f21"), "name" : "Joe Recruiter", "company" : "Staffing Inc.", "phone" : { "office" : "617-555-1991 ext. 311", "cell" : "508-555-9215" }, "email" : "joe.recruiter@staffinginc.com" }
+{ "_id" : ObjectId("5579a202aa2cdce4a1f15f22"), "name" : "Ann Placement-Manager", "company" : "Staffing Inc.", "phone" : { "office" : "617-555-1991 ext. 315", "cell" : "718-555-9151" }, "email" : "ann.placementmanager@staffinginc.com" }
+{ "_id" : ObjectId("5579a20aaa2cdce4a1f15f23"), "name" : "Martine H. R. Manager", "title" : "Director of Human Resources", "company" : "TechCorp LLC", "phone" : { "office" : "617-555-7123", "cell" : "617-555-9918", "home" : "617-555-1122" }, "email" : { "work" : "martine.h.r.manager@techcorpllc.com", "home" : "martinemanager@gmail.com" } }
+> 
+```
+
+That's kind of tough to read, so we can filter it through `.pretty()`
+
+```
+> db.contacts.find().pretty();
+{
+    "_id" : ObjectId("5579a06aaa2cdce4a1f15f21"),
+    "name" : "Joe Recruiter",
+    "company" : "Staffing Inc.",
+    "phone" : {
+        "office" : "617-555-1991 ext. 311",
+        "cell" : "508-555-9215"
+    },
+    "email" : "joe.recruiter@staffinginc.com"
+}
+{
+    "_id" : ObjectId("5579a202aa2cdce4a1f15f22"),
+    "name" : "Ann Placement-Manager",
+    "company" : "Staffing Inc.",
+    "phone" : {
+        "office" : "617-555-1991 ext. 315",
+        "cell" : "718-555-9151"
+    },
+    "email" : "ann.placementmanager@staffinginc.com"
+}
+{
+    "_id" : ObjectId("5579a20aaa2cdce4a1f15f23"),
+    "name" : "Martine H. R. Manager",
+    "title" : "Director of Human Resources",
+    "company" : "TechCorp LLC",
+    "phone" : {
+        "office" : "617-555-7123",
+        "cell" : "617-555-9918",
+        "home" : "617-555-1122"
+    },
+    "email" : {
+        "work" : "martine.h.r.manager@techcorpllc.com",
+        "home" : "martinemanager@gmail.com"
+    }
+}
+```
+
+What do we see in this?
+
+* MongoDB gave each of our documents a unique ID field, called ID.
+
+* MongoDB doesn't care that Joe and Ann only have one email, while Martine has two emails.  It also doesn't care that Martine has a job title, while Joe and Ann do not.  
+
+### Searching for particular things
+
+We can pass arguments to `find`, and MongoDB will give us all matching records:
+
+```
+> db.contacts.find({ _id: ObjectId("5579a20aaa2cdce4a1f15f23") }).pretty();
+{
+    "_id" : ObjectId("5579a20aaa2cdce4a1f15f23"),
+    "name" : "Martine H. R. Manager",
+    "title" : "Director of Human Resources",
+    "company" : "TechCorp LLC",
+    "phone" : {
+        "office" : "617-555-7123",
+        "cell" : "617-555-9918",
+        "home" : "617-555-1122"
+    },
+    "email" : {
+        "work" : "martine.h.r.manager@techcorpllc.com",
+        "home" : "martinemanager@gmail.com"
+    }
+}
+> db.contacts.find({ company: "Staffing Inc." }).pretty();
+{
+    "_id" : ObjectId("5579a06aaa2cdce4a1f15f21"),
+    "name" : "Joe Recruiter",
+    "company" : "Staffing Inc.",
+    "phone" : {
+        "office" : "617-555-1991 ext. 311",
+        "cell" : "508-555-9215"
+    },
+    "email" : "joe.recruiter@staffinginc.com"
+}
+{
+    "_id" : ObjectId("5579a202aa2cdce4a1f15f22"),
+    "name" : "Ann Placement-Manager",
+    "company" : "Staffing Inc.",
+    "phone" : {
+        "office" : "617-555-1991 ext. 315",
+        "cell" : "718-555-9151"
+    },
+    "email" : "ann.placementmanager@staffinginc.com"
+}
+> 
+```
+
+There is an incredibly useful table that translates from SQL to MongoDB syntax at [http://docs.mongodb.org/manual/reference/sql-comparison/](http://docs.mongodb.org/manual/reference/sql-comparison/).
+
+
+
+
 
 
