@@ -1,4 +1,4 @@
-# Template Node Project Repository
+# Template Frontend Project Repository
 
 ## Installation
 
@@ -22,10 +22,20 @@ npm install
 │   └── ...
 ├── ./README.md
 ├── ./app.js
-├── ./lib
-│   └── tic-tac-toe.js
+├── ./assets
+│   ├── ./scripts
+│   │   ├── example.js
+│   │   ├── example.json
+│   │   └── ...
+│   └── ./styles
+│       ├── example.css
+│       └── ...
+├── ./data
+│   ├── example.json
+│   └── ...
+├── ./index.html
 └── ./spec
-    └── tic-tac-toe.spec.js
+    └── example.spec.js
 ```
 
 This is where everyhing is stored:
@@ -40,17 +50,13 @@ This is where everyhing is stored:
 
 * The entry point into your application should be the only Javascript file at the top level.  By convention it's called `index.js`, `app.js`, `main.js`, or `server.js`, and is named in the `package.json` file.
 
-* All of your other code goes into the `./lib` (library) directory.
+* All of your other code goes into the `./assets` directory.
 
 * All of your tests go into the `./spec` (specification) directory.
 
 ## Grunt automations
 
 Type these at the command line to see useful things happen.
-
-* `grunt debug` - runs your application in debug mode, fires up a `node-inspector` translation process, and opens a Chrome window to access `node-inspector`.
-
-* `grunt test` - runs your test suite
 
 * `grunt nag` - runs code quality analysis tools on your code and complains
 
@@ -60,3 +66,8 @@ Type these at the command line to see useful things happen.
     * `grunt jsbeautifier:status` finds parts of your code that could be beautified
 
 * `grunt reformat` - reformats all your code in a standard style
+
+## TODO
+
+* [ ] Add webpack or browserify to toolchain to concat/minify a bundle
+* [ ] Configure `.jshintrc`, `.editorconfig`, etc. for in-editor tools

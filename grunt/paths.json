@@ -1,7 +1,7 @@
 {
   "source": [
     "app.js",
-    "lib/**/*.js"
+    "assets/scripts/**/*.js"
   ],
   "tests": [
     "spec/**/*.spec.js"
@@ -12,11 +12,11 @@
   ],
   "project": [
     "app.js",
-    "lib/**/*.js",
+    "assets/scripts/**/*.js",
     "spec/**/*.spec.js"
   ],
   "source_json": [
-    "lib/**/*.json"
+    "assets/scripts/**/*.json"
   ],
   "tests_json": [
     "spec/**/*.json"
@@ -26,7 +26,7 @@
   ],
   "project_json": [
     "grunt/*.json",
-    "lib/**/*.json",
+    "assets/scripts/**/*.json",
     "spec/**/*.spec.json"
   ]
 }

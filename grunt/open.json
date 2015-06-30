@@ -1,6 +1,0 @@
-{
-  "debug": {
-    "path": "http://localhost:8080/debug?ws=localhost:8080&port=5858",
-    "app": "Google Chrome"
-  }
-}

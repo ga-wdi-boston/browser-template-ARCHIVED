@@ -20,6 +20,5 @@
     "devel": true,
     "node": true,
     "jasmine": true
-
   }
 }
