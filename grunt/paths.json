@@ -1,7 +1,6 @@
 {
   "source": [
-    "assets/scripts/**/*.js",
-    "quiz.js"
+    "assets/scripts/**/*.js"
   ],
   "tests": [
     "spec/**/*.spec.js"
