@@ -1,0 +1,22 @@
+{
+  "vendor": {
+    "src": [],
+    "dest": "vendor.js",
+    "options": {
+      "require": ["jquery"]
+    }
+  },
+  "app": {
+    "src": ["<%= paths.source %>"],
+    "dest": "app.js",
+    "options": {
+      "external": [
+        "jquery"
+      ]
+    }
+  },
+  "specs": {
+    "src": ["<%= paths.tests %>"],
+    "dest": "specs.js"
+  }
+}

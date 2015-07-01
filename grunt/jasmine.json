@@ -1,0 +1,8 @@
+{
+  "tests": {
+    "src": "app.js",
+    "options": {
+      "specs": "specs.js"
+    }
+  }
+}

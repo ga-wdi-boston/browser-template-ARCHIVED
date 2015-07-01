@@ -1,9 +1,13 @@
 {
   "source": [
-    "assets/scripts/**/*.js"
+    "assets/scripts/**/*.js",
+    "quiz.js"
   ],
   "tests": [
     "spec/**/*.spec.js"
+  ],
+  "helpers": [
+    "spec/**/*.helper.js"
   ],
   "other": [
     "Gruntfile.js",
