@@ -1,6 +1,5 @@
 {
   "source": [
-    "app.js",
     "assets/scripts/**/*.js"
   ],
   "tests": [
@@ -11,7 +10,6 @@
     "grunt/*.js"
   ],
   "project": [
-    "app.js",
     "assets/scripts/**/*.js",
     "spec/**/*.spec.js"
   ],

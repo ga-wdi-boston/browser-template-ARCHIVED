@@ -1,3 +1,5 @@
+app.js
+
 # Created by https://www.gitignore.io
 
 ### Node ###
@@ -128,4 +130,3 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-
