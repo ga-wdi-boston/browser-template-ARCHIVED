@@ -1,0 +1,8 @@
+{
+  "preset": "airbnb",
+  "requirePaddingNewLinesAfterBlocks": {
+    "allExcept": ["inCallExpressions", "inArrayExpressions", "inProperties"]
+  },
+  "disallowMultipleVarDecl": "exceptUndefined",
+  "validateIndentation": 2
+}
