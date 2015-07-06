@@ -1,0 +1,13 @@
+{
+    "strict": true,
+    "globalstrict": true,
+    "esnext": true,
+    "curly": true,
+    "eqeqeq": true,
+    "undef": true,
+    "devel": true,
+    "browser": true,
+    "jasmine": true,
+    "jquery": true,
+    "browserify": true
+}
