@@ -1,6 +1,8 @@
 {
-  "default": [],
+  "default": ["nag"],
+  "build": ["webpack:prod"],
+  "dev": ["webpack:dev"],
   "nag": ["jshint", "jsonlint:all", "jscs:status", "jsbeautifier:status"],
   "reformat": ["jsbeautifier:write"],
-  "test": ["browserify", "jasmine"]
+  "test": ["jasmine"]
 }
