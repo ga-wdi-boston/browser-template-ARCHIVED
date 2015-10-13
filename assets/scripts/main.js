@@ -1,6 +1,6 @@
 'use strict';
 
-require('./index.css');
+require('./example');
 
 var $ = require('jquery');
 
