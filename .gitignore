@@ -1,6 +1,7 @@
 app.js
 vendor.js
 specs.js
+*bundle.js
 
 # Created by https://www.gitignore.io
 
@@ -132,4 +133,3 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-bundle.js
