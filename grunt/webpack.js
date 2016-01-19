@@ -5,13 +5,14 @@ var webpack = require('webpack');
 module.exports = {
   options: {
     entry: {
-      app: './assets/scripts/index.js',
-      vendor: ['jquery']
+      bundle: './assets/scripts/index.js',
+      specs: './spec/_all.js',
+      vendor: ['jquery'],
     },
 
     output: {
       path: './',
-      filename: 'bundle.js'
+      filename: '[name].js'
     },
 
     plugins: [
