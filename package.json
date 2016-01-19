@@ -12,7 +12,6 @@
     "grunt-concurrent": "^2.1.0",
     "grunt-contrib-jasmine": "^1.0.0",
     "grunt-contrib-jshint": "^0.12.0",
-    "grunt-jasmine-nodejs": "^1.4.3",
     "grunt-jsbeautifier": "^0.2.10",
     "grunt-jscs": "^2.6.0",
     "grunt-jsonlint": "^1.0.7",
