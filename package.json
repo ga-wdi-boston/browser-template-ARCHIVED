@@ -2,9 +2,6 @@
   "name": "ga-wdi-boston-js-template",
   "version": "0.0.1",
   "private": true,
-  "scripts": {
-    "test": "grunt jasmine-nodejs"
-  },
   "license": "MIT",
   "dependencies": {
     "jquery": "^2.1.4"
