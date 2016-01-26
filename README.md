@@ -32,6 +32,10 @@ Developers should store styles in [`assets/styles`](assets/styles).
 
 Developers should run these often!
 
--   `grunt test` - runs any automated tests
--   `grunt nag` - runs code quality analysis tools on your code and complains
--   `grunt reformat` - reformats all your code in a standard style
+-   `grunt nag` or just `grunt`: runs code quality analysis tools on your code
+    and complains
+-   `grunt reformat`: reformats all your code in a standard style
+-   `grunt serve`: generates bundles, watches, and livereloads
+-   `grunt test`: runs any automated tests, depends on `grunt build`
+-   `grunt build`: place bundled styles and scripts where `index.html` can find
+    them
