@@ -31,13 +31,7 @@ module.exports = {
     }
   },
 
-  dev: {
-    failOnError: false,
-    watch: true,
-    keepalive: true
-  },
-
-  prod: {
+  build: {
     failOnError: true,
     watch: false,
     keepalive: false
