@@ -9,6 +9,6 @@ require('./example');
 // load sass manifest
 require('../styles/index.scss');
 
-$(document).ready(function() {
+$(document).ready(() => {
   console.log('It works.');
 });
