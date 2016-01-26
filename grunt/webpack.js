@@ -5,7 +5,7 @@ var webpack = require('webpack');
 module.exports = {
   options: {
     entry: {
-      bundle: './assets/scripts/index.js',
+      bundle: './index.js',
       specs: './spec/_all.js',
       vendor: ['jquery'],
     },
