@@ -1,33 +1,26 @@
 {
-  "source": [
-    "assets/scripts/**/*.js"
-  ],
-  "tests": [
-    "spec/**/*.spec.js"
-  ],
-  "helpers": [
-    "spec/**/*.helper.js"
-  ],
-  "other": [
-    "Gruntfile.js",
-    "grunt/*.js"
-  ],
-  "project": [
-    "assets/scripts/**/*.js",
-    "spec/**/*.spec.js"
-  ],
-  "source_json": [
-    "assets/scripts/**/*.json"
-  ],
-  "tests_json": [
-    "spec/**/*.json"
-  ],
-  "other_json": [
-    "grunt/*.json"
-  ],
-  "project_json": [
-    "grunt/*.json",
-    "assets/scripts/**/*.json",
-    "spec/**/*.spec.json"
-  ]
+  "scripts": {
+    "all": [
+      "assets/scripts/**/*.js",
+      "spec/**/*.spec.js"
+    ],
+    "src": [
+      "assets/scripts/**/*.js"
+    ]
+  },
+
+  "grunt": {
+    "all": [
+      "Gruntfile.js",
+      "grunt/*.js"
+    ]
+  },
+
+  "json": {
+    "all": [
+      "assets/scripts/**/*.json",
+      "spec/**/*.json",
+      "grunt/*.json"
+    ]
+  }
 }

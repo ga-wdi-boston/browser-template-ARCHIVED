@@ -6,14 +6,14 @@
   },
 
   "status": {
-    "src": ["<%= paths.project %>"],
+    "src": ["<%= paths.scripts.all %>"],
     "options": {
       "force": true
     }
   },
 
   "write": {
-    "src": ["<%= paths.project %>"],
+    "src": ["<%= paths.scripts.all %>"],
     "options": {
       "fix": true
     }

@@ -1,6 +1,6 @@
 {
   "all": {
-    "src": ["<%= paths.project %>"]
+    "src": ["<%= paths.scripts.all %>"]
   },
   "options": {
     "jshintrc": true
