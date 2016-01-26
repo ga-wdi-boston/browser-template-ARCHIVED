@@ -39,3 +39,8 @@ Developers should run these often!
 -   `grunt test`: runs any automated tests, depends on `grunt build`
 -   `grunt build`: place bundled styles and scripts where `index.html` can find
     them
+
+## [License](LICENSE)
+
+Source code distributed under the MIT license. Text and other assets copyright
+General Assembly, Inc., all rights reserved.
