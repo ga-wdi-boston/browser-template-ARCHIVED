@@ -23,6 +23,11 @@ module.exports = {
         "window.jQuery": "jquery"
       })
     ],
+    module: {
+      loaders: [
+        { test: /\.scss$/, loader: 'style!css!sass' }
+      ]
+    },
 
     stats: {
       colors: true,
