@@ -10,7 +10,7 @@ module.exports = {
   start: {
     keepAlive: true,
     webpack: {
-      devtool: 'eval',
+      devtool: 'source-map',
       debug: 'true'
     }
   }
