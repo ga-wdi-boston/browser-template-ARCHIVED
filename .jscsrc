@@ -1,8 +1,12 @@
 {
   "preset": "airbnb",
+  "disallowMultipleVarDecl": "exceptUndefined",
   "requirePaddingNewLinesAfterBlocks": {
     "allExcept": ["inCallExpressions", "inArrayExpressions", "inProperties"]
   },
-  "disallowMultipleVarDecl": "exceptUndefined",
+  "requireSpacesInAnonymousFunctionExpression": {
+    "beforeOpeningRoundBrace": true,
+    "beforeOpeningCurlyBrace": true
+  },
   "validateIndentation": 2
 }
