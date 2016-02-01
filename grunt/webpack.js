@@ -1,6 +1,7 @@
 'use strict';
 
-var webpack = require('webpack');
+let webpack = require('webpack');
+let path = require('path');
 
 module.exports = {
   options: {
@@ -33,7 +34,19 @@ module.exports = {
             presets: ['es2015']
           }
         },
-        { test: /\.scss$/, loader: 'style!css!sass' }
+        {
+          test: /\.scss/,
+          loader: 'style!css!sass',
+          includePaths: [path.resolve(__dirname, "./node_modules")]
+        },
+        {
+          test: /\.woff[\d]?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          loader: "url-loader?limit=10000&mimetype=application/font-woff"
+        },
+        {
+          test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          loader: "file-loader"
+        }
       ]
     },
 
