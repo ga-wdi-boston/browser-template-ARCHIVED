@@ -4,7 +4,11 @@
 // var example = require('./example');
 
 // load manifests
+// scripts
 require('./assets/scripts/index.js');
+
+// styles
+require('normalize.css');
 require('./assets/styles/index.scss');
 
 // attach jQuery globally
