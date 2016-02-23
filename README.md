@@ -1,6 +1,16 @@
 # js-template
 
-## Updating Dependencies
+A template for starting front-end projects. Webpack for `require` system, build
+pipeline, and development server. Boostrap and Handlebars.js included. No
+front-end frameworks included.
+
+## Dependencies
+
+Install with `npm install`.
+
+-   [Webpack](https://webpack.github.io)
+-   [Bootstrap](http://getbootstrap.com)
+-   [Handlebars.js](http://handlebarsjs.com)
 
 At the beginning of each cohort, update the versions in
 [`package.json`](package.json) by replace all versions with a glob (`*`) and
