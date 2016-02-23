@@ -24,6 +24,7 @@ module.exports = {
         "window.jQuery": "jquery"
       })
     ],
+
     module: {
       loaders: [
         {
@@ -51,6 +52,14 @@ module.exports = {
         {
           test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
           loader: "file-loader"
+        },
+        {
+          test: /\.(hbs|handlebars)$/,
+          loader: 'handlebars-loader'
+        },
+        {
+          test: /\.html\.(hbs|handlebars)$/,
+          loader: 'handlebars-loader!html'
         }
       ]
     },
