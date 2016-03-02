@@ -2,7 +2,7 @@
   "tests": {
     "src": ["vendor.bundle.js", "bundle.js"],
     "options": {
-      "specs": "specs.js"
+      "specs": "spec/specs.bundle.js"
     }
   }
 }

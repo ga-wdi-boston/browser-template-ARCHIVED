@@ -6,13 +6,13 @@ let path = require('path');
 module.exports = {
   options: {
     entry: {
-      bundle: './index.js',
+      bundle: './app/index.js',
       specs: './spec/_all.js',
       vendor: ['jquery', 'bootstrap-sass'],
     },
 
     output: {
-      path: './',
+      path: './dist',
       filename: '[name].js'
     },
 
@@ -54,12 +54,16 @@ module.exports = {
           loader: "file-loader"
         },
         {
+          test: /\.html\.(hbs|handlebars)$/,
+          loader: 'handlebars-loader!file-loader'
+        },
+        {
           test: /\.(hbs|handlebars)$/,
           loader: 'handlebars-loader'
         },
         {
-          test: /\.html\.(hbs|handlebars)$/,
-          loader: 'handlebars-loader!html'
+          test: /\.html$/,
+          loader: 'html-loader'
         }
       ]
     },

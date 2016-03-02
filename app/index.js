@@ -5,11 +5,15 @@
 
 // load manifests
 // scripts
-require('./assets/scripts/index.js');
+require('./scripts/index.js');
 
 // styles
-require('./assets/styles/index.scss');
+require('./styles/index.scss');
 
 // attach jQuery globally
 require('expose?$!jquery');
 require('expose?jQuery!jquery');
+
+// copy static files to build directory
+require('./index.html');
+require('./favicon.ico');
