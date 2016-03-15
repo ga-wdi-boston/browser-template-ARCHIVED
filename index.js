@@ -16,4 +16,4 @@ require('expose?jQuery!jquery');
 
 // attach urlFormData globally
 
-require('expose?formUrlencoded!./lib/wiring/x-www-form-urlencoded.js');
+require('expose?getFormData!./lib/wiring/x-www-form-urlencoded.js');
