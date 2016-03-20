@@ -46,6 +46,9 @@ needed.
 
 Developers should store styles in [`assets/styles`](assets/styles).
 
+Developers should use [getFormFields](forms.md) to collect data for `$.ajax`
+ requests.
+
 ## Tasks
 
 Developers should run these often!
