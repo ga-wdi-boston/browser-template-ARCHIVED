@@ -27,13 +27,14 @@ module.exports = {
 
 ```js
 
+const getFormFields = require('../../lib/get-form-fields');
 const api = require('./api.js');
 
 const success = (data) => {
   // handle success
 };
 
-const fail = (errpor) => {
+const fail = (err) => {
   // handle failure
 };
 
