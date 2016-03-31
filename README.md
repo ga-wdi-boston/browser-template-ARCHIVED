@@ -46,6 +46,9 @@ needed.
 
 Developers should store styles in [`assets/styles`](assets/styles).
 
+Developers should use [getFormFields](forms.md) to retrieve form data to send to
+ an API.
+
 ## Tasks
 
 Developers should run these often!
