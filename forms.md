@@ -1,7 +1,11 @@
 # Forms
 
 Developers should use `getFormFields` to retrieve data from html forms for API
- requests:
+ requests.
+
+`getFormFields` only retrieves data from form elements with a name attribute.
+
+The object returned can be used to validate the form data.
 
 **in `api.js`**
 
@@ -10,7 +14,6 @@ Developers should use `getFormFields` to retrieve data from html forms for API
 
 const ajaxDefaults = {
   url: 'http://localhost:3000',
-  processData: false,
 };
 
 const myRequest = (data, success, fail) => {
@@ -33,13 +36,13 @@ const success = (data) => {
   // handle success
 };
 
-const fail = (err) => {
+const failure = (err) => {
   // handle failure
 };
 
 module.exports = {
   success,
-  fail,
+  failure,
 }
 ```
 
@@ -56,7 +59,7 @@ $(() => {
   $('#my-form').on('submit', function (e) {
     let data = getFormFields(this);
     e.preventDefault();
-    api.myRequest(data, ui.success, ui.fail);
+    api.myRequest(data, ui.success, ui.failure);
   });  
 });
 ```
