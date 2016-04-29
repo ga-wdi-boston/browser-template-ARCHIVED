@@ -35,11 +35,9 @@ const addHandlers = () => {
     let data = getFormFields(this);
     authApi.changePassword(authUi.changePasswordSuccess, authUi.failure, data);
   });
-
-
-
-
 };
+
+
 
 module.exports = {
   addHandlers,

@@ -1,7 +1,34 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-
+body{
+  margin: 0 auto;
+  background-color: #EFEBE9;
+}
 .modal-footer > #sign-up{
+  margin: 0 auto;
+}
+.navbar{
+  margin: 0 auto;
+}
+.navbar-container {
+  padding: 0 50px;
+}
+.jumbotron{
+  margin: 0 auto;
+}
+.jumbotron-header{
+  min-height: 500px;
+  position: relative;
+  background-color: #0288D1;
+  //background-image: url("http://libreshot.com/wp-content/uploads/2015/05/coffee-and-laptop.jpg");
+  //background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.write-story-main-button{
+  padding: 50px 150px;
   margin: 0 auto;
 }
