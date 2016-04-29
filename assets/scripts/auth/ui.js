@@ -20,10 +20,15 @@ const signOutSuccess = () => {
   console.log(appData);
 };
 
+const changePasswordSuccess = () => {
+  console.log("Change password successful!");
+};
+
 module.exports = {
   failure,
   success,
   signInSuccess,
   signOutSuccess,
+  changePasswordSuccess,
 
 };

@@ -1,7 +1,8 @@
 'use strict';
 
-
 const appURL = require('../app-url');
+
+
 
 const showAll = (success, failure, data) => {
   $.ajax({
@@ -41,9 +42,28 @@ const signOut = (success, failure) => {
     .fail(failure);
 };
 
+const changePassword = (success, failure, data) => {
+  console.log(appURL.user.token);
+  $.ajax({
+    method: 'PATCH',
+    url: appURL.link + '/change-password/' + appURL.user.id,
+    data: {
+        "passwords": {
+          "old": data.credentials.old_password,
+          "new": data.credentials.password
+      }
+    },
+    headers: {
+      Authorization: 'Token token=' + appURL.user.token,
+    },
+  }).done(success)
+    .fail(failure);
+};
+
 module.exports = {
   showAll,
   signUp,
   signIn,
   signOut,
+  changePassword,
 };
