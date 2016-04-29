@@ -1,6 +1,6 @@
 'use strict';
 
 const app = {
-  api: ''
+  link: 'http://localhost:3000'
 };
 module.exports = app;
