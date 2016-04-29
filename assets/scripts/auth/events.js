@@ -15,10 +15,14 @@ const addHandlers = () => {
     event.preventDefault();
     let data = getFormFields(this);
     console.log('sign-in' + data);
-    authApi.signIn(authUi.success, authUi.failure, data);
+    authApi.signIn(authUi.sign_in_success, authUi.failure, data);
   });
 
-
+  $('#signout_form').on('click', function(event) {
+    event.preventDefault();
+    console.log('sign-out');
+    authApi.signOut(authUi.success, authUi.failure);
+  });
 
 
 };
