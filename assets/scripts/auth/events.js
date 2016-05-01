@@ -4,6 +4,7 @@ const authApi = require('./api');
 const authUi = require('./ui');
 
 const addHandlers = () => {
+// Authentication ations
   $('#signup_form').on('submit', function (event) {
     event.preventDefault();
     let data = getFormFields(this);
@@ -24,7 +25,14 @@ const addHandlers = () => {
     authApi.signOut(authUi.success, authUi.failure);
   });
 
+// Quiver and Journal actions
 
+  $('#add_board').on('submit', function(event){
+    event.preventDefault();
+    let data = getFormFields(this);
+    console.log(data);
+    authApi.addBoard(authUi.success, authUi.failure, data);
+  });
 };
 
 module.exports = {

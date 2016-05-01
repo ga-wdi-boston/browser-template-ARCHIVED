@@ -13,6 +13,7 @@ const sign_in_success = (data) => {
   console.log('user 1' + app.user1);
   console.log(data);
   console.log('signed in');
+  $('.btn').removeClass('disabled');
 };
 
 module.exports= {

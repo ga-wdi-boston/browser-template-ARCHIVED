@@ -33,8 +33,26 @@ const signOut = (success, failure) => {
   .fail(failure);
 };
 
+// Quiver and Journal actions
+const addBoard = (success, failure, data) => {
+  $.ajax({
+    method: 'POST',
+    url: app.api + 'surfboards',
+    headers: {
+      Authorization: 'Token token=' + app.user1.token,
+    },
+    data:{
+      "surfboard":{
+        data
+      }
+    },
+  }).done(success)
+  .fail(failure);
+};
+
 module.exports = {
   signUp,
   signIn,
-  signOut
+  signOut,
+  addBoard
 };
