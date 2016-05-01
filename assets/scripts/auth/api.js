@@ -60,10 +60,23 @@ const changePassword = (success, failure, data) => {
     .fail(failure);
 };
 
+const createStory = (success, failure) => {
+  console.log(appURL.data);
+  $.ajax({
+    method: 'POST',
+    url: appURL.link + '/stories/',
+    headers: {
+      Authorization: 'Token token=' + appURL.user.token,
+    },
+  }).done(success)
+    .fail(failure);
+};
+
 module.exports = {
   showAll,
   signUp,
   signIn,
   signOut,
   changePassword,
+  createStory,
 };

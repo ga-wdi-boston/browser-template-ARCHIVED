@@ -5,6 +5,11 @@ body{
   margin: 0 auto;
   background-color: #EFEBE9;
 }
+
+.container{
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
 .modal-footer > #sign-up{
   margin: 0 auto;
 }
@@ -21,14 +26,27 @@ body{
   min-height: 500px;
   position: relative;
   background-color: #0288D1;
-  //background-image: url("http://libreshot.com/wp-content/uploads/2015/05/coffee-and-laptop.jpg");
-  //background-size: cover;
+  background-image: url("http://libreshot.com/wp-content/uploads/2015/05/coffee-and-laptop.jpg");
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
 
 }
+.jumbotron-main-content{
+  padding-top: 0;
+  padding-bottom: 0;
+}
 .write-story-main-button{
-  padding: 50px 150px;
+  padding: 25px 100px;
   margin: 0 auto;
+}
+
+.story-collection-heading{
+  text-align: center;
+}
+
+.container-story-preview{
+  padding-top: 0;
+  padding-bottom: 0;
 }

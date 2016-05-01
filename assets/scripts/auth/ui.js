@@ -1,9 +1,10 @@
 'use strict';
-const appData = require('../app-url');
+const appURL = require('../app-url');
+const storyData = require('./htmlVar');
 
 const success = (data) => {
   console.log(data);
-  console.log("Log in successful");
+  console.log("User Created");
 };
 
 const failure = (error) => {
@@ -11,17 +12,25 @@ const failure = (error) => {
 };
 
 const signInSuccess = (data) => {
-  appData.user = data.user;
-  console.log(appData);
+  appURL.user = data.user;
+  console.log(appURL);
+  console.log("Sign in successful");
 };
 
 const signOutSuccess = () => {
-  appData.user = null;
-  console.log(appData);
+  appURL.user = null;
+  console.log(appURL);
+  console.log("Sign out successful");
 };
 
 const changePasswordSuccess = () => {
   console.log("Change password successful!");
+};
+
+const createStorySuccess = (data) => {
+  storyData.storyId = data.game.id;
+  console.log(data);
+  console.log("You created a story");
 };
 
 module.exports = {
@@ -30,5 +39,5 @@ module.exports = {
   signInSuccess,
   signOutSuccess,
   changePasswordSuccess,
-
+  createStorySuccess,
 };
