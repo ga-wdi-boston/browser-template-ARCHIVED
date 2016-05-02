@@ -39,6 +39,15 @@ const addHandlers = () => {
   });
 };
 
+$('#add_session').on('submit', function(event) {
+  event.preventDefault();
+  let data=getFormFields(this);
+  console.log(data);
+  authApi.addSession(authUi.success, authUi.failure, data);
+});
+
+
+
 module.exports = {
   addHandlers,
 };

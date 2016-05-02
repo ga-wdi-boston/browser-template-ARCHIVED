@@ -50,10 +50,24 @@ const showQuiver = (success, failure, data) => {
 
 };
 
+const addSession = (success, failure, data) => {
+  $.ajax({
+    method: 'POST',
+    url: app.api + 'sessions',
+    headers: {
+      Authorization: 'Token token=' + app.user1.token,
+    },
+    data,
+  }).done(success)
+  .fail(failure);
+};
+
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   addBoard,
-  showQuiver
+  showQuiver,
+  addSession
 };
