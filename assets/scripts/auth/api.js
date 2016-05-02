@@ -23,6 +23,7 @@ const signIn = (success, failure, data) => {
 };
 
 const signUp = (success, failure, data) => {
+  debugger;
   $.ajax({
     method: 'POST',
     url: appURL.link + '/sign-up',
@@ -60,11 +61,13 @@ const changePassword = (success, failure, data) => {
     .fail(failure);
 };
 
-const createStory = (success, failure) => {
+const createStory = (success, failure, data) => {
+  debugger;
   console.log(appURL.data);
   $.ajax({
     method: 'POST',
     url: appURL.link + '/stories/',
+    data,
     headers: {
       Authorization: 'Token token=' + appURL.user.token,
     },

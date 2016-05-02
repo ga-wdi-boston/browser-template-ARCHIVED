@@ -28,7 +28,7 @@ const changePasswordSuccess = () => {
 };
 
 const createStorySuccess = (data) => {
-  storyData.storyId = data.game.id;
+  storyData.storyId = appURL.data.stories.id;
   console.log(data);
   console.log("You created a story");
 };

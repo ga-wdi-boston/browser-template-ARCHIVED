@@ -36,9 +36,10 @@ const addHandlers = () => {
       authApi.changePassword(authUi.changePasswordSuccess, authUi.failure, data);
   });
 
-  $('.write-story-main-button').on('click', function(event){
+  $('#submit-story-form').on('submit', function(event){
       event.preventDefault();
-      authApi.createStory(authUi.createStorySuccess, authUi.failure);
+      let data = getFormFields(this);
+      authApi.createStory(authUi.createStorySuccess, authUi.failure, data);
   });
 
 };

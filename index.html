@@ -25,8 +25,8 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Link</a></li>
+<!--            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Link</a></li> --->
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -52,7 +52,7 @@
 <!-- MAIN JUMBO ---------------------->
   <div class="jumbotron jumbotron-header">
     <div class="container-fluid">
-      <button type="button" class="btn btn-lg btn-default write-story-main-button">Write A Story</button>
+      <button type="button" class="btn btn-lg btn-default write-story-main-button" data-toggle="modal" data-target="#write-a-story-modal">Write A Story</button>
     </div>
   </div>
 <!--- SHOW ALL STORIES ----------------->
@@ -64,7 +64,7 @@
 
     <div class="container container-story-preview">
       <div class="panel panel-default">
-        <div class="panel-body">
+        <div class="panel-body" data-toggle="modal" data-target="#read-story-on-click">
           Basic panel example
         </div>
       </div>
@@ -73,12 +73,10 @@
   </div>
 
 
-
-
 </body>
 
 
-    <!-- Modal ------------------------------------------------>
+    <!-- Sign-in Modal ------------------------------------------------>
           <div class="modal fade" id="my-sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -109,7 +107,7 @@
               </div>
             </div>
           </div>
-
+<!------ SIGN UP MODAL ------>
           <div class="modal fade" id="my-sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -131,4 +129,54 @@
               </div>
             </div>
           </div>
+
+
+
+          <!-- write story Modal -->
+          <div class="modal fade" id="write-a-story-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Write your story</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <form accept-charset="UTF-8" id="submit-story-form" method="post">
+                      <h4>Title</h4>
+                      <input class="form-control" type="text" name="stories[title]" value="" placeholder="Title of Story">
+                      <h4>Write your story</h4>
+                      <input class="story-input-textbox form-control" type="text" name="stories[body]" value="" placeholder="My Story">
+                      <input type="submit" name="submit" class="btn btn-primary" id="submit-story" value="Submit">
+                    </form>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="modal fade" id="read-story-on-click" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                  <p>One fine body&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+
+
 </html>

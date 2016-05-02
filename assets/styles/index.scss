@@ -49,4 +49,23 @@ body{
 .container-story-preview{
   padding-top: 0;
   padding-bottom: 0;
+  width: 50%;
+}
+
+.story-input-textbox{
+  height: 250px;
+}
+
+
+
+
+
+
+
+@media (max-width: 500px) {
+  .container-story-preview{
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 100%;
+  }
 }
