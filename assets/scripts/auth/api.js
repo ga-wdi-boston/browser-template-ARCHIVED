@@ -41,18 +41,19 @@ const addBoard = (success, failure, data) => {
     headers: {
       Authorization: 'Token token=' + app.user1.token,
     },
-    data:{
-      "surfboard":{
-        data
-      }
-    },
+    data,
   }).done(success)
   .fail(failure);
+};
+
+const showQuiver = (success, failure, data) => {
+
 };
 
 module.exports = {
   signUp,
   signIn,
   signOut,
-  addBoard
+  addBoard,
+  showQuiver
 };

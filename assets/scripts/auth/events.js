@@ -33,6 +33,10 @@ const addHandlers = () => {
     console.log(data);
     authApi.addBoard(authUi.success, authUi.failure, data);
   });
+
+  $('#showQuiver').on('click', function(event) {
+    event.preventDefault();
+  });
 };
 
 module.exports = {

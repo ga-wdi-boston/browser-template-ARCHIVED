@@ -165,23 +165,23 @@
       </div>
       <div class="modal-body">
 
-<form class="form-horizontal">
+<form class="form-horizontal" id="add_session">
   <div class="form-group">
     <label for="input3" class="col-sm-2 control-label">Spot</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="input_length" placeholder="Board length">
+      <input name="session[spot]"type="text" class="form-control" id="input_length" placeholder="Board length">
     </div>
   </div>
   <div class="form-group">
     <label for="input3" class="col-sm-2 control-label">Date</label>
     <div class="col-sm-10">
-      <input type="date" class="form-control" id="input_shape" placeholder="shape">
+      <input name="session[date]" type="date" class="form-control" id="input_shape" placeholder="shape">
     </div>
   </div>
   <div class="form-group">
     <label for="input3" class="col-sm-2 control-label">Conditions</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="input_fins" placeholder="conditions">
+      <input name="session[conditions]" type="text" class="form-control" id="input_fins" placeholder="conditions">
     </div>
   </div>
   <div class="form-group">
@@ -196,7 +196,7 @@
 </div>
 <hr>
 <!--show quiver -->
-<button type="button" class="btn btn-primary btn-lg disabled"  data-toggle="modal" data-target="#quiver">
+<button type="button" class="btn btn-primary btn-lg disabled" id="showQuiver" data-toggle="modal" data-target="#quiver">
   See your quiver
 </button>
 <div class="modal fade" id="quiver" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
