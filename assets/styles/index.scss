@@ -15,6 +15,7 @@ body{
 }
 .navbar{
   margin: 0 auto;
+  border-radius: 0;
 }
 .navbar-container {
   padding: 0 50px;
@@ -40,8 +41,17 @@ body{
 .write-story-main-button{
   padding: 25px 100px;
   margin: 0 auto;
+  background-color: #0091EA;
+  border-color: #0091EA;
+  color: white;
 }
-
+.write-story-main-button:visited{
+  color: #0091EA;
+}
+.write-story-main-button:hover{
+  background-color: #00B0FF;
+  border-color: #00B0FF;
+}
 .story-collection-heading{
   text-align: center;
 }

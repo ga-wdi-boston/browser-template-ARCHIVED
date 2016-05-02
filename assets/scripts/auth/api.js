@@ -1,17 +1,7 @@
 'use strict';
 
 const appURL = require('../app-url');
-
-
-
-const showAll = (success, failure, data) => {
-  $.ajax({
-    method: 'GET',
-    url: appURL.link + '/stories/',
-    data,
-  }).done(success)
-    .fail(failure);
-};
+const storyData = require('./htmlVar.js');
 
 const signIn = (success, failure, data) => {
   $.ajax({
@@ -23,7 +13,6 @@ const signIn = (success, failure, data) => {
 };
 
 const signUp = (success, failure, data) => {
-  debugger;
   $.ajax({
     method: 'POST',
     url: appURL.link + '/sign-up',
@@ -62,12 +51,33 @@ const changePassword = (success, failure, data) => {
 };
 
 const createStory = (success, failure, data) => {
-  debugger;
   console.log(appURL.data);
   $.ajax({
     method: 'POST',
     url: appURL.link + '/stories/',
     data,
+    headers: {
+      Authorization: 'Token token=' + appURL.user.token,
+    },
+  }).done(success)
+    .fail(failure);
+};
+
+const showAll = (success, failure) => {
+  $.ajax({
+    method: 'GET',
+    url: appURL.link + '/stories/',
+    headers: {
+      Authorization: 'Token token=' + appURL.user.token,
+    },
+  }).done(success)
+    .fail(failure);
+};
+
+const deleteStory = (success, failure) => {
+  $.ajax({
+    method: 'DELETE',
+    url: appURL.link + '/stories/' + storyData.storyId,
     headers: {
       Authorization: 'Token token=' + appURL.user.token,
     },
@@ -82,4 +92,5 @@ module.exports = {
   signOut,
   changePassword,
   createStory,
+  deleteStory,
 };

@@ -9,7 +9,7 @@ const addHandlers = () => {
 
   $('#home-button').on('click', function(event){
       event.preventDefault();
-      authApi.showAll();
+      authApi.showAll(authUi.showAllsuccess, authUi.failure);
   });
 
   $('#sign-up').on('submit', function (event) {
@@ -41,6 +41,13 @@ const addHandlers = () => {
       let data = getFormFields(this);
       authApi.createStory(authUi.createStorySuccess, authUi.failure, data);
   });
+
+  $('#delete-story-button').on('click', function(event){
+      event.preventDefault();
+      authApi.deleteStory(authUi.deleteStorySuccess, authUi.failure);
+  });
+
+
 
 };
 

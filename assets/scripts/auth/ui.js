@@ -28,9 +28,17 @@ const changePasswordSuccess = () => {
 };
 
 const createStorySuccess = (data) => {
-  storyData.storyId = appURL.data.stories.id;
-  console.log(data);
+  storyData.storyId = data.stories;
+  console.log(storyData.storyId);
   console.log("You created a story");
+};
+
+const showAllsuccess = () => {
+  console.log("Showing All Stories");
+};
+
+const deleteStorySuccess =() => {
+  console.log("Deleted this story successful");
 };
 
 module.exports = {
@@ -40,4 +48,6 @@ module.exports = {
   signOutSuccess,
   changePasswordSuccess,
   createStorySuccess,
+  showAllsuccess,
+  deleteStorySuccess,
 };

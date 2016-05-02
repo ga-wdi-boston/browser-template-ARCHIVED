@@ -2,6 +2,7 @@
 
 let isThereUser;
 let storyId;
+let storyToken;
 
 
 
@@ -9,4 +10,5 @@ let storyId;
 module.exports = {
   isThereUser,
   storyId,
+  storyToken,
 };
