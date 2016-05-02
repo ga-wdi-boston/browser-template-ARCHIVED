@@ -34,9 +34,9 @@
                 <li><a href="#">FanFic</a></li>
                 <li><a href="#">Mystery</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">My Stories</a></li>
+                <li class="user-logged-options"><a href="#">My Stories</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">My Favorites</a></li>
+                <li class="user-logged-options"><a href="#">My Favorites</a></li>
               </ul>
             </li>
           </ul>
@@ -48,6 +48,11 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
+    <div class="nav-bar hidden alert-notification">
+      <p>
+        PLEASE SIGN IN
+      </p>
+    </div>
 
 <!-- MAIN JUMBO ---------------------->
   <div class="jumbotron jumbotron-header">
@@ -86,16 +91,20 @@
                 </div>
                 <div class="menu-body modal-body">
                   <form id="sign-in" class="modal-sign-in-section text" action="index.html" method="post">
-                    <input type="text" name="credentials[email]" value="" placeholder="Email">
-                    <input type="password" name="credentials[password]" value="" placeholder="Password">
-                    <input type="submit" name="submit" class="btn btn-primary" value="Login">
+                    <input class="input-fields" type="text" name="credentials[email]" value="" placeholder="Email">
+                    <br>
+                    <input class="input-fields" type="password" name="credentials[password]" value="" placeholder="Password">
+                    <br>
+                    <input class="input-fields" id="login-button" type="submit" name="submit" class="btn btn-primary" value="Login">
                   </form>
                   <br>
                   <h3 class="modal-changepassword-section">Change Password</h3>
                   <form id="change-password" class="modal-changepassword-section text" action="index.html" method="patch">
-                    <input type="password" name="credentials[old_password]" value="" placeholder="Old Password">
-                    <input type="password" name="credentials[password]" value="" placeholder="New Password">
-                    <input type="submit" name="submit" class="btn btn-primary" value="Change Password">
+                    <input class="input-fields" type="password" name="credentials[old_password]" value="" placeholder="Old Password">
+                    <br>
+                    <input class="input-fields" type="password" name="credentials[password]" value="" placeholder="New Password">
+                    <br>
+                    <input class="input-fields" type="submit" name="submit" class="btn btn-primary" value="Change Password">
                   </form>
                   <br>
                 </div>
@@ -118,13 +127,13 @@
                 </div>
                 <div class="menu-body modal-body">
                   <form id="sign-up" class="modal-signup-section text" action="index.html" method="post">
-                    <input type="text" name="credentials[email]" value="" placeholder="Email">
+                    <input class="sign-up input-fields" type="text" name="credentials[email]" value="" placeholder="Email">
                     <br>
-                    <input type="password" name="credentials[password]" value="" placeholder="Password">
+                    <input class="sign-up input-fields" type="password" name="credentials[password]" value="" placeholder="Password">
                     <br>
-                    <input type="password" name="credentials[password_confirmation]" value="" placeholder="Password Confirmation">
+                    <input class="sign-up input-fields" type="password" name="credentials[password_confirmation]" value="" placeholder="Password Confirmation">
                     <br>
-                    <input type="submit" name="submit" class="btn btn-primary" value="Sign up!">
+                    <input class="sign-up input-fields" type="submit" name="submit" class="btn btn-primary" value="Sign up!">
                   </form>
                 </div>
               </div>
@@ -145,9 +154,9 @@
                   <div class="form-group">
                     <form accept-charset="UTF-8" id="submit-story-form" method="post">
                       <h4>Title</h4>
-                      <input class="form-control" type="text" name="stories[title]" value="" placeholder="Title of Story">
+                      <input class="form-control" type="text" name="story[title]" value="" placeholder="Title of Story">
                       <h4>Write your story</h4>
-                      <input class="story-input-textbox form-control" type="text" name="stories[body]" value="" placeholder="My Story">
+                      <input class="story-input-textbox form-control" type="text" name="story[body]" value="" placeholder="My Story">
                       <input type="submit" name="submit" class="btn btn-primary" id="submit-story" value="Submit">
                     </form>
                   </div>

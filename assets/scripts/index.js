@@ -4,12 +4,12 @@
 // var example = require('./example');
 
 // use require without a reference to ensure a file is bundled
-require('./example');
+//const functionality = require('./example');
 const authEvents = require('./auth/events.js');
 
 // On document ready
 $(() => {
   authEvents.addHandlers();
-
+  //functionality.hideSignUp();
 
 });

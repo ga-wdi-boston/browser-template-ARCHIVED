@@ -42,10 +42,10 @@ const addHandlers = () => {
       authApi.createStory(authUi.createStorySuccess, authUi.failure, data);
   });
 
-  $('#delete-story-button').on('click', function(event){
-      event.preventDefault();
-      authApi.deleteStory(authUi.deleteStorySuccess, authUi.failure);
-  });
+  // $('#delete-story-button').on('click', function(event){
+  //     event.preventDefault();
+  //     authApi.deleteStory(authUi.deleteStorySuccess, authUi.failure);
+  // });
 
 
 

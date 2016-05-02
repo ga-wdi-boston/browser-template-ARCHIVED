@@ -51,11 +51,17 @@ const changePassword = (success, failure, data) => {
 };
 
 const createStory = (success, failure, data) => {
+  debugger;
   console.log(appURL.data);
   $.ajax({
     method: 'POST',
     url: appURL.link + '/stories/',
-    data,
+    data: {
+        "story": {
+          "title": data.story.title,
+          "body": data.story.body
+      }
+    },
     headers: {
       Authorization: 'Token token=' + appURL.user.token,
     },
@@ -74,16 +80,16 @@ const showAll = (success, failure) => {
     .fail(failure);
 };
 
-const deleteStory = (success, failure) => {
-  $.ajax({
-    method: 'DELETE',
-    url: appURL.link + '/stories/' + storyData.storyId,
-    headers: {
-      Authorization: 'Token token=' + appURL.user.token,
-    },
-  }).done(success)
-    .fail(failure);
-};
+// const deleteStory = (success, failure) => {
+//   $.ajax({
+//     method: 'DELETE',
+//     url: appURL.link + '/stories/' + data.story.id,
+//     headers: {
+//       Authorization: 'Token token=' + appURL.user.token,
+//     },
+//   }).done(success)
+//     .fail(failure);
+// };
 
 module.exports = {
   showAll,
@@ -92,5 +98,5 @@ module.exports = {
   signOut,
   changePassword,
   createStory,
-  deleteStory,
+//  deleteStory,
 };
