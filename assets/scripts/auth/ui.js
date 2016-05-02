@@ -10,7 +10,7 @@ const success = (data) => {
 const sign_in_success = (data) => {
   app.user1 = data.user;
   app.user1.authToken = data.user.token;
-  console.log('user 1' + app.user1);
+  console.log(app.user1.id);
   console.log(data);
   console.log('signed in');
   $('.btn').removeClass('disabled');

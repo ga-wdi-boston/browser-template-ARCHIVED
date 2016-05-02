@@ -36,6 +36,7 @@ const addHandlers = () => {
 
   $('#showQuiver').on('click', function(event) {
     event.preventDefault();
+    authApi.showQuiver();
   });
 };
 
@@ -44,6 +45,11 @@ $('#add_session').on('submit', function(event) {
   let data=getFormFields(this);
   console.log(data);
   authApi.addSession(authUi.success, authUi.failure, data);
+});
+
+$('#showSessions').on('click', function(event) {
+  event.preventDefault();
+  authApi.showSessions();
 });
 
 

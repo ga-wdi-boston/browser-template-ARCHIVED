@@ -46,9 +46,36 @@ const addBoard = (success, failure, data) => {
   .fail(failure);
 };
 
-const showQuiver = (success, failure, data) => {
-
+const showQuiver = () => {
+  $.ajax({
+    method: 'GET',
+    url: app.api + 'surfboards',
+    headers: {
+      Authorization: 'Token token=' + app.user1.token,
+    },
+  }).done(function(data){
+    displayQuiver(data);
+  });
 };
+
+// const showQuiver = () => {
+//   $.ajax({
+//     method: 'GET',
+//     url: app.api + 'surfboards/user_id/' + app.user1.id,
+//     headers: {
+//       Authorization: 'Token token=' + app.user1.token,
+//     },
+//   }).done(function(data){
+//     displayQuiver(data);
+//   });
+// };
+
+const displayQuiver = (data) => {
+  let quiverTemplate = require('../templates/quiver.handlebars');
+  $('.show-quiver').append(quiverTemplate({surfboards:data}));
+};
+
+
 
 const addSession = (success, failure, data) => {
   $.ajax({
@@ -63,11 +90,29 @@ const addSession = (success, failure, data) => {
 };
 
 
+const showSessions = () => {
+  $.ajax({
+    method: 'GET',
+    url: app.api + 'sessions',
+    headers: {
+      Authorization: 'Token token=' + app.user1.token,
+    }
+  }).done(function(data){
+    displayJournal(data);
+  });
+};
+
+const displayJournal = (data) => {
+  let sessionsTemplate = require('../templates/sessions.handlebars');
+  $('.show-sessions').append(sessionsTemplate({sessions:data}));
+};
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   addBoard,
   showQuiver,
-  addSession
+  addSession,
+  showSessions
 };
