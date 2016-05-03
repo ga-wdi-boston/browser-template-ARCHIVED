@@ -1,13 +1,14 @@
 'use strict';
 
 const app = require('../app-data');
+
 // let surfboardId = require('./events');
 const authUi = require('./ui');
 
 const signUp = (success, failure, data) => {
   $.ajax({
-    method: "POST",
-    url: app.api + "sign-up",
+    method: 'POST',
+    url: app.api + 'sign-up',
     dataProcessing: false,
     data,
   }).done(success)
@@ -16,8 +17,8 @@ const signUp = (success, failure, data) => {
 
 const signIn = (success, failure, data) => {
   $.ajax({
-    method: "POST",
-    url: app.api + "sign-in",
+    method: 'POST',
+    url: app.api + 'sign-in',
     data,
   }).done(success)
   .fail(failure);
@@ -29,7 +30,7 @@ const signOut = (success, failure) => {
     method: 'DELETE',
     url: app.api + 'sign-out/' + app.user1.id,
     headers: {
-      Authorization: "Token token=" + app.user1.token,
+      Authorization: 'Token token=' + app.user1.token,
     },
   }).done(success)
   .fail(failure);
@@ -55,7 +56,7 @@ const showQuiver = () => {
     headers: {
       Authorization: 'Token token=' + app.user1.token,
     },
-  }).done(function(data){
+  }).done(function (data) {
     displayQuiver(data);
     console.log(data);
   });
@@ -63,13 +64,13 @@ const showQuiver = () => {
 
 const displayQuiver = (data) => {
   let quiverTemplate = require('../templates/quiver.handlebars');
+
   // let quiverTemplateSelect = require('../templates/quiver-select.handlebars');
   // let quiverTemplateSelect = require('../templates/quiver-select.handlebars');
-  $('.show-quiver').append(quiverTemplate({surfboards:data}));
+  $('.show-quiver').append(quiverTemplate({ surfboards:data }));
+
   // $('.show-quiver-select').append(quiverTemplateSelect({surfboards:data}));
 };
-
-
 
 const addSession = (success, failure, data) => {
   $.ajax({
@@ -88,11 +89,10 @@ const deleteSession = (success, failure, id) => {
     method: 'DELETE',
     url: app.api + 'sessions/' + id,
     headers:{
-      Authorization: 'Token token=' + app.user1.token}
+      Authorization: 'Token token=' + app.user1.token, },
   }).done(success)
   .fail(failure);
 };
-
 
 const showSessions = () => {
   $.ajax({
@@ -100,11 +100,11 @@ const showSessions = () => {
     url: app.api + 'sessions',
     headers: {
       Authorization: 'Token token=' + app.user1.token,
-    }
-  }).done(function(data){
+    },
+  }).done(function (data) {
     displayJournal(data);
     showQuiver();
-    $('#delete_session').on('click', function(event) {
+    $('#delete_session').on('click', function (event) {
       event.preventDefault();
       let id = this.name;
       console.log(id);
@@ -113,12 +113,9 @@ const showSessions = () => {
   });
 };
 
-
-
-
 const displayJournal = (data) => {
   let sessionsTemplate = require('../templates/sessions.handlebars');
-  $('.show-sessions').append(sessionsTemplate({sessions:data}));
+  $('.show-sessions').append(sessionsTemplate({ sessions:data }));
 };
 
 const addBoardToSession = (success, failure, data) => {
@@ -151,5 +148,5 @@ module.exports = {
   showSessions,
   addBoardToSession,
   deleteSession,
-  NoaaData
+  NoaaData,
 };

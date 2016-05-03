@@ -6,7 +6,7 @@ const authUi = require('./ui');
 let surfboardId;
 
 const addHandlers = () => {
-// Authentication ations
+  // Authentication ations
   $('#signup_form').on('submit', function (event) {
     event.preventDefault();
     let data = getFormFields(this);
@@ -21,37 +21,37 @@ const addHandlers = () => {
     authApi.signIn(authUi.sign_in_success, authUi.failure, data);
   });
 
-  $('#signout_form').on('click', function(event) {
+  $('#signout_form').on('click', function (event) {
     event.preventDefault();
     console.log('sign-out');
     authApi.signOut(authUi.success, authUi.failure);
   });
 
-// Quiver and Journal actions
+  // Quiver and Journal actions
 
-  $('#add_board').on('submit', function(event){
+  $('#add_board').on('submit', function (event) {
     event.preventDefault();
     let data = getFormFields(this);
     surfboardId = $(this).name;
     console.log(data);
-    authApi.addBoardToSession(authUi.success, authUi.failure, data, surfboardId);
+    authApi.addBoard(authUi.success, authUi.failure, data, surfboardId);
   });
 
-  $('#showQuiver').on('click', function(event) {
+  $('#showQuiver').on('click', function (event) {
     event.preventDefault();
     $('.show-quiver').html('');
     authApi.showQuiver();
   });
 };
 
-$('#add_session').on('submit', function(event) {
+$('#add_session').on('submit', function (event) {
   event.preventDefault();
-  let data=getFormFields(this);
+  let data = getFormFields(this);
   console.log(data);
   authApi.addSession(authUi.success, authUi.failure, data);
 });
 
-$('#showSessions').on('click', function(event) {
+$('#showSessions').on('click', function (event) {
   event.preventDefault();
   $('.show-sessions').html('');
   $('.show-quiver').html('');
@@ -68,7 +68,7 @@ $('#showSessions').on('click', function(event) {
 // });
 
 // add board to sessions
-$('#add_board_to_session').on('submit', function(event) {
+$('#add_board_to_session').on('submit', function (event) {
   event.preventDefault();
   console.log('clicked!!!!');
   let data = getFormFields(this);
@@ -80,5 +80,5 @@ $('#add_board_to_session').on('submit', function(event) {
 
 module.exports = {
   addHandlers,
-  surfboardId
+  surfboardId,
 };

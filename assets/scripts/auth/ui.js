@@ -1,7 +1,6 @@
 'use strict';
 const app = require('../app-data.js');
 
-
 const success = (data) => {
   console.log(data);
   console.log('success');
@@ -21,9 +20,7 @@ const sign_in_success = (data) => {
   $('.btn').removeClass('disabled');
 };
 
-
-
-module.exports= {
+module.exports = {
   success,
-  sign_in_success
+  sign_in_success,
 };
