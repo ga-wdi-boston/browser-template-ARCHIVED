@@ -1,13 +1,28 @@
+.body {
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: cover;
+  height: 700px;
+  width: 100%;
+}
+
+.page-header {
+  background-color: $faded-blue;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .side-nav {
   background-color: $faded-blue;
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 2em;
-  float: left;
+  max-width: 400px;
+  margin: 25px;
+  position: absolute;
+  left: 0px;
 
     button{
-      width: 250px;
+      // max-width: 250px;
       padding: 10px;
-      margin-top: 10px;
+      margin: 10px;
     }
 }

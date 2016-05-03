@@ -6,12 +6,18 @@
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
+    <body class="container-fluid" >
 
  <!-- Content section -->
  <!-- Button trigger modal -->
 <!--sign up -->
-<div class=".col-xs-6 .col-md-4 side-nav">
+<div class = "page-header">
+  <img src="./assets/img/SurfsApp.png" alt="SurfsApp"/>
+</div>
+<div class="body" style="background-image: url('./assets/img/surf.jpg')">
+
+
+<div class="side-nav">
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signup">
   Sign up
 </button>
@@ -48,6 +54,9 @@
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <button type="submit" class="btn btn-default">Sign up</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">Close</span>
+              </button>
             </div>
           </div>
         </form>
@@ -88,6 +97,9 @@
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <button type="submit" class="btn btn-default">Sign in</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">Close</span>
+              </button>
             </div>
           </div>
         </form>
@@ -105,7 +117,7 @@
 <!-- INPUT SECTION -->
 <!-- surfboard input -->
 <button type="button" class="btn btn-primary btn-lg disabled"  data-toggle="modal" data-target="#surfboard">
-  Add board to quiver
+  New Board
 </button>
 <div class="modal fade" id="surfboard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -140,6 +152,9 @@
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-default">Submit</button>
+      <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">Close</span>
+      </button>
     </div>
   </div>
 </form>
@@ -153,7 +168,7 @@
 
 <!-- session input -->
 <button type="button" class="btn btn-primary btn-lg disabled"  data-toggle="modal" data-target="#session">
-  Add session to journal
+  New Session
 </button>
 <div class="modal fade" id="session" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -188,6 +203,9 @@
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-default">Submit</button>
+      <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">Close</span>
+      </button>
     </div>
   </div>
 </form>
@@ -217,6 +235,9 @@
     <div class="col-sm-10">
       <ul class="show-quiver">
       </ul><!-- HANDLE BAR THIS LIST!!!!!!!!!!!!! -->
+      <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">Close</span>
+      </button>
     </div>
   </div>
 </form>
@@ -246,6 +267,9 @@
       <ul class="show-sessions">
       <!-- HANDLE BAR THIS LIST!!!!!!!!!!!!! -->
     </ul>
+    <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">Close</span>
+    </button>
     </div>
   </div>
       </form>
@@ -257,7 +281,7 @@
 <hr>
 <!-- add board to session -->
 <button type="button" class="btn btn-primary btn-lg disabled"  data-toggle="modal" data-target="#add_board_session">
-  Add board to session
+  Use Board
 </button>
 <div class="modal fade" id="add_board_session" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -266,7 +290,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h4 class="modal-title" id="myModalLabel">Add board to sessionl</h4>
+        <h4 class="modal-title" id="myModalLabel">Add board to session</h4>
       </div>
       <div class="modal-body">
 
@@ -286,12 +310,16 @@
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <button type="submit" class="btn btn-default">Submit</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">Close</span>
+              </button>
             </div>
           </div>
         </form>
       </div>
     </div>
   </div>
+</div>
 </div>
 </div>
     </body>
