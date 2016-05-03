@@ -1,20 +1,333 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Surf's App</title>
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+    <body class="container-fluid" >
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+ <!-- Content section -->
+ <!-- Button trigger modal -->
+<!--sign up -->
+<div class = "page-header">
+  <img src="./assets/img/SurfsApp.png" alt="SurfsApp"/>
+</div>
+<div class="body" style="background-image: url('./assets/img/surf.jpg')">
+
+
+<div class="side-nav">
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signup">
+  Sign up
+</button>
+
+<div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Sign up</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" id="signup_form">
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+              <input name="credentials[email]" type="email" class="form-control" id="inputEmail3" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+              <input name="credentials[password]" type="password" class="form-control" id="inputPassword3" placeholder="Password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Confirm Password</label>
+            <div class="col-sm-10">
+              <input name="credentials[password_confirmation]" type="password" class="form-control" id="inputPassword3" placeholder="Password">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Sign up</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">Close</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+ <!--sign in -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Sign in
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Sign in</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" id="signin_form">
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+              <input name="credentials[email]" type="email" class="form-control" id="inputEmail3" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+              <input name="credentials[password]" type="password" class="form-control" id="inputPassword3" placeholder="Password">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Sign in</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">Close</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<!-- signout -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signout" id="signout_form">
+  Sign out
+</button>
+
+<hr>
+<!-- INPUT SECTION -->
+<!-- surfboard input -->
+<button type="button" class="btn btn-primary btn-lg disabled"  data-toggle="modal" data-target="#surfboard">
+  New Board
+</button>
+<div class="modal fade" id="surfboard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Quiver</h4>
+      </div>
+      <div class="modal-body">
+
+<form class="form-horizontal" id="add_board">
+  <div class="form-group">
+    <label for="input3" class="col-sm-2 control-label">Board Length (inches)</label>
+    <div class="col-sm-10">
+      <input name="surfboard[height]" type="number" class="form-control" id="input_length" placeholder="Board length">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="input3" class="col-sm-2 control-label">Shape</label>
+    <div class="col-sm-10">
+      <input name="surfboard[shape]" type="text" class="form-control" id="input_shape" placeholder="shape">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="input3" class="col-sm-2 control-label">Fin Setup</label>
+    <div class="col-sm-10">
+      <input name="surfboard[fin_setup]" type="text" class="form-control" id="input_fins" placeholder="fins">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Submit</button>
+      <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">Close</span>
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<br>
+<!-- Delete board from quiver -->
+
+
+<!-- session input -->
+<button type="button" class="btn btn-primary btn-lg disabled"  data-toggle="modal" data-target="#session">
+  New Session
+</button>
+<div class="modal fade" id="session" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Session Journal</h4>
+      </div>
+      <div class="modal-body">
+
+<form class="form-horizontal" id="add_session">
+  <div class="form-group">
+    <label for="input3" class="col-sm-2 control-label">Spot</label>
+    <div class="col-sm-10">
+      <input name="session[spot]"type="text" class="form-control" id="input_length" placeholder="Spot">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="input3" class="col-sm-2 control-label">Date</label>
+    <div class="col-sm-10">
+      <input name="session[day]" type="date" class="form-control" id="input_shape" placeholder="shape">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="input3" class="col-sm-2 control-label">Conditions</label>
+    <div class="col-sm-10">
+      <input name="session[conditions]" type="text" class="form-control" id="input_fins" placeholder="conditions">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Submit</button>
+      <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">Close</span>
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+<br>
+<!--show quiver -->
+<button type="button" class="btn btn-primary btn-lg disabled" id="showQuiver" data-toggle="modal" data-target="#quiver">
+  See your quiver
+</button>
+<div class="modal fade" id="quiver" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Quiver</h4>
+      </div>
+      <div class="modal-body">
+
+<form class="form-horizontal">
+  <div class="form-group">
+    <div class="col-sm-10">
+      <ul class="show-quiver">
+      </ul><!-- HANDLE BAR THIS LIST!!!!!!!!!!!!! -->
+      <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">Close</span>
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<br>
+<!--show session journal -->
+<button id="showSessions" type="button" class="btn btn-primary btn-lg disabled"  data-toggle="modal" data-target="#journal">
+  See your journal
+</button>
+  <div class="modal fade" id="journal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Sessions</h4>
+        </div>
+      <div class="modal-body">
+
+        <form class="form-horizontal">
+          <div class="form-group">
+    <div class="col-sm-10">
+      <ul class="show-sessions">
+      <!-- HANDLE BAR THIS LIST!!!!!!!!!!!!! -->
+    </ul>
+    <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">Close</span>
+    </button>
+    </div>
+  </div>
+      </form>
+      </div>
+      </div>
+      </div>
+</div>
+<br>
+<hr>
+<!-- add board to session -->
+<button type="button" class="btn btn-primary btn-lg disabled"  data-toggle="modal" data-target="#add_board_session">
+  Use Board
+</button>
+<div class="modal fade" id="add_board_session" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Add board to session</h4>
+      </div>
+      <div class="modal-body">
+
+        <form class="form-horizontal" id="add_board_to_session">
+          <div class="form-group">
+            <label for="input3" class="col-sm-2 control-label">Board Id</label>
+            <div class="col-sm-10">
+              <input name="session[surfboard_id]"type="number" class="form-control" id="input_board_id" placeholder="Which board?">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="input3" class="col-sm-2 control-label">Session</label>
+            <div class="col-sm-10">
+              <input name="session[id]" type="text" class="form-control" id="input_session_id" placeholder="Which session?">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">Close</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="side-nav noaa">
+  <div class="col-sm-10">
+    <p>Local Time: </p>
+    <p>Boston Ocean Temp: </p>
+    <p>Current Wind: </p>
+  </div>
+</div>
     </body>
 </html>
