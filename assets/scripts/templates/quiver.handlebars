@@ -1,11 +1,14 @@
-<li class="quiver_handles">
-  {{#each surfboards}}
-<h1>{{this.shape}}</h1>
-
-<ul class="hb_list">
-  <li>{{this.height}}"</li>
-  <li>{{this.fin_setup}}</li>
-</ul>
-
-</li>
+{{#each surfboards}}
+  <li class="quiver_handles">
+    <strong>Board id: {{this.id}}</strong>
+    <br>
+    Shape: {{this.shape}}
+    <br>
+    Size: {{this.height}}"
+    <br>
+    Fin Setup: {{this.fin_setup}}
+    <hr>
+  </li>
 {{/each}}
+{{!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+</button> --}}

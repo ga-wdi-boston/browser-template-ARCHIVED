@@ -3,6 +3,8 @@ const getFormFields = require('../../../lib/get-form-fields');
 const authApi = require('./api');
 const authUi = require('./ui');
 
+let surfboardId;
+
 const addHandlers = () => {
 // Authentication ations
   $('#signup_form').on('submit', function (event) {
@@ -30,12 +32,14 @@ const addHandlers = () => {
   $('#add_board').on('submit', function(event){
     event.preventDefault();
     let data = getFormFields(this);
+    surfboardId = $(this).name;
     console.log(data);
-    authApi.addBoard(authUi.success, authUi.failure, data);
+    authApi.addBoardToSession(authUi.success, authUi.failure, data, surfboardId);
   });
 
   $('#showQuiver').on('click', function(event) {
     event.preventDefault();
+    $('.show-quiver').html('');
     authApi.showQuiver();
   });
 };
@@ -49,11 +53,35 @@ $('#add_session').on('submit', function(event) {
 
 $('#showSessions').on('click', function(event) {
   event.preventDefault();
+  $('.show-sessions').html('');
+  $('.show-quiver').html('');
+  authApi.showQuiver();
   authApi.showSessions();
 });
 
+// $('#delete_board').on('click', function(event) {
+//   event.preventDefault();
+//   surfboardId = $(this).name;
+//   console.log(surfboardId);
+//   $('.show-quiver').html('');
+//   authApi.showQuiver();
+//   authApi.deleteSurfboard(authUi.success, authUi.failure);
+// });
 
+// add board to sessions
+$('#add_board_to_session').on('submit', function(event) {
+  event.preventDefault();
+  console.log('clicked!!!!');
+  let data = getFormFields(this);
+  console.log(data);
+  // debugger;
+  let sessionId = parseInt(data.session.id);
+  // debugger;
+  console.log(sessionId);
+  authApi.addBoardToSession(authUi.success, authUi.failure, data);
+});
 
 module.exports = {
   addHandlers,
+  surfboardId
 };
