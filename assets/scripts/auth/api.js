@@ -1,8 +1,8 @@
 'use strict';
 
 const app = require('../app-data');
-let surfboardId = require('./events');
-// const authUi = require('./ui');
+// let surfboardId = require('./events');
+const authUi = require('./ui');
 
 const signUp = (success, failure, data) => {
   $.ajax({
@@ -63,10 +63,10 @@ const showQuiver = () => {
 
 const displayQuiver = (data) => {
   let quiverTemplate = require('../templates/quiver.handlebars');
-  let quiverTemplateSelect = require('../templates/quiver-select.handlebars');
+  // let quiverTemplateSelect = require('../templates/quiver-select.handlebars');
   // let quiverTemplateSelect = require('../templates/quiver-select.handlebars');
   $('.show-quiver').append(quiverTemplate({surfboards:data}));
-  $('.show-quiver-select').append(quiverTemplateSelect({surfboards:data}));
+  // $('.show-quiver-select').append(quiverTemplateSelect({surfboards:data}));
 };
 
 
@@ -83,6 +83,16 @@ const addSession = (success, failure, data) => {
   .fail(failure);
 };
 
+const deleteSession = (success, failure, id) => {
+  $.ajax({
+    method: 'DELETE',
+    url: app.api + 'sessions/' + id,
+    headers:{
+      Authorization: 'Token token=' + app.user1.token}
+  }).done(success)
+  .fail(failure);
+};
+
 
 const showSessions = () => {
   $.ajax({
@@ -94,8 +104,17 @@ const showSessions = () => {
   }).done(function(data){
     displayJournal(data);
     showQuiver();
+    $('#delete_session').on('click', function(event) {
+      event.preventDefault();
+      let id = this.name;
+      console.log(id);
+      deleteSession(authUi.success, authUi.failure, id);
+    });
   });
 };
+
+
+
 
 const displayJournal = (data) => {
   let sessionsTemplate = require('../templates/sessions.handlebars');
@@ -122,5 +141,6 @@ module.exports = {
   showQuiver,
   addSession,
   showSessions,
-  addBoardToSession
+  addBoardToSession,
+  deleteSession
 };

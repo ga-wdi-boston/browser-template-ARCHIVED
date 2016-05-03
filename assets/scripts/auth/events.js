@@ -59,13 +59,12 @@ $('#showSessions').on('click', function(event) {
   authApi.showSessions();
 });
 
-// $('#delete_board').on('click', function(event) {
+// $('.delete_session').on('click', function(event) {
+//   debugger;
 //   event.preventDefault();
-//   surfboardId = $(this).name;
-//   console.log(surfboardId);
-//   $('.show-quiver').html('');
-//   authApi.showQuiver();
-//   authApi.deleteSurfboard(authUi.success, authUi.failure);
+//   let id = this.name;
+//   console.log(id);
+//   debugger;
 // });
 
 // add board to sessions
@@ -74,9 +73,7 @@ $('#add_board_to_session').on('submit', function(event) {
   console.log('clicked!!!!');
   let data = getFormFields(this);
   console.log(data);
-  // debugger;
   let sessionId = parseInt(data.session.id);
-  // debugger;
   console.log(sessionId);
   authApi.addBoardToSession(authUi.success, authUi.failure, data);
 });

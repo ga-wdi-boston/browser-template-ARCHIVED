@@ -1,14 +1,18 @@
   {{#each sessions}}
 <li class="session_handles">
-<strong>Session id: {{this.id}}</strong>
+<strong id={{this.id}}>Session id: {{this.id}}</strong>
 <br>
-Date:{{this.day}}
+Date: {{this.day}}
 <br>
 At: {{this.spot}}
 <br>
 Conditions: {{this.conditions}}
 <br>
 Board: {{this.surfboard_id}}
+<br>
+<button type="button" class="btn btn-default" id="delete_session" name={{this.id}}>
+  Delete
+</button>
 </form>
 </li>
 {{/each}}
