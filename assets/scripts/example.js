@@ -11,25 +11,29 @@ const hideSignUp = () => {
     $('.user-logged-options').hide("<li>");
   }
 };
-
-const alertUserToSignIn = () => {
-  if (storyData.isThereUser !== true) {
-    $('.alert-notification').removeClass("hidden");
+const hideAlert = (data) => {
+  if (data === true) {
+    $('.alert-notification').addClass("hidden");
   }
 };
 
 const promptUserLogin = (data) => {
   if (data === false) {
-      $('.alert-notification').removeClass("hidden").html("<p>You need to sign in to write a story</p>");
+    $('.write-story-main-button').attr("data-target", "");
+    $('.alert-notification').removeClass("hidden").html("<p>You need to sign in to write a story</p>");
+  } else {
+    $('.write-story-main-button').attr("data-target", "#write-a-story-modal");
+    $('.alert-notification').addClass("hidden");
   }
 };
 
-
-
-
+const closeModals = (element) => {
+  $(element).attr("data-dismiss", "modal");
+};
 
 module.exports = {
   hideSignUp,
-  alertUserToSignIn,
   promptUserLogin,
+  hideAlert,
+  closeModals,
 };

@@ -13,9 +13,7 @@ $(() => {
   authEvents.addHandlers();
 
   $('.write-story-main-button').on('click', function(){
-    $(this).addClass("no-modal");
     functionality.promptUserLogin(userStatus.isThereUser);
   });
-  //functionality.hideSignUp();
 
 });

@@ -17,6 +17,7 @@ const signInSuccess = (data) => {
   appURL.user = data.user;
   storyData.isThereUser = true;
   functionality.hideSignUp(data);
+  functionality.hideAlert(storyData.isThereUser);
   console.log(appURL);
   console.log("Sign in successful");
 };

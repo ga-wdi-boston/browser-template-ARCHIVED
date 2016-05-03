@@ -95,10 +95,17 @@ body{
   vertical-align: middle;
 }
 .alert-notification{
-  background-color: red;
-  text-align: center;
+  background-color: #E53935;
+  margin-bottom: 0;
+  height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  color: black;
+  font-weight: bolder;
 }
-
 
 
 @media (max-width: 500px) {
