@@ -133,6 +133,14 @@ const addBoardToSession = (success, failure, data) => {
   .fail(failure);
 };
 
+const NoaaData = () => {
+  $.ajax({
+    method: 'GET',
+    url: app.noaa,
+  }).done(console.log('data')).
+  fail(authUi.failure);
+};
+
 module.exports = {
   signUp,
   signIn,
@@ -142,5 +150,6 @@ module.exports = {
   addSession,
   showSessions,
   addBoardToSession,
-  deleteSession
+  deleteSession,
+  NoaaData
 };
