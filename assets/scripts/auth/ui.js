@@ -14,7 +14,6 @@ const failure = (error) => {
 };
 
 const signInSuccess = (data) => {
-  //storyData.isThereUser is not setting to true
   appURL.user = data.user;
   storyData.isThereUser = true;
   functionality.hideSignUp(data);
@@ -29,6 +28,7 @@ const signOutSuccess = () => {
   storyData.isThereUser = false;
   functionality.hideSignUp();
   functionality.closeSignInModal();
+  functionality.depopulateTitles();
   console.log(appURL);
   console.log("Sign out successful");
 };
@@ -49,7 +49,6 @@ const createStorySuccess = (data) => {
 const showAllsuccess = (data) => {
   storyData.allStories = data;
   functionality.populateTitles(data);
-  // $('#story-title').text(data.stories[0].title);
   console.log("Showing All Stories");
 };
 

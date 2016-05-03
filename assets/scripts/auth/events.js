@@ -7,7 +7,7 @@ const authUi = require('./ui');
 
 const addHandlers = () => {
 
-  $('#home-button').on('click', function(event){
+  $('#show-my-stories-all').on('click', function(event){
       event.preventDefault();
       authApi.showAll(authUi.showAllsuccess, authUi.failure);
   });

@@ -84,7 +84,7 @@ body{
 .container-story-preview{
   padding-top: 0;
   padding-bottom: 0;
-  width: 50%;
+  width: 70%;
 }
 .hidden{
   display: none;
@@ -107,7 +107,19 @@ body{
   font-weight: bolder;
 }
 
+.panel-title{
+  background-color: #795548;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
 
+.panel-body{
+  padding: 20px;
+  text-align: justify;
+  font-size: 16px;
+}
 @media (max-width: 500px) {
   .container-story-preview{
     padding-top: 0;

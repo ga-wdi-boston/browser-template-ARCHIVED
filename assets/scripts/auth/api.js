@@ -4,6 +4,7 @@ const appURL = require('../app-url');
 const storyData = require('./htmlVar.js');
 
 const signIn = (success, failure, data) => {
+  debugger;
   $.ajax({
     method: 'POST',
     url: appURL.link + '/sign-in',
@@ -78,6 +79,18 @@ const showAll = (success, failure) => {
   }).done(success)
     .fail(failure);
 };
+
+// const showAll = (success, failure) => {
+//   $.ajax({
+//     method: 'GET',
+//     url: appURL.link + '/stories/'
+//     headers: {
+//       Authorization: 'Token token=' + appURL.user.token,
+//     },
+//   }).done(success)
+//     .fail(failure);
+// };
+
 
 // const deleteStory = (success, failure) => {
 //   $.ajax({
