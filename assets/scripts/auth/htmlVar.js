@@ -1,6 +1,6 @@
 'use strict';
 
-let isThereUser;
+let isThereUser = false;
 let storyId;
 let storyToken;
 

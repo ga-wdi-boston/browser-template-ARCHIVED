@@ -44,6 +44,8 @@ body{
   background-color: #0091EA;
   border-color: #0091EA;
   color: white;
+  font-size: 16px;
+  font-weight: bold;
 }
 .write-story-main-button:visited{
   color: #0091EA;
@@ -58,27 +60,40 @@ body{
 .modal-title{
   text-align: center;
 }
+.btn.input-fields{
+  background-color: #0091EA;
+}
+.btn.publish-button{
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #00C853;
+}
 .input-fields{
   width: 100%;
   height: 40px;
   text-align: center;
 }
-
+.story-body-input{
+  height: 200px;
+  text-align: left;
+}
 .container-story-preview{
   padding-top: 0;
   padding-bottom: 0;
   width: 50%;
 }
-
-.story-input-textbox{
-  height: 250px;
-}
-
 .hidden{
   display: none;
 }
-
-
+.logged-in-as{
+  font: white;
+  height: 50px;
+  vertical-align: middle;
+}
 .alert-notification{
   background-color: red;
   text-align: center;
@@ -93,3 +108,6 @@ body{
     width: 100%;
   }
 }
+
+
+//red: #E53935

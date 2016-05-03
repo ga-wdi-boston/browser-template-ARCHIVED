@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Story Teller</title>
-
     <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
     <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
   </head>
@@ -94,23 +93,24 @@
                     <input class="input-fields" type="text" name="credentials[email]" value="" placeholder="Email">
                     <br>
                     <input class="input-fields" type="password" name="credentials[password]" value="" placeholder="Password">
-                    <br>
-                    <input class="input-fields" id="login-button" type="submit" name="submit" class="btn btn-primary" value="Login">
+                    <br><br>
+                    <input id="login-button" type="submit" name="submit" class="btn btn-primary input-fields" value="Login">
                   </form>
                   <br>
-                  <h3 class="modal-changepassword-section">Change Password</h3>
+                  <h4 class="modal-title modal-changepassword-section">Change Password</h4>
+                  <br>
                   <form id="change-password" class="modal-changepassword-section text" action="index.html" method="patch">
                     <input class="input-fields" type="password" name="credentials[old_password]" value="" placeholder="Old Password">
                     <br>
                     <input class="input-fields" type="password" name="credentials[password]" value="" placeholder="New Password">
-                    <br>
-                    <input class="input-fields" type="submit" name="submit" class="btn btn-primary" value="Change Password">
+                    <br><br>
+                    <input type="submit" name="submit" class="btn btn-primary input-fields" value="Change Password">
                   </form>
                   <br>
                 </div>
                 <div class="modal-footer">
                     <form id="sign-out" class="submit" action="index.html" method="post">
-                      <input type="submit" name="submit" class="btn btn-primary btn-lg" value="Log Out">
+                      <input type="submit" name="submit" class="btn btn-primary btn-lg input-fields" value="Log Out">
                     </form>
                 </div>
               </div>
@@ -132,8 +132,8 @@
                     <input class="sign-up input-fields" type="password" name="credentials[password]" value="" placeholder="Password">
                     <br>
                     <input class="sign-up input-fields" type="password" name="credentials[password_confirmation]" value="" placeholder="Password Confirmation">
-                    <br>
-                    <input class="sign-up input-fields" type="submit" name="submit" class="btn btn-primary" value="Sign up!">
+                    <br><br>
+                    <input type="submit" name="submit" class="btn btn-primary sign-up input-fields" value="Sign up!">
                   </form>
                 </div>
               </div>
@@ -148,22 +148,19 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Write your story</h4>
+                  <h4 class="modal-title" id="write-your-story">Write your story</h4>
                 </div>
                 <div class="modal-body">
                   <div class="form-group">
                     <form accept-charset="UTF-8" id="submit-story-form" method="post">
                       <h4>Title</h4>
                       <input class="form-control" type="text" name="story[title]" value="" placeholder="Title of Story">
-                      <h4>Write your story</h4>
-                      <input class="story-input-textbox form-control" type="text" name="story[body]" value="" placeholder="My Story">
-                      <input type="submit" name="submit" class="btn btn-primary" id="submit-story" value="Submit">
+                      <h4>Your Story</h4>
+                      <textarea class="input-fields story-body-input" name="story[body]" rows="50" placeholder="Your story here"></textarea>
+            <!---<input class="story-input-textbox form-control" type="text" name="story[body]" value="" placeholder="My Story">--->
+                      <input type="submit" name="submit" class="btn btn-primary publish-button" id="submit-story" value="Publish">
                     </form>
                   </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" id="">Submit</button>
                 </div>
               </div>
             </div>
