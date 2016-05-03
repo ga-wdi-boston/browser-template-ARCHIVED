@@ -16,4 +16,11 @@ $(() => {
     functionality.promptUserLogin(userStatus.isThereUser);
   });
 
+  $('.panel panel-body panel-default').on('click', function(){
+    event.preventDefault();
+    debugger;
+    let currentPanel = parseInt($('.panel panel-body panel-default').attr("id"));
+    functionality.populateStories(currentPanel);
+  });
+
 });

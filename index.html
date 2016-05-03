@@ -65,11 +65,9 @@
       <h1>Story Collection</h1>
     </div>
 
-    <div class="container container-story-preview">
-      <div class="panel panel-default">
-        <div class="panel-body" data-toggle="modal" data-target="#read-story-on-click">
-          <div id="storyTitle"></div>
-        </div>
+    <div class="container story-holder container-story-preview">
+      <div class="panel panel-body panel-default" data-toggle="modal" data-target="#read-story-on-click">
+
       </div>
     </div>
 
@@ -165,24 +163,23 @@
             </div>
           </div>
 
-
-          <div class="modal fade" id="read-story-on-click" tabindex="-1" role="dialog">
+{{!-- ORGINAL READ MODAL
+          <div class="modal fade show-story-modal" id="read-story-on-click" tabindex="-1" role="dialog">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title">Modal title</h4>
+                  <h4 class="modal-title">Title</h4>
                 </div>
-                <div class="modal-body">
-                  <p>One fine body&hellip;</p>
+                <div class="modal-body-read">
+                  <p>One fine body</p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                   <button id="delete-story-button" type="button" class="btn btn-primary">Delete Story</button>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
-          </div><!-- /.modal -->
+          </div><!-- /.modal -->      --}}
+
 
 
 </html>

@@ -27,13 +27,104 @@ const promptUserLogin = (data) => {
   }
 };
 
-const closeModals = (element) => {
-  $(element).attr("data-dismiss", "modal");
+const closeSignInModal = () => {
+  $('#my-sign-in-modal').modal('toggle');
 };
+const closeSignUpModal = () => {
+  $('#my-sign-up-modal').modal('toggle');
+};
+const closeWriteStoryModal = () => {
+  $('#write-a-story-modal').modal('toggle');
+};
+const showAlert = (text) => {
+  $('.alert-notification').removeClass("hidden").html(text);
+  $(this).hide(5000).addClass("hidden");
+};
+
+const populateTitles = (data) => {
+  for (let i = 0; i < data.stories.length; i++) {
+    let storyTitle = data.stories[i].title;
+    let div = $('<div/>', {
+      "class": 'panel panel-body panel-default',
+      "data-toggle": 'modal',
+      "data-target": '#read-story-on-click-' + i,
+      text: storyTitle
+    });
+    $('.story-holder').append(div);
+  }
+
+  // const populateStories = (data) => {
+  //   for (let i = 0; i < data.stories.length; i++) {
+  //     let storyTitle = data.stories[i].title;
+  //     let storyBody = data.stories[i].body;
+  //     let div = $('<div/>', {
+  //       "class": 'panel panel-body panel-default',
+  //       "data-toggle": 'modal',
+  //       "data-target": '#read-story-on-click-' + i,
+  //       text: storyTitle
+  //     });
+  //     $('.story-holder').append(div);
+  //   }
+
+
+};
+// const populateStories = (id) => {
+//   $('.modal-body-read').text(storyData.allStories.stories[id].title);
+//   $('.modal-title-read').text(storyData.allStories.stories[id].body);
+// };
+
+
+
+
+// <div class="modal fade show-story-modal" id="read-story-on-click" tabindex="-1" role="dialog">
+//   <div class="modal-dialog">
+//     <div class="modal-content">
+//       <div class="modal-header">
+//         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+//         <h4 class="modal-title">Title</h4>
+//       </div>
+//       <div class="modal-body-read">
+//         <p>One fine body&hellip;</p>
+//       </div>
+//       <div class="modal-footer">
+//         <button id="delete-story-button" type="button" class="btn btn-primary">Delete Story</button>
+//       </div>
+//     </div><!-- /.modal-content -->
+//   </div><!-- /.modal-dialog -->
+// </div><!-- /.modal -->
+
+// <div class="modal fade show-story-modal" id="read-story-on-click" tabindex="-1" role="dialog">
+//   <div class="modal-dialog">
+//     <div class="modal-content">
+//       <div class="modal-header">
+//         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+//         <h4 class="modal-title-read">Title</h4>
+//       </div>
+//       <div class="modal-body">
+//         <p>One fine body&hellip;</p>
+//       </div>
+//       <div class="modal-footer">
+//         <button id="delete-story-button" type="button" class="btn btn-primary">Delete Story</button>
+//       </div>
+//     </div><!-- /.modal-content -->
+//   </div><!-- /.modal-dialog -->
+// </div><!-- /.modal -->
+
+
+
+
+
+
+
 
 module.exports = {
   hideSignUp,
   promptUserLogin,
   hideAlert,
-  closeModals,
+  closeSignInModal,
+  showAlert,
+  closeWriteStoryModal,
+  closeSignUpModal,
+  populateTitles,
+//  populateStories,
 };

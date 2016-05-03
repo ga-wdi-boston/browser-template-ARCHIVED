@@ -51,7 +51,6 @@ const changePassword = (success, failure, data) => {
 };
 
 const createStory = (success, failure, data) => {
-  debugger;
   console.log(appURL.data);
   $.ajax({
     method: 'POST',
