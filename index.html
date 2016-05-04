@@ -1,20 +1,209 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
+  <head>
+    <title>Story Teller</title>
+    <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
 
-      <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+  <body>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
-    </body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid navbar-container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" id="home-button" href="#">Read All</a>
+        </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+<!--            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Link</a></li> --->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Creepy Pasta</a></li>
+                <li><a href="#">FanFic</a></li>
+                <li><a href="#">Mystery</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="user-logged-options" id="show-my-stories-all"><a href="#">My Stories</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="user-logged-options"><a href="#">My Favorites</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li id="register-button" type="button" data-toggle="modal" data-target="#my-sign-up-modal"><a href="#">Register</a></li>
+            <li id="sign-in-button" type="button" data-toggle="modal" data-target="#my-sign-in-modal"><a href="#">Sign-in</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div class="nav-bar hidden alert-notification">
+      <p>
+      </p>
+    </div>
+
+<!-- MAIN JUMBO ---------------------->
+  <div class="jumbotron jumbotron-header">
+    <div class="container-fluid">
+      <button id="write-story-main-button" type="button" class="btn btn-lg btn-default write-story-main-button" data-toggle="modal" data-target="#write-a-story-modal">Write A Story</button>
+    </div>
+  </div>
+<!--- SHOW ALL STORIES ----------------->
+  <div class="jumbotron jumbotron-main-content">
+
+    <div class="edit-your-story-modal hidden container" id="edit-your-story-modal">
+      <form accept-charset="UTF-8" id="submit-story-edit" method="patch">
+        <h4>Title</h4>
+        <input class="form-control" type="text" name="story[title]" value="" placeholder="Title of Story">
+        <h4>Your Story</h4>
+        <textarea class="input-fields story-body-input" name="story[body]" rows="50" placeholder="Your story here"></textarea>
+        <input type="submit" name="submit" class="btn btn-primary publish-button" id="submit-edit-story" value="Submit Edit">
+      </form>
+    </div>
+
+    <div class="container story-collection-heading">
+      <h1>Story Collection</h1>
+    </div>
+
+    <div class="container story-holder container-story-preview">
+      <!-- <div class="panel panel-body panel-default" data-toggle="modal" data-target="#read-story-on-click">
+      </div> -->
+
+    </div>
+
+  </div>
+
+
+</body>
+
+
+    <!-- Sign-in Modal ------------------------------------------------>
+          <div class="modal fade" id="my-sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <!--Modal Header-->
+                <div class="modal-header">
+                  <h3 class="modal-title" id="myModalLabel">Sign In</h3>
+                </div>
+                <div class="menu-body modal-body">
+                  <form id="sign-in" class="modal-sign-in-section text" action="index.html" method="post">
+                    <input class="input-fields" type="text" name="credentials[email]" value="" placeholder="Email">
+                    <br>
+                    <input class="input-fields" type="password" name="credentials[password]" value="" placeholder="Password">
+                    <br><br>
+                    <input id="login-button" type="submit" name="submit" class="btn btn-primary input-fields" value="Login">
+                  </form>
+                  <br>
+                  <h4 class="modal-title modal-changepassword-section">Change Password</h4>
+                  <br>
+                  <form id="change-password" class="modal-changepassword-section text" action="index.html" method="patch">
+                    <input class="input-fields" type="password" name="credentials[old_password]" value="" placeholder="Old Password">
+                    <br>
+                    <input class="input-fields" type="password" name="credentials[password]" value="" placeholder="New Password">
+                    <br><br>
+                    <input type="submit" name="submit" class="btn btn-primary input-fields" value="Change Password">
+                  </form>
+                  <br>
+                </div>
+                <div class="modal-footer">
+                    <form id="sign-out" class="submit" action="index.html" method="post">
+                      <input type="submit" name="submit" class="btn btn-primary btn-lg input-fields log-out-button" value="Log Out">
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+<!------ SIGN UP MODAL ------>
+          <div class="modal fade" id="my-sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <!--Modal Header-->
+                <div class="modal-header">
+                  <h3 class="modal-title" id="myModalLabel">Sign-up Now</h3>
+                </div>
+                <div class="menu-body modal-body">
+                  <form id="sign-up" class="modal-signup-section text" action="index.html" method="post">
+                    <input class="sign-up input-fields" type="text" name="credentials[email]" value="" placeholder="Email">
+                    <br>
+                    <input class="sign-up input-fields" type="password" name="credentials[password]" value="" placeholder="Password">
+                    <br>
+                    <input class="sign-up input-fields" type="password" name="credentials[password_confirmation]" value="" placeholder="Password Confirmation">
+                    <br><br>
+                    <input type="submit" name="submit" class="btn btn-primary sign-up input-fields" value="Sign up!">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- write story Modal -->
+          <div class="modal fade" id="write-a-story-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="write-your-story">Write your story</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <form accept-charset="UTF-8" id="submit-story-form" method="post">
+                      <h4>Title</h4>
+                      <input class="form-control" type="text" name="story[title]" value="" placeholder="Title of Story">
+                      <h4>Your Story</h4>
+                      <textarea class="input-fields story-body-input" name="story[body]" rows="50" placeholder="Your story here"></textarea>
+            <!---<input class="story-input-textbox form-control" type="text" name="story[body]" value="" placeholder="My Story">--->
+                      <input type="submit" name="submit" class="btn btn-primary publish-button" id="submit-story" value="Publish">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="modal fade show-story-modal" id="options-modal-on-click" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+              <button id="delete-story-button" type="button" class="btn btn-primary">Delete Story</button>
+              <br><br>
+              <button id="edit-story-button" type="button" data-toggle="modal" data-target="edit-your-story-modal" class="btn btn-primary">Edit Story</button>
+      <!--<li id="edit-story-button" type="button" data-toggle="modal" data-target="edit-your-story-modal" class="btn btn-primary"><a data-dismiss="modal" onclick="#write-a-story-modal">Edit Story</a></li>-->
+            </div>
+          </div>
+
+          <!-- <div class="edit-story-form hidden" id="edit-your-story-modal">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="write-your-story-edit">Write your story</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <form accept-charset="UTF-8" id="submit-story-edit" method="patch">
+                      <h4>Title</h4>
+                      <input class="form-control" type="text" name="story[title]" value="" placeholder="Title of Story">
+                      <h4>Your Story</h4>
+                      <textarea class="input-fields story-body-input" name="story[body]" rows="50" placeholder="Your story here"></textarea>
+                      <input type="submit" name="submit" class="btn btn-primary publish-button" id="submit-edit-story" value="Submit Edit">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+
 </html>

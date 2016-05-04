@@ -1,2 +1,146 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+body{
+  margin: 0 auto;
+  background-color: #EFEBE9;
+}
+
+.container{
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.modal-footer > #sign-up{
+  margin: 0 auto;
+}
+.navbar{
+  margin: 0 auto;
+  border-radius: 0;
+}
+.navbar-container {
+  padding: 0 50px;
+}
+.jumbotron{
+  margin: 0 auto;
+}
+.jumbotron-header{
+  min-height: 500px;
+  position: relative;
+  background-color: #0288D1;
+  background-image: url("http://libreshot.com/wp-content/uploads/2015/05/coffee-and-laptop.jpg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.jumbotron-main-content{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.write-story-main-button{
+  padding: 25px 100px;
+  margin: 0 auto;
+  background-color: #0091EA;
+  border-color: #0091EA;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+.write-story-main-button:visited{
+  color: #0091EA;
+}
+.write-story-main-button:hover{
+  background-color: #00B0FF;
+  border-color: #00B0FF;
+}
+.story-collection-heading{
+  text-align: center;
+}
+.modal-title{
+  text-align: center;
+}
+.btn.input-fields{
+  background-color: #0091EA;
+}
+.btn.publish-button{
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #00C853;
+}
+.input-fields{
+  width: 100%;
+  height: 40px;
+  text-align: center;
+}
+.story-body-input{
+  height: 200px;
+  text-align: left;
+}
+.container-story-preview{
+  padding-top: 0;
+  padding-bottom: 0;
+  width: 70%;
+}
+.hidden{
+  display: none;
+}
+.logged-in-as{
+  font: white;
+  height: 50px;
+  vertical-align: middle;
+}
+.alert-notification{
+  background-color: #E53935;
+  margin-bottom: 0;
+  height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+  color: black;
+  font-weight: bolder;
+}
+
+.panel-title{
+  background-color: #795548;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.panel-body{
+  padding: 20px;
+  text-align: justify;
+  font-size: 16px;
+}
+#delete-story-button{
+  width: 100%;
+  background-color: #E53935;
+  border: none;
+  height: 50px;
+  font-weight: bold;
+}
+#edit-story-button{
+  width: 100%;
+  background-color: #0091EA;
+  border: none;
+  height: 50px;
+  font-weight: bold;
+}
+@media (max-width: 500px) {
+  .container-story-preview{
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 100%;
+  }
+}
+
+
+//red: #E53935
