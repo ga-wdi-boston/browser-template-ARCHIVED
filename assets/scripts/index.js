@@ -24,10 +24,4 @@ $(() => {
     $('#edit-your-story-modal').removeClass("hidden");
   });
 
-  // $('.panel panel-body panel-default').on('click', function(){
-  //   event.preventDefault();
-  //   let currentPanel = parseInt($('.panel panel-body panel-default').attr("id"));
-  //   functionality.populateStories(currentPanel);
-  // });
-
 });

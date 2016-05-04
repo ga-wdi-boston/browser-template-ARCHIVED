@@ -16,10 +16,10 @@ const failure = (error) => {
 const signInSuccess = (data) => {
   appURL.user = data.user;
   storyData.isThereUser = true;
-  functionality.hideSignUp(data);
+  functionality.hideSignUp();
   functionality.hideAlert(storyData.isThereUser);
   functionality.closeSignInModal();
-  functionality.depopulateTitles();
+//  functionality.populateTitles(data);
   console.log(appURL);
   console.log("Sign in successful");
 };
@@ -59,6 +59,7 @@ const showAllsuccess = (data) => {
 
 const deleteStorySuccess =() => {
   functionality.closeOptionModal();
+  functionality.populateTitles(storyData.allStories);
   console.log("Deleted this story successful");
 };
 

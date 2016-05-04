@@ -2,9 +2,10 @@
 
 const authApi = require('./api');
 const getFormFields = require('../../../lib/get-form-fields');
-const appURL = require('../app-url');
+//const appURL = require('../app-url');
 const authUi = require('./ui');
-//const userStatus = require('./htmlVar');
+const functionality = require('../example');
+const userStatus = require('./htmlVar');
 
 const addHandlers = () => {
 
@@ -26,7 +27,6 @@ const addHandlers = () => {
 
   $('#sign-in').on('submit', function (event) {
       let data = getFormFields(this);
-      appURL.currentPass = data.credentials.password;
       event.preventDefault();
       authApi.signIn(authUi.signInSuccess, authUi.failure, data);
   });
@@ -49,16 +49,18 @@ const addHandlers = () => {
   });
 
   $('#submit-story-edit').on('submit', function(event){
-    debugger;
       event.preventDefault();
       let data = getFormFields(this);
       // let id = userStatus.storyId;
       authApi.updateStory(authUi.updateStorySuccess, authUi.failure, data);
+      functionality.depopulateTitles(functionality.populateTitles(userStatus.allStories));
   });
 
   $('#delete-story-button').on('click', function(event){
     event.preventDefault();
     authApi.deleteStory(authUi.deleteStorySuccess, authUi.failure);
+    // functionality.populateTitles(userStatus.allStories);
+    functionality.depopulateTitles();
   });
 
 
