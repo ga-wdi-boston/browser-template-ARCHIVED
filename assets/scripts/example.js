@@ -10,10 +10,14 @@ const hideSignUp = () => {
     $('#sign-in-button').html("<a>Sign-in</a>");
   }
 };
-const hideAlert = (data) => {
-  if (data === true) {
+// const hideAlert = (data) => {
+//   if (data === true) {
+//     $('.alert-notification').addClass("hidden");
+//   }
+// };
+const hideAlert = () => {
     $('.alert-notification').addClass("hidden");
-  }
+
 };
 
 const promptUserLogin = (data) => {

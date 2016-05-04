@@ -43,12 +43,15 @@ const createStorySuccess = (data) => {
   storyData.storyId = data.story.id;
   functionality.closeWriteStoryModal();
   functionality.showAlert("You have published your story");
+  functionality.depopulateTitles();
   console.log(data);
   console.log("You created a story");
 };
 
 const updateStorySuccess = () => {
   console.log("Update story is successful");
+  $('#edit-your-story-modal').addClass("hidden");
+  functionality.updateStorySuccess();
 };
 
 const showAllsuccess = (data) => {
@@ -59,7 +62,8 @@ const showAllsuccess = (data) => {
 
 const deleteStorySuccess =() => {
   functionality.closeOptionModal();
-  functionality.populateTitles(storyData.allStories);
+  functionality.depopulateTitles();
+  //functionality.populateTitles(storyData.allStories);
   console.log("Deleted this story successful");
 };
 

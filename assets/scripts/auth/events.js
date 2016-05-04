@@ -17,6 +17,7 @@ const addHandlers = () => {
   $('#show-my-stories-all').on('click', function(event){
       event.preventDefault();
       authApi.showAll(authUi.showAllsuccess, authUi.failure);
+      functionality.hideAlert();
   });
 
   $('#sign-up').on('submit', function (event) {
@@ -53,7 +54,8 @@ const addHandlers = () => {
       let data = getFormFields(this);
       // let id = userStatus.storyId;
       authApi.updateStory(authUi.updateStorySuccess, authUi.failure, data);
-      functionality.depopulateTitles(functionality.populateTitles(userStatus.allStories));
+      functionality.depopulateTitles();
+
   });
 
   $('#delete-story-button').on('click', function(event){
