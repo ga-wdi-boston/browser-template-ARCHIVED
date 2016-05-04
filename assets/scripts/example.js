@@ -40,32 +40,41 @@ const showAlert = (text) => {
   $('.alert-notification').removeClass("hidden").html(text);
   $(this).hide(5000).addClass("hidden");
 };
+const closeOptionModal = () => {
+  $('#options-modal-on-click').modal('toggle');
+};
 
 const populateTitles = (data) => {
   for (let i = 0; i < data.stories.length; i++) {
     let storyTitle = data.stories[i].title;
     let storyBody = data.stories[i].body;
+    let storyId = data.stories[i].id;
     let div1 = $('<div/>', {
+      id: storyId,
+      title: storyTitle,
       "class": 'panel panel-title panel-default',
-      // "data-toggle": 'modal',
-      // "data-target": '#read-story-on-click-',
+      "data-toggle": 'modal',
+      "data-target": '#options-modal-on-click',
       text: storyTitle
     });
     let div2 = $('<div/>', {
       "class": 'panel panel-body panel-default',
       // "data-toggle": 'modal',
-      // "data-target": '#read-story-on-click-',
+      // "data-target": '#read-story-on-click',
       text: storyBody
     });
     $('.story-holder').append(div1, div2);
   }
+  $('.panel-title').on('click', function(event){
+    event.preventDefault();
+    storyData.storyId = this.id;
+  });
 };
 
 const depopulateTitles = () => {
   $('.panel-title').remove();
   $('.panel-body').remove();
 };
-
 
 // const populateStories = (data) => {
 //   for (let i = 0; i < data.stories.length; i++) {
@@ -103,5 +112,6 @@ module.exports = {
   closeSignUpModal,
   populateTitles,
   depopulateTitles,
+  closeOptionModal,
 //  populateStories,
 };

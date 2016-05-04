@@ -10,18 +10,22 @@ const userStatus = require('./auth/htmlVar');
 
 // On document ready
 $(() => {
+
   userStatus.isThereUser = false;
   authEvents.addHandlers();
-
 
   $('.write-story-main-button').on('click', function(){
     event.preventDefault();
     functionality.promptUserLogin(userStatus.isThereUser);
   });
 
+  $('#edit-story-button').on('click', function(){
+    functionality.closeOptionModal();
+    $('#edit-your-story-modal').removeClass("hidden");
+  });
+
   // $('.panel panel-body panel-default').on('click', function(){
   //   event.preventDefault();
-  //   debugger;
   //   let currentPanel = parseInt($('.panel panel-body panel-default').attr("id"));
   //   functionality.populateStories(currentPanel);
   // });

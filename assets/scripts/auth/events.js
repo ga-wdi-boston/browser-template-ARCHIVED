@@ -4,8 +4,14 @@ const authApi = require('./api');
 const getFormFields = require('../../../lib/get-form-fields');
 const appURL = require('../app-url');
 const authUi = require('./ui');
+//const userStatus = require('./htmlVar');
 
 const addHandlers = () => {
+
+  // $('#home-button').on('click', function(event){
+  //     event.preventDefault();
+  //     authApi.showIndex(authUi.showAllsuccess, authUi.failure);
+  // });
 
   $('#show-my-stories-all').on('click', function(event){
       event.preventDefault();
@@ -42,11 +48,18 @@ const addHandlers = () => {
       authApi.createStory(authUi.createStorySuccess, authUi.failure, data);
   });
 
-  // $('#delete-story-button').on('click', function(event){
-  //     event.preventDefault();
-  //     authApi.deleteStory(authUi.deleteStorySuccess, authUi.failure);
-  // });
+  $('#submit-story-edit').on('submit', function(event){
+    debugger;
+      event.preventDefault();
+      let data = getFormFields(this);
+      // let id = userStatus.storyId;
+      authApi.updateStory(authUi.updateStorySuccess, authUi.failure, data);
+  });
 
+  $('#delete-story-button').on('click', function(event){
+    event.preventDefault();
+    authApi.deleteStory(authUi.deleteStorySuccess, authUi.failure);
+  });
 
 
 };

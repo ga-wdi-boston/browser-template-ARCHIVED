@@ -4,7 +4,6 @@ const appURL = require('../app-url');
 const storyData = require('./htmlVar.js');
 
 const signIn = (success, failure, data) => {
-  debugger;
   $.ajax({
     method: 'POST',
     url: appURL.link + '/sign-in',
@@ -69,6 +68,17 @@ const createStory = (success, failure, data) => {
     .fail(failure);
 };
 
+// const showIndex = (success, failure) => {
+//   $.ajax({
+//     method: 'GET',
+//     url: appURL.link + '/stories/index',
+//     headers: {
+//       Authorization: 'Token token=' + appURL.user.token,
+//     },
+//   }).done(success)
+//     .fail(failure);
+// };
+
 const showAll = (success, failure) => {
   $.ajax({
     method: 'GET',
@@ -80,28 +90,35 @@ const showAll = (success, failure) => {
     .fail(failure);
 };
 
-// const showAll = (success, failure) => {
-//   $.ajax({
-//     method: 'GET',
-//     url: appURL.link + '/stories/'
-//     headers: {
-//       Authorization: 'Token token=' + appURL.user.token,
-//     },
-//   }).done(success)
-//     .fail(failure);
-// };
+const updateStory = (success, failure, data) => {
+  console.log();
+  $.ajax({
+    method: 'PATCH',
+    url: appURL.link + '/stories/' + storyData.storyId,
+    data: {
+      "story": {
+        "title": data.story.title,
+        "body": data.story.body
+      }
+    },
+    headers: {
+      Authorization: 'Token token=' + appURL.user.token
+    }
+  }).done(success)
+    .fail(failure);
+};
 
 
-// const deleteStory = (success, failure) => {
-//   $.ajax({
-//     method: 'DELETE',
-//     url: appURL.link + '/stories/' + data.story.id,
-//     headers: {
-//       Authorization: 'Token token=' + appURL.user.token,
-//     },
-//   }).done(success)
-//     .fail(failure);
-// };
+const deleteStory = (success, failure) => {
+  $.ajax({
+    method: 'DELETE',
+    url: appURL.link + '/stories/' + storyData.storyId,
+    headers: {
+      Authorization: 'Token token=' + appURL.user.token,
+    },
+  }).done(success)
+    .fail(failure);
+};
 
 module.exports = {
   showAll,
@@ -110,5 +127,7 @@ module.exports = {
   signOut,
   changePassword,
   createStory,
-//  deleteStory,
+  deleteStory,
+  updateStory,
+// showIndex,
 };

@@ -19,6 +19,7 @@ const signInSuccess = (data) => {
   functionality.hideSignUp(data);
   functionality.hideAlert(storyData.isThereUser);
   functionality.closeSignInModal();
+  functionality.depopulateTitles();
   console.log(appURL);
   console.log("Sign in successful");
 };
@@ -46,15 +47,20 @@ const createStorySuccess = (data) => {
   console.log("You created a story");
 };
 
-const showAllsuccess = (data) => {
-  storyData.allStories = data;
-  functionality.populateTitles(data);
-  console.log("Showing All Stories");
+const updateStorySuccess = () => {
+  console.log("Update story is successful");
 };
 
-// const deleteStorySuccess =() => {
-//   console.log("Deleted this story successful");
-// };
+const showAllsuccess = (data) => {
+  storyData.allStories = data;
+  console.log("Showing All Stories");
+  functionality.populateTitles(data);
+};
+
+const deleteStorySuccess =() => {
+  functionality.closeOptionModal();
+  console.log("Deleted this story successful");
+};
 
 module.exports = {
   failure,
@@ -64,5 +70,6 @@ module.exports = {
   changePasswordSuccess,
   createStorySuccess,
   showAllsuccess,
-//  deleteStorySuccess,
+  deleteStorySuccess,
+  updateStorySuccess,
 };

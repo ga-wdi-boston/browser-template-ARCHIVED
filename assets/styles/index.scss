@@ -120,6 +120,20 @@ body{
   text-align: justify;
   font-size: 16px;
 }
+#delete-story-button{
+  width: 100%;
+  background-color: #E53935;
+  border: none;
+  height: 50px;
+  font-weight: bold;
+}
+#edit-story-button{
+  width: 100%;
+  background-color: #0091EA;
+  border: none;
+  height: 50px;
+  font-weight: bold;
+}
 @media (max-width: 500px) {
   .container-story-preview{
     padding-top: 0;
