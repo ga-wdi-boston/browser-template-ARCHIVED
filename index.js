@@ -17,3 +17,4 @@ require('expose?jQuery!jquery');
 // attach getFormFields globally
 
 require('expose?getFormFields!./lib/get-form-fields.js');
+require('expose?router!./lib/router.js');
