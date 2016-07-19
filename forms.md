@@ -60,6 +60,6 @@ $(() => {
     let data = getFormFields(this);
     e.preventDefault();
     api.myRequest(data, ui.success, ui.failure);
-  });  
+  });
 });
 ```
