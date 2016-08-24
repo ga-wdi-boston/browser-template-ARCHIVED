@@ -1,3 +1,14 @@
+tmp
+dist
+vendor.js
+specs.js
+*bundle.js
+_SpecRunner.html
+*.woff2
+*.woff
+*.svg
+*.ttf
+*.eot
 
 # Created by https://www.gitignore.io/api/node,osx,linux,windows,ruby,node,rails,express,ember
 
@@ -51,7 +62,8 @@ jspm_packages
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
