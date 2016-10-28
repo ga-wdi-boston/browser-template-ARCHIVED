@@ -2,7 +2,10 @@
   "name": "ga-wdi-boston.browser-template",
   "version": "0.0.3",
   "private": true,
-  "license": "MIT",
+  "license": {
+    "software": "GNU GPLv3",
+    "content": "CC­BY­NC­SA 4.0"
+  },
   "dependencies": {
     "jquery": "^3.1.1"
   },
