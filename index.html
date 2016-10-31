@@ -3,20 +3,91 @@
     <head>
       <title>Example</title>
 
+<!-- -->
+
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="assets/styles/styles1.css" type=text/css>
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+<!--NAV STARTS HERE -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Developed by Adam Kadane</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <form class="navbar-form navbar-left">
+            <div class="form-group"></div>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+<!--NAV ends HERE -->
+
+
+      <h1>Title Goes Here</h1>
+
+<!--DROPDOWN STARTS HERE -->
+        <div class="dropdown_wrapper">
+        <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Click to Start
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">Sign Up</a></li>
+          <li><a href="#">Sign In</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">Change Password</a></li>
+        </ul>
+      </div>
+      </div>
+<!--DROPDOWN ENDS HERE -->
+
+      <div class="game_board">
+          <div class="row article">
+            <div id="oneA" class="col-xs-4 col-md-4 box">oneA</div>
+            <div id="twoA" class="col-xs-4 col-md-4 box">twoA</div>
+            <div id="threeA" class="col-xs-4 col-md-4 box">threeA</div>
+          </div>
+          <div class="row article">
+            <div id="oneB" class="col-xs-4 col-md-4 box">oneB</div>
+            <div id="twoB" class="col-xs-4 col-md-4 box">twoB</div>
+            <div id="threeB" class="col-xs-4 col-md-4 box">threeB</div>
+          </div>
+          <div class="row article">
+            <div id="oneC" class="col-xs-4 col-md-4 box">oneC</div>
+            <div id="twoC" class="col-xs-4 col-md-4 box">.twoC</div>
+            <div id="threeC" class="col-xs-4 col-md-4 box">threeC</div>
+          </div>
+          </div>
+
+          <button class="reset" name="subject" type="submit" value="HTML">RESET</button>
     </body>
 </html>
