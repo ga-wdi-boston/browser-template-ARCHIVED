@@ -51,10 +51,11 @@
 <!--NAV ends HERE -->
 
 
+
       <h1>Title Goes Here</h1>
 
 <!--DROPDOWN STARTS HERE -->
-        <div class="dropdown_wrapper">
+         <div class="dropdown_wrapper">
         <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           Click to Start
@@ -67,7 +68,7 @@
           <button class="btn btn-primary" data-toggle="modal" data-target="#modal-3">Change Password</button>
         </ul>
       </div>
-      </div>
+    </div>
 <!--DROPDOWN ENDS HERE -->
 
 <!--MODAL #1 STARTS HERE *** SIGN UP -->
@@ -80,22 +81,20 @@
       </div>
       <div class="modal-body">
         <!--Modal Forms -->
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="SignUp_email" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-      <label for="email">Password:</label>
-      <input type="password" class="form-control" id="SignUp_password" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-      <label for="email">Confirm Password:</label>
-      <input type="password" class="form-control" id="SignUp_password_confirm" placeholder="Enter email">
-    </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="sign-up">Play</button>
-      </div>
+        <form id="sign-up" class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="SignUp_email" placeholder="Enter email" name="credentials[email]">
+          <br>
+            <label for="email">Password:</label>
+            <input type="password" class="form-control" id="SignUp_password" placeholder="Enter Password" name="credentials[password]">
+          <br>
+            <label for="email">Confirm Password:</label>
+            <input type="password" class="form-control" id="SignUp_password_confirm" placeholder="Enter Password" name="credentials[password_confirmation]">
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Play</button>
+          </div>
+        </form>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
@@ -109,19 +108,19 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title">Sign In</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body"> -->
         <!--Modal Forms -->
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="SignIn_email" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-      <label for="email">Password:</label>
-      <input type="password" class="form-control" id="SignIn_password" placeholder="Enter Password">
-    </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="sign-in">Play</button>
+        <form id="sign-in" class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="SignIn_email" placeholder="Enter email" name="credentials[email]">
+          <br>
+            <label for="email">Password:</label>
+            <input type="password" class="form-control" id="SignIn_password" placeholder="Enter Password" name="credentials[password]">
+          <br>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Play</button>
+          </form>
+        </div>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -138,17 +137,15 @@
       </div>
       <div class="modal-body">
         <!--Modal Forms -->
-    <div class="form-group">
-      <label for="email">New Password:</label>
-      <input type="email" class="form-control" id="newPasswordOne" placeholder="Enter email">
-    </div>
-    <div class="form-group">
+      <form id="change-password" class="form-group">
+      <label for="email">Old Password:</label>
+      <input type="password" class="form-control" id="newPasswordOne" placeholder="Old Password" name="passwords[old]">
+    <br>
       <label for="email">Confirm Password:</label>
-      <input type="email" class="form-control" id="newPasswordTwo" placeholder="Enter email">
-    </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="onChangePassword">Play</button>
+      <input type="password" class="form-control" id="newPasswordTwo" placeholder="New Password" name="passwords[new]">
+    <br>
+        <button type="submit" class="btn btn-primary" id="onChangePassword">Play</button>
+      </form>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -171,7 +168,7 @@
             <div id="twoC" class="col-xs-4 col-md-4 box">.twoC</div>
             <div id="threeC" class="col-xs-4 col-md-4 box">threeC</div>
           </div>
-          </div>
+      </div>
 
           <button class="reset" name="subject" type="submit" value="HTML">RESET</button>
     </body>
