@@ -5,10 +5,10 @@
 
 // load manifests
 // scripts
-require('./assets/scripts/index.js');
+require('./assets2/scripts2/index.js');
 
 // styles
-require('./assets/styles/index.scss');
+require('./assets2/styles2/index.scss');
 
 // attach jQuery globally
 require('expose?$!jquery');
