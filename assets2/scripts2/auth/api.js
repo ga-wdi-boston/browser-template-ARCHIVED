@@ -6,7 +6,6 @@ const app = require('../app');
 //authApi.signUp(authUi.success, authUi.failure, data);
 
 const signUp = function(data){
-  debugger;
   console.log(data);
   return $.ajax({
     url: app.host + '/sign-up',
@@ -24,15 +23,15 @@ const signIn = function(data){
   });
 };
 
-// const signOut = function(){
-//   return $.ajax({
-//     method: 'DELETE',
-//     url: app.host + '/sign-out/' + app.user.id,
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token,
-//     },
-//   });
-// };
+const signOut = function(){
+  return $.ajax({
+    method: 'DELETE',
+    url: app.host + '/sign-out/' + app.user.id,
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
 
 const changePassword = function(data){
   return $.ajax({
@@ -48,6 +47,6 @@ const changePassword = function(data){
 module.exports = {
   signUp,
   signIn,
-  // signOut,
+  signOut,
   changePassword,
 };
