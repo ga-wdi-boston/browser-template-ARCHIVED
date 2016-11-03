@@ -3,20 +3,226 @@
     <head>
       <title>Example</title>
 
+<!-- -->
+
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="assets2/styles2/styles1.css" type=text/css>
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+<!--NAV STARTS HERE -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Developed by Adam Kadane</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <form class="navbar-form navbar-left">
+            <div class="form-group"></div>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+<!--NAV ends HERE -->
+
+
+
+      <h1>Title Goes Here</h1>
+
+<!--DROPDOWN STARTS HERE -->
+         <div class="dropdown_wrapper">
+        <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Click to Start
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <button class="btn btn-primary" data-toggle="modal" data-target="#modal-1">sign UP</button>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#modal-2">sign IN</button>
+          <br>
+          <form id="sign-out"><button class="btn btn-primary" type="submit" >sign OUT></button></form>
+          <li role="separator" class="divider"></li>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#modal-3">Change Password</button>
+        </ul>
+      </div>
+    </div>
+<!--DROPDOWN ENDS HERE -->
+
+<!--MODAL #1 STARTS HERE *** SIGN UP -->
+<div id="modal-1" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <!--Modal Forms -->
+        <form id="sign-up" class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="SignUp_email" placeholder="Enter email" name="credentials[email]">
+          <br>
+            <label for="email">Password:</label>
+            <input type="password" class="form-control" id="SignUp_password" placeholder="Enter Password" name="credentials[password]">
+          <br>
+            <label for="email">Confirm Password:</label>
+            <input type="password" class="form-control" id="SignUp_password_confirm" placeholder="Enter Password" name="credentials[password_confirmation]">
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Play</button>
+          </div>
+        </form>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--MODAL #1 ENDS HERE -->
+
+<!--MODAL #2 STARTS HERE **SIGN IN -->
+<div id="modal-2" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Sign In</h4>
+      </div>
+      <div class="modal-body"> -->
+        <!--Modal Forms -->
+        <form id="sign-in" class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="SignIn_email" placeholder="Enter email" name="credentials[email]">
+          <br>
+            <label for="email">Password:</label>
+            <input type="password" class="form-control" id="SignIn_password" placeholder="Enter Password" name="credentials[password]">
+          <br>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Play</button>
+          </form>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--MODAL #2 ENDS HERE -->
+
+<!--MODAL #3 STARTS HERE ** New Password -->
+<div id="modal-3" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">New Password</h4>
+      </div>
+      <div class="modal-body">
+        <!--Modal Forms -->
+      <form id="change-password" class="form-group">
+      <label for="email">Old Password:</label>
+      <input type="password" class="form-control" id="newPasswordOne" placeholder="Old Password" name="passwords[old]">
+    <br>
+      <label for="email">Confirm Password:</label>
+      <input type="password" class="form-control" id="newPasswordTwo" placeholder="New Password" name="passwords[new]">
+    <br>
+        <button type="submit" class="btn btn-primary" id="onChangePassword">Play</button>
+      </form>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--MODAL #3 ENDS HERE -->
+
+      <div id="game_board">
+          <div class="row article" id="row">
+            <div id="box0" class="col-xs-4 col-md-4 box">oneA</div>
+            <div id="box1" class="col-xs-4 col-md-4 box">twoA</div>
+            <div id="box2" class="col-xs-4 col-md-4 box">threeA</div>
+          </div>
+          <div class="row article" id="row">
+            <div id="box3" class="col-xs-4 col-md-4 box">oneB</div>
+            <div id="box4" class="col-xs-4 col-md-4 box">twoB</div>
+            <div id="box5" class="col-xs-4 col-md-4 box">threeB</div>
+          </div>
+          <div class="row article" id="row">
+            <div id="box6" class="col-xs-4 col-md-4 box">oneC</div>
+            <div id="box7" class="col-xs-4 col-md-4 box">.twoC</div>
+            <div id="box8" class="col-xs-4 col-md-4 box">threeC</div>
+          </div>
+      </div>
+
+          <button class="reset" name="subject" type="submit" value="HTML">RESET</button>
+
+
+
+          <!--MODAL #4 STARTS HERE ** O WINS -->
+          <div id="modal_Owins" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">O WINS BRO</h4>
+                </div>
+                <div class="modal-body"> Nice Game! Click "Reset" to Play Again
+                  <button type="submit" class="btn btn-primary" id="reset_X">Reset</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+          <!--MODAL #4 ENDS HERE ** X WINS-->
+
+          <!--MODAL #5 STARTS HERE ** X WINS -->
+          <div id="modal_Xwins" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">X WINS BRO</h4>
+                </div>
+                <div class="modal-body"> Nice Game! Click "Reset" to Play Again
+                  <button type="submit" class="btn btn-primary" id="reset_O">Reset</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+          <!--MODAL #5 ENDS HERE ** X WINS-->
+
+          <!--MODAL #6 STARTS HERE ** X WINS -->
+          <div id="modal_Tie" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">IT'S A TIE BRO</h4>
+                </div>
+                <div class="modal-body"> Nice TRY! Click "Reset" to Play Again
+                  <button type="submit" class="btn btn-primary" id="reset_O">Reset</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+          <!--MODAL #6 ENDS HERE ** X WINS-->
+
     </body>
 </html>

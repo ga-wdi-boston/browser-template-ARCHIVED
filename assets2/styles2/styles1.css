@@ -1,0 +1,33 @@
+.box {
+  border: solid black 2px;
+  height: 100px;
+}
+
+h1 {
+  color: white;
+  background-color: blue;
+  text-align: center;
+  margin-bottom: 90px;
+}
+
+#game_board {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.dropdown_wrapper {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 40px;
+}
+
+.reset {
+  margin: 10px auto;
+  padding: 10px 40px;
+  color: white;
+  background-color: cyan;
+  display: block;
+  text-align: center;
+
+}
