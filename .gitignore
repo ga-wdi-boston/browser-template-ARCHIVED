@@ -1,5 +1,6 @@
 tmp
 dist
+dependencies.js
 vendor.js
 specs.js
 *bundle.js
