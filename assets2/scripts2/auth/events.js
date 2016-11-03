@@ -45,9 +45,9 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword);
 };
 
-const onSignInSuccess = () => {
-  $('#sign-up').modal('submit', onSignUp);
-};
+// const onSignInSuccess = () => {
+//   $('#sign-up').modal('submit', onSignUp);
+// };
 
 module.exports = {
   addHandlers,
