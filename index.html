@@ -154,24 +154,75 @@
 </div><!-- /.modal -->
 <!--MODAL #3 ENDS HERE -->
 
-      <div class="game_board">
-          <div class="row article">
-            <div id="oneA" class="col-xs-4 col-md-4 box">oneA</div>
-            <div id="twoA" class="col-xs-4 col-md-4 box">twoA</div>
-            <div id="threeA" class="col-xs-4 col-md-4 box">threeA</div>
+      <div id="game_board">
+          <div class="row article" id="row">
+            <div id="box0" class="col-xs-4 col-md-4 box">oneA</div>
+            <div id="box1" class="col-xs-4 col-md-4 box">twoA</div>
+            <div id="box2" class="col-xs-4 col-md-4 box">threeA</div>
           </div>
-          <div class="row article">
-            <div id="oneB" class="col-xs-4 col-md-4 box">oneB</div>
-            <div id="twoB" class="col-xs-4 col-md-4 box">twoB</div>
-            <div id="threeB" class="col-xs-4 col-md-4 box">threeB</div>
+          <div class="row article" id="row">
+            <div id="box3" class="col-xs-4 col-md-4 box">oneB</div>
+            <div id="box4" class="col-xs-4 col-md-4 box">twoB</div>
+            <div id="box5" class="col-xs-4 col-md-4 box">threeB</div>
           </div>
-          <div class="row article">
-            <div id="oneC" class="col-xs-4 col-md-4 box">oneC</div>
-            <div id="twoC" class="col-xs-4 col-md-4 box">.twoC</div>
-            <div id="threeC" class="col-xs-4 col-md-4 box">threeC</div>
+          <div class="row article" id="row">
+            <div id="box6" class="col-xs-4 col-md-4 box">oneC</div>
+            <div id="box7" class="col-xs-4 col-md-4 box">.twoC</div>
+            <div id="box8" class="col-xs-4 col-md-4 box">threeC</div>
           </div>
       </div>
 
           <button class="reset" name="subject" type="submit" value="HTML">RESET</button>
+
+
+
+          <!--MODAL #4 STARTS HERE ** O WINS -->
+          <div id="modal_Owins" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">O WINS BRO</h4>
+                </div>
+                <div class="modal-body"> Nice Game! Click "Reset" to Play Again
+                  <button type="submit" class="btn btn-primary" id="reset_X">Reset</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+          <!--MODAL #4 ENDS HERE ** X WINS-->
+
+          <!--MODAL #5 STARTS HERE ** X WINS -->
+          <div id="modal_Xwins" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">X WINS BRO</h4>
+                </div>
+                <div class="modal-body"> Nice Game! Click "Reset" to Play Again
+                  <button type="submit" class="btn btn-primary" id="reset_O">Reset</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+          <!--MODAL #5 ENDS HERE ** X WINS-->
+
+          <!--MODAL #6 STARTS HERE ** X WINS -->
+          <div id="modal_Tie" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">IT'S A TIE BRO</h4>
+                </div>
+                <div class="modal-body"> Nice TRY! Click "Reset" to Play Again
+                  <button type="submit" class="btn btn-primary" id="reset_O">Reset</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+          <!--MODAL #6 ENDS HERE ** X WINS-->
+
     </body>
 </html>

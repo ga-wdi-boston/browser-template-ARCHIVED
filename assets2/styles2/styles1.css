@@ -10,7 +10,7 @@ h1 {
   margin-bottom: 90px;
 }
 
-.game_board {
+#game_board {
     width: 300px;
     margin: 0 auto;
 }
