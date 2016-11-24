@@ -8,7 +8,7 @@ module.exports = {
     entry: {
       bundle: './index.js',
       specs: './spec/_all.js',
-      vendor: ['jquery', 'bootstrap-sass'],
+      vendor: ['jquery', 'materialize-css'],
     },
 
     output: {
