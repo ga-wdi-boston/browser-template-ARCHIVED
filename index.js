@@ -13,3 +13,7 @@ require('./assets/styles/index.scss');
 // attach jQuery globally
 require('expose?$!jquery');
 require('expose?jQuery!jquery');
+
+// attach urlFormData globally
+
+require('expose?getFormData!./lib/wiring/x-www-form-urlencoded.js');
