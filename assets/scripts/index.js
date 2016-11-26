@@ -5,3 +5,7 @@
 
 // use require without a reference to ensure a file is bundled
 require('./example');
+
+$(() => {
+  // Put on document ready stuff here
+});
