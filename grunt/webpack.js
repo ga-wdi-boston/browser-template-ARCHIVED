@@ -16,6 +16,14 @@ module.exports = {
       filename: '[name].js',
     },
 
+    // the npm materialize-css package comes with it's own private copy of jquery
+    // which causes problems, so this is to make sure 'our' jquery is used
+    resolve: {
+      alias: {
+        'jquery': path.resolve(__dirname, '../node_modules/jquery/dist/jquery.js') // The ../node_modules seems hacky JAF
+      }
+    },
+
     plugins: [
       new webpack.optimize.CommonsChunkPlugin('vendor', 'dependencies.js'),
       new webpack.ProvidePlugin({
