@@ -46,6 +46,11 @@ start putting all code in this file, but encourage them to break out different
 responsibilities and use the `require` syntax put references where they're
 needed.
 
+Developers should set `config.apiOrigins.production` (and
+`config.apiOrigins.development` if it differs from the default).  With
+`apiOrigins` set, developers may rely on `config.apiOrigin` as the base for API
+URLs.
+
 Developers should store styles in [`assets/styles`](assets/styles).
 
 Developers should use [getFormFields](forms.md) to retrieve form data to send to
