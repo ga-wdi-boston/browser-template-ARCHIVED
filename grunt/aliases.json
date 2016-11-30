@@ -1,5 +1,12 @@
 {
   "default": ["nag"],
+  "deploy": [
+    "shell:git-is-clean",
+    "shell:git-push-master",
+    "shell:deploy-prepare",
+    "build",
+    "shell:deploy-publish"
+  ],
   "build": ["webpack:build"],
   "server": ["webpack-dev-server:start"],
   "serve": ["server"],

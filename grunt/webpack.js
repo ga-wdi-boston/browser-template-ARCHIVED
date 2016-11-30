@@ -6,18 +6,22 @@ let path = require('path');
 module.exports = {
   options: {
     entry: {
-      bundle: './index.js',
+      application: './index.js',
       specs: './spec/_all.js',
       vendor: ['jquery', 'bootstrap-sass'],
     },
 
     output: {
-      path: './',
       filename: '[name].js',
+      path: __dirname + '/../public',
+      publicPath: 'public/',
     },
 
     plugins: [
-      new webpack.optimize.CommonsChunkPlugin('vendor', 'dependencies.js'),
+      new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor',
+        minChunks: Infinity,
+      }),
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',

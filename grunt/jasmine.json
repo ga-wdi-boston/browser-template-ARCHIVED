@@ -1,8 +1,8 @@
 {
   "tests": {
-    "src": ["vendor.bundle.js", "bundle.js"],
+    "src": ["public/vendor.js", "public/application.js"],
     "options": {
-      "specs": "specs.js"
+      "specs": "public/specs.js"
     }
   }
 }

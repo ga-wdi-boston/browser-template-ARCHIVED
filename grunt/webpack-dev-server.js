@@ -19,6 +19,7 @@ module.exports = {
     port,
     inline: true, // reload on change
     webpack: webpackConfig,
+    publicPath: '/public/',
   },
 
   start: {
