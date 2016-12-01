@@ -6,10 +6,11 @@
 'use strict';
 
 const authEvents = require('./auth/events.js');
+const quoteEvents = require('./quotes/events.js');
+
 // On document ready
 $('document').ready(function() {
-  // debugger;
   authEvents.addHandlers();
-
+  quoteEvents.addHandlers();
 
 });

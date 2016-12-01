@@ -1,0 +1,22 @@
+{{#each quotes as |quote|}}
+
+  <!-- {{> partial}}
+  Don't uncomment yet -->
+
+  <h1> <small>Quote: {{quote.author}}</small></h1>
+  <div>
+    {{#if quote.author}}
+      {{book.author}}
+    {{else}}
+      Unknown author.
+    {{/if}}
+  </div>
+  <div>
+    {{#if quote.quoteText}}
+      {{book.quoteText}}
+    {{else}}
+      Unknown quoteText.
+    {{/if}}
+  </div>
+
+{{/each}}
