@@ -1,19 +1,20 @@
 {{#each quotes as |quote|}}
-
+<div class="quote" data-id="{{quote.id}}">
   <h1> <small>Quote: {{quote.author}}</small></h1>
   <div>
-    {{#if quote.author}}
-      {{book.author}}
+    {{#if quote.user}}
+      {{quote.user.email}}
     {{else}}
-      Unknown author.
+      Unknown user.
     {{/if}}
   </div>
   <div>
     {{#if quote.quoteText}}
-      {{book.quoteText}}
+      {{quote.quoteText}}
     {{else}}
       Unknown quoteText.
     {{/if}}
   </div>
+</div>
 
 {{/each}}
