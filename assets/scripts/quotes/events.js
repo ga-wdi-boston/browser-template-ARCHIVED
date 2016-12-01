@@ -5,13 +5,14 @@ const ui = require('./ui.js');
 
 const onGetQuotes = (event) => {
   event.preventDefault();
-  api.getBooks()
+  api.getQuotes()
     .then(ui.getQuotesSuccess)
     .catch(ui.failure);
+};
 
-    .then(function(){
-      $
-    })
+const addHandlers = () => {
+  $('#getQuotesButton').on('click', onGetQuotes);
+  // $('#clearBooksButton').on('click', onClearBooks);
 };
 
 module.exports = {

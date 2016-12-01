@@ -4,7 +4,7 @@ const app = require('../app.js');
 
 let getQuotes = function(){
   return $.ajax({
-    url: app.host + "/quotes", // "http://book-json.herokuapp.com/books"
+    url: app.host + "/quotes",
     method: 'GET',
     // dataType: 'json'
   });
@@ -13,5 +13,4 @@ let getQuotes = function(){
 
 module.exports = {
   getQuotes,
-  getTitles
 };

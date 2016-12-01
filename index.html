@@ -1,164 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>POLL</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="dependencies.js" type="text/javascript" charset="utf-8" defer></script>
-    <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
-    <style>
-      /* Remove the navbar's default rounded borders and increase the bottom margin */
-      .navbar {
+
+<head>
+  <title>POLL</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="dependencies.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */
+
+    .navbar {
       margin-bottom: 50px;
       border-radius: 0;
-      }
-      /* Remove the jumbotron's default bottom margin */
-      .jumbotron {
+    }
+    /* Remove the jumbotron's default bottom margin */
+
+    .jumbotron {
       margin-bottom: 0;
-      }
-      /* Add a gray background color and some padding to the footer */
-      footer {
+    }
+    /* Add a gray background color and some padding to the footer */
+
+    footer {
       background-color: #f2f2f2;
       padding: 25px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="jumbotron">
-      <div class="container text-center">
-        <h1>Quote <br> Polls</h1>
-        <p>Where your opinion matters & "counts".</p>
-      </div>
+    }
+  </style>
+</head>
+
+<body>
+  <div class="jumbotron">
+    <div class="container text-center">
+      <h1>Quote <br> Polls</h1>
+      <p>Where your opinion matters & "counts".</p>
     </div>
-    <!-- NAVBAR STARTS HERE -->
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="game-stats">
-        </div>
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-            aria-expanded="false">
+  </div>
+  <!-- NAVBAR STARTS HERE -->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="game-stats">
+      </div>
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           </button>
-          <a class="navbar-brand" href="#">Opinions</a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="sign-up-form" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                aria-expanded="false">SIGN UP/IN? <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <form class="sign-up-form" id="sign-up">
-                    <p>Sign Up</p>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="sign-up-email" placeholder="Email" name="credentials[email]">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" placeholder="Password" name="credentials[password]">
-                      <input type="password" class="form-control" placeholder="Password Confirmation" name="credentials[password_confirmation]">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  </form>
-                </li>
-                <li>
-                  <form class="sign-in-form" id="sign-in">
-                    <p>Sign In</p>
-                    <input name="credentials[email]" type="text" value="" placeholder="email">
-                    <input name="credentials[password]" type="password" value="" placeholder="password, bro">
-                    <input type="submit" name="submit" value="Sign in!">
-                  </form>
-                </li>
-                <li>
-                  <form id="change-password">
-                    <p>Change Password</p>
-                    <input type="password" name="passwords[old]" value="" placeholder="Old Password">
-                    <input type="password" name="passwords[new]" value="" placeholder="New Password">
-                    <input type="submit" name="submit" value="Change Password">
-                  </form>
-                </li>
-                <li role="separator" class="divider"></li>
-                <li>
-                  <form id="sign-out">
-                    <input type="submit" name="submit" value="Sign out!">
-                  </form>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+        <a class="navbar-brand" href="#">Opinions</a>
       </div>
-      <!-- /.container-fluid -->
-    </nav>
-    <!-- NAVBAR ENDS HERE -->
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="sign-up-form" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SIGN UP/IN? <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li>
+                <form class="sign-up-form" id="sign-up">
+                  <p>Sign Up</p>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="sign-up-email" placeholder="Email" name="credentials[email]">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" placeholder="Password" name="credentials[password]">
+                    <input type="password" class="form-control" placeholder="Password Confirmation" name="credentials[password_confirmation]">
+                  </div>
+                  <button type="submit" class="btn btn-default">Submit</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </form>
+              </li>
+              <li>
+                <form class="sign-in-form" id="sign-in">
+                  <p>Sign In</p>
+                  <input name="credentials[email]" type="text" value="" placeholder="email">
+                  <input name="credentials[password]" type="password" value="" placeholder="password, bro">
+                  <input type="submit" name="submit" value="Sign in!">
+                </form>
+              </li>
+              <li>
+                <form id="change-password">
+                  <p>Change Password</p>
+                  <input type="password" name="passwords[old]" value="" placeholder="Old Password">
+                  <input type="password" name="passwords[new]" value="" placeholder="New Password">
+                  <input type="submit" name="submit" value="Change Password">
+                </form>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <form id="sign-out">
+                  <input type="submit" name="submit" value="Sign out!">
+                </form>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+  <!-- NAVBAR ENDS HERE -->
 
-    <!-- MODAL -->
-<!-- MODAL end -->
+  <!-- handlebars -->
+  <div class="container-fluid">
+    <button id="getQuotesButton" class="btn btn-default">Get Quotes!</button>
+    <button id="clearQuotesButton" class="btn btn-default">Clear Quotes!</button>
+    <div id="content" class="content">
+    </div>
+  </div>
+  <!-- handlebars end -->
 
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">BLACK FRIDAY DEAL</div>
-            <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-          </div>
+
+
+  <!-- the content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">BLACK FRIDAY DEAL</div>
+          <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
         </div>
-        <div class="col-sm-4">
-          <div class="panel panel-danger">
-            <div class="panel-heading">BLACK FRIDAY DEAL</div>
-            <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-          </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-danger">
+          <div class="panel-heading">BLACK FRIDAY DEAL</div>
+          <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
         </div>
-        <div class="col-sm-4">
-          <div class="panel panel-success">
-            <div class="panel-heading">BLACK FRIDAY DEAL</div>
-            <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-          </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-success">
+          <div class="panel-heading">BLACK FRIDAY DEAL</div>
+          <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
         </div>
       </div>
     </div>
-    <br>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">BLACK FRIDAY DEAL</div>
-            <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-          </div>
+  </div>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">BLACK FRIDAY DEAL</div>
+          <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
         </div>
-        <div class="col-sm-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">BLACK FRIDAY DEAL</div>
-            <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-          </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">BLACK FRIDAY DEAL</div>
+          <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
         </div>
-        <div class="col-sm-4">
-          <div class="panel panel-primary">
-            <div class="panel-heading">BLACK FRIDAY DEAL</div>
-            <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-            <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-          </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">BLACK FRIDAY DEAL</div>
+          <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+          <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
         </div>
       </div>
     </div>
-    <br><br>
-    <footer class="container-fluid text-center">
-      <p>Online Store Copyright</p>
-      <form class="form-inline">Get deals:
-        <input type="email" class="form-control" size="50" placeholder="Email Address">
-        <button type="button" class="btn btn-danger">Sign Up</button>
-      </form>
-    </footer>
-  </body>
+  </div>
+  <!-- the content ends -->
+
+  <br><br>
+  <footer class="container-fluid text-center">
+    <p>Online Store Copyright</p>
+    <form class="form-inline">Get deals:
+      <input type="email" class="form-control" size="50" placeholder="Email Address">
+      <button type="button" class="btn btn-danger">Sign Up</button>
+    </form>
+  </footer>
+</body>
+
 </html>
