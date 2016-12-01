@@ -4,7 +4,6 @@ const showQuotesTemplate = require('../templates/quote-listing.handlebars');
 
 
 const getQuotesSuccess = (quotes) => {
-  debugger;
   $('#content').html(showQuotesTemplate(quotes));
     console.log(quotes);
 
