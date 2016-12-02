@@ -1,6 +1,6 @@
 {{#each quotes as |quote|}}
 <div class="quote" data-id="{{quote.id}}">
-  <h1> <small>Quote: {{quote.author}}</small></h1>
+  <h1> <small>{{quote.author}}</small></h1>
   <div>
     {{#if quote.user}}
       {{quote.user.email}}
@@ -15,6 +15,14 @@
       Unknown quoteText.
     {{/if}}
   </div>
+  <div>
+  {{#if quote.editable}}
+    <button data-id="{{quote.id}}" class="delete-button">Delete This Post</button>
+  {{else}}
+    Unknown quoteText.
+  {{/if}}
+  </div>
+
 </div>
 
 {{/each}}
