@@ -60,14 +60,20 @@ module.exports = {
         {
           test: /\.(hbs|handlebars)$/,
           loader: 'handlebars-loader',
-        },
-        {
-          test: /\.html\.(hbs|handlebars)$/,
-          loader: 'handlebars-loader!html',
+          query: {
+            helperDirs: [
+              __dirname + '/../assets/scripts/templates/helpers',
+            ],
+          },
         },
       ],
     },
 
+    resolve: {
+      alias: {
+        handlebars: 'handlebars/dist/handlebars.js',
+      },
+    },
     stats: {
       colors: true,
       modules: true,
