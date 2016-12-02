@@ -22,7 +22,15 @@ const indexQuotes = function(e) {
 const createQuote = function(event) {
   event.preventDefault();
   let data = getFormFields(this);
-  api.create(data)
+  api.create({quote:data.quote})
+  .then(ui.createQuoteSuccess)
+  .catch(ui.failure);
+};
+
+const updateQuote = function(event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.update(data, $(this).attr('data-id'))
   .then(ui.createQuoteSuccess)
   .catch(ui.failure);
 };
@@ -35,7 +43,8 @@ window.alert($(this).attr('data-id'))
 const addHandlers = () => {
   $('#getQuotesButton').on('click', onGetQuotes);
   $('#create-quote').on('submit', onGetQuotes, createQuote);
-  $(document).on('click','.delete-button', deleteQuote)
+  $(document).on('submit','.update-quote-form', updateQuote);
+  $(document).on('click','.delete-button', deleteQuote);
   // $('#clearBooksButton').on('click', onClearBooks);
 };
 

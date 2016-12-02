@@ -41,7 +41,16 @@ Edit Your Quote?
                 <h4 class="modal-title" id="myModalLabel">Edit Your Quote</h4>
               </div>
               <div class="modal-body">
-                ...
+
+                <form data-id="{{quote.id}}" class="update-quote-form" >
+                  <h2>Update Quote</h2>
+                  <input name="quote[quoteText]" type="text" value="" placeholder="quote">
+                  <input name="quote[author]" type="text" value="" placeholder="Original author/unknown">
+                  <input name="quote[user]" type="text" value="" placeholder="your email">
+                  <input type="submit" name="submit" value="Update Quote">
+                </form>
+
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

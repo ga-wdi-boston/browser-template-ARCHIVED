@@ -25,7 +25,21 @@ let create = function(data) {
   });
 };
 
+
+let update = function(data, id) {
+  console.log(data)
+  return $.ajax({
+    url: app.host + '/quotes/' + id,
+    method: 'PATCH',
+    data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+  });
+};
+
 module.exports = {
   getQuotes,
-  create
+  create,
+  update
 };
