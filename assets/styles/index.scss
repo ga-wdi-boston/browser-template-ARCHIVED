@@ -1,2 +1,26 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.navbar {
+  margin-bottom: 50px;
+  border-radius: 0;
+}
+/* Remove the jumbotron's default bottom margin */
+
+.jumbotron {
+  margin-bottom: 0;
+}
+/* Add a gray background color and some padding to the footer */
+
+body {
+  padding-bottom: 190px;
+}
+
+
+footer {
+  background-color: #f2f2f2;
+  padding: 25px;
+  position: relative;
+  clear: both;
+  padding-top: 20px;
+}

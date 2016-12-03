@@ -35,10 +35,11 @@ const updateQuote = function(event) {
   .catch(ui.failure);
 };
 
-const deleteQuote = function(event){
-// In here ---- access the data-id using $()
-window.alert($(this).attr('data-id'))
-}
+const deleteQuote = function () {
+  event.preventDefault()
+  .then(ui.success)
+  .catch(ui.failure);
+};
 
 const addHandlers = () => {
   $('#getQuotesButton').on('click', onGetQuotes);

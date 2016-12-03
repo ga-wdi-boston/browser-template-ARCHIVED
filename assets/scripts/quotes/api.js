@@ -27,7 +27,7 @@ let create = function(data) {
 
 
 let update = function(data, id) {
-  console.log(data)
+  // console.log(data)
   return $.ajax({
     url: app.host + '/quotes/' + id,
     method: 'PATCH',
@@ -38,8 +38,19 @@ let update = function(data, id) {
   });
 };
 
+let destroy = () => {
+  return $.ajax({
+    url: app.host + '/quotes/' + store.user.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+  });
+};
+
 module.exports = {
   getQuotes,
   create,
-  update
+  update,
+  destroy
 };
