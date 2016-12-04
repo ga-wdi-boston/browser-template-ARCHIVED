@@ -3,7 +3,7 @@
 const app = require('../app.js');
 const store = require('../store.js');
 
-let getQuotes = function(){
+const getQuotes = function(){
   return $.ajax({
     url: app.host + "/quotes",
     method: 'GET',
@@ -14,7 +14,7 @@ let getQuotes = function(){
   });
 };
 
-let create = function(data) {
+const create = function(data) {
   return $.ajax({
     url: app.host + '/quotes',
     method: 'POST',
@@ -25,9 +25,9 @@ let create = function(data) {
   });
 };
 
-
-let update = function(data, id) {
-  // console.log(data)
+const update = function(data, id) {
+  // console.log('dogge is ', dogge);
+  // ^ print to the console 'something new!'
   return $.ajax({
     url: app.host + '/quotes/' + id,
     method: 'PATCH',
@@ -38,9 +38,9 @@ let update = function(data, id) {
   });
 };
 
-let destroy = () => {
+const destroy = function(id) {
   return $.ajax({
-    url: app.host + '/quotes/' + store.user.id,
+    url: app.host + '/quotes/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token

@@ -1,6 +1,7 @@
+{{!--  list all quotes--}}
 {{#each quotes as |quote|}}
   <div class="quote" data-id="{{quote.id}}">
-    <h1> <small>{{quote.author}}</small></h1>
+    <h1> <small>{{quote.quoteText}}</small></h1>
     <div>
       {{#if quote.user}}
         {{quote.user.email}}
@@ -9,19 +10,22 @@
       {{/if}}
     </div>
     <div>
-      {{#if quote.quoteText}}
-        {{quote.quoteText}}
+      {{#if quote.author}}
+        {{quote.author}}
       {{else}}
-        Unknown quoteText.
+        Unknown Author.
       {{/if}}
     </div>
+
+    {{!--  end list all quotes--}}
+
     <div>
       {{#if quote.editable}}
         <button data-id="{{quote.id}}" class="delete-button btn-danger btn large material-icons">Remove
           <span class="glyphicon glyphicon-trash"></span>
         </button>
       {{else}}
-        Unknown quoteText.
+
       {{/if}}
     </div>
 
@@ -65,7 +69,7 @@ Edit Your Quote?
     </div>
 
     {{else}}
-      Unknown quoteText.
+
       {{/if}}
   </div>
 
