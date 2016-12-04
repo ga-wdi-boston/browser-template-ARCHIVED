@@ -6,7 +6,22 @@ const api = require('./api');
 
 const getQuotesSuccess = (quotes) => {
   $('#content').html(showQuotesTemplate(quotes, "cool"));
-    console.log(quotes);
+    console.log('quotes is',quotes);
+
+};
+
+const createQuoteSuccess = (quotes) => {
+  $('#content').html(showQuotesTemplate(quotes.id, "cool"));
+    console.log('quotes is', quotes);
+
+};
+
+const updateQuoteSuccess = (quotes) => {
+  $('#content').html(showQuotesTemplate(quotes, "cool"));
+  api.getQuotes();
+  // $('#updateModal').modal('close');
+  // $('.modal-backdrop').remove();
+  console.log('quotes is', quotes);
 
 };
 
@@ -14,4 +29,7 @@ const getQuotesSuccess = (quotes) => {
 module.exports = {
   showQuotesTemplate,
   getQuotesSuccess,
+  createQuoteSuccess,
+  updateQuoteSuccess
+
 };
