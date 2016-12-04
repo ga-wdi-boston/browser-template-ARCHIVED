@@ -1,5 +1,5 @@
 'use strict';
-const store = require('../store')
+const store = require('../store');
 const showQuotesTemplate = require('../templates/quote-listing.handlebars');
 const api = require('./api');
 

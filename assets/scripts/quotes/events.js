@@ -36,7 +36,7 @@ const updateQuote = function(event) {
 };
 
 const deleteQuote = function () {
-  event.preventDefault()
+  api.destroy(data, $(this).attr('data-id'))
   .then(ui.success)
   .catch(ui.failure);
 };

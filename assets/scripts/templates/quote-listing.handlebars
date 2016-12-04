@@ -17,7 +17,9 @@
     </div>
     <div>
       {{#if quote.editable}}
-        <button data-id="{{quote.id}}" class="delete-button">Delete This Post</button>
+        <button data-id="{{quote.id}}" class="delete-button btn-danger btn large material-icons">Remove
+          <span class="glyphicon glyphicon-trash"></span>
+        </button>
       {{else}}
         Unknown quoteText.
       {{/if}}
@@ -28,6 +30,7 @@
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#updateModal">
 Edit Your Quote?
+<span class="glyphicon glyphicon-pencil"></span>
 </button>
 
         <!-- Modal -->
