@@ -1,20 +1,78 @@
+{{!--  list all quotes--}}
 {{#each quotes as |quote|}}
-<div class="quote" data-id="{{quote.id}}">
-  <h1> <small>Quote: {{quote.author}}</small></h1>
-  <div>
-    {{#if quote.user}}
-      {{quote.user.email}}
+  <div class="quote" data-id="{{quote.id}}">
+    <h1> <small>{{quote.quoteText}}</small></h1>
+    <div>
+      {{#if quote.user}}
+        {{quote.user.email}}
+      {{else}}
+        Unknown user.
+      {{/if}}
+    </div>
+    <div>
+      {{#if quote.author}}
+        {{quote.author}}
+      {{else}}
+        Unknown Author.
+      {{/if}}
+    </div>
+
+    {{!--  end list all quotes--}}
+
+    <div>
+      {{#if quote.editable}}
+        <button data-id="{{quote.id}}" class="delete-button btn-danger btn large material-icons">Remove
+          <span class="glyphicon glyphicon-trash"></span>
+        </button>
+      {{else}}
+
+      {{/if}}
+    </div>
+
+    <div>
+      {{#if quote.editable}}
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#updateModal">
+Edit Your Quote?
+<span class="glyphicon glyphicon-pencil"></span>
+</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+                <h4 class="modal-title" id="myModalLabel">Edit Your Quote</h4>
+              </div>
+              <div class="modal-body">
+
+                <form data-id="{{quote.id}}" class="update-quote-form" >
+                  <h2>Update Quote</h2>
+                  <input name="quote[quoteText]" type="text" value="" placeholder="quote">
+                  <input name="quote[author]" type="text" value="" placeholder="Original author/unknown">
+                  <input name="quote[user]" type="text" value="" placeholder="your email">
+                  <input type="submit" data-toggle='modal-close' name="submit" value="Update Quote">
+                </form>
+
+
+              </div>
+              {{!-- <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div> --}}
+            </div>
+          </div>
+        </div>
+    </div>
+
     {{else}}
-      Unknown user.
-    {{/if}}
+
+      {{/if}}
   </div>
-  <div>
-    {{#if quote.quoteText}}
-      {{quote.quoteText}}
-    {{else}}
-      Unknown quoteText.
-    {{/if}}
+
   </div>
-</div>
 
 {{/each}}
