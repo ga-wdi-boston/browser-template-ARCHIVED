@@ -208,7 +208,7 @@ webpackJsonp([0],[
 	'use strict';
 
 	module.exports = {
-	  host: 'https://radiant-retreat-75178.herokuapp.com/'
+	  host: 'https://mysterious-atoll-51731.herokuapp.com/'
 	};
 
 /***/ },
