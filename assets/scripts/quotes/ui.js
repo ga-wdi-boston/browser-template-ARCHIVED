@@ -19,8 +19,11 @@ const createQuoteSuccess = (quotes) => {
 const updateQuoteSuccess = (quotes) => {
   $('#content').html(showQuotesTemplate(quotes, "cool"));
   api.getQuotes();
-  // $('#updateModal').modal('close');
-  // $('.modal-backdrop').remove();
+  $('#updateModal').modal('hide');
+  $('body').removeClass('modal-open');
+  $('.modal-backdrop').remove();
+
+
   console.log('quotes is', quotes);
 
 };
