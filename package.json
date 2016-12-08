@@ -26,6 +26,7 @@
     "grunt-jsonlint": "^1.1.0",
     "grunt-nodemon": "^0.4.2",
     "grunt-open": "^0.2.3",
+    "grunt-shell": "^2.1.0",
     "grunt-webpack": "^1.0.18",
     "handlebars": "^4.0.5",
     "handlebars-loader": "^1.4.0",

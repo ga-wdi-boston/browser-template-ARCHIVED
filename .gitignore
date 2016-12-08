@@ -1,15 +1,15 @@
 tmp
 dist
-dependencies.js
 vendor.js
 specs.js
-*bundle.js
+application.js
 _SpecRunner.html
 *.woff2
 *.woff
 *.svg
 *.ttf
 *.eot
+public/
 
 # Created by https://www.gitignore.io/api/node,osx,linux,windows,ruby,node,rails,express,ember
 
