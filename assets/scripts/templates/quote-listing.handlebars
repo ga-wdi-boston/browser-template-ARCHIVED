@@ -4,16 +4,16 @@
     <h1> <small>{{quote.quoteText}}</small></h1>
     <div>
       {{#if quote.user}}
-        {{quote.user.email}}
+        User: {{quote.user.email}}
       {{else}}
-        Unknown user.
+        Unknown.
       {{/if}}
     </div>
     <div>
       {{#if quote.author}}
-        {{quote.author}}
+        Author: {{quote.author}}
       {{else}}
-        Unknown Author.
+        Unknown.
       {{/if}}
     </div>
 
