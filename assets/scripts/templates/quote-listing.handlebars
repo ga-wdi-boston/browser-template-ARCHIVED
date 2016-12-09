@@ -37,7 +37,7 @@ Edit Your Quote?
 <span class="glyphicon glyphicon-pencil"></span>
 </button>
 
-        <!-- Modal -->
+        <!-- Modal update -->
         <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -51,8 +51,8 @@ Edit Your Quote?
 
                 <form data-id="{{quote.id}}" class="update-quote-form" >
                   <h2>Update Quote</h2>
-                  <input name="quote[quoteText]" type="text" value="" placeholder="quote">
-                  <input name="quote[author]" type="text" value="" placeholder="Original author/unknown">
+                  <input name="quote[quoteText]" type="text" value="{{quoteText}}" onfocus="this.select();">
+                  <input name="quote[author]" type="text" value="{{author}}" onfocus="this.select();">
 
                   <input type="submit" data-toggle='modal-close' name="submit" value="Update Quote">
                 </form>
