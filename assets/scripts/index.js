@@ -12,5 +12,4 @@ const quoteEvents = require('./quotes/events.js');
 $('document').ready(function() {
   authEvents.addHandlers();
   quoteEvents.addHandlers();
-
 });

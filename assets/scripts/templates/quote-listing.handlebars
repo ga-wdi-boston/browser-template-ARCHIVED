@@ -51,10 +51,10 @@ Edit Your Quote?
 
                 <form data-id="{{quote.id}}" class="update-quote-form" >
                   <h2>Update Quote</h2>
-                  <input name="quote[quoteText]" type="text" value="{{quoteText}}" onfocus="this.select();">
-                  <input name="quote[author]" type="text" value="{{author}}" onfocus="this.select();">
+                  <input name="quote[quoteText]" type="text" placeholder="Quote" value="{{quoteText}}" onfocus="this.select();">
+                  <input name="quote[author]" type="text" placeholder="Original Author" value="{{author}}" onfocus="this.select();">
 
-                  <input type="submit" data-toggle='modal-close' name="submit" value="Update Quote">
+                  <button type="submit" data-toggle='modal-close' name="submit" class="btn btn-inverse btn-info" value="Update Quote">Update</button>
                 </form>
 
 

@@ -22,7 +22,7 @@
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           </button>
-        <a class="navbar-brand" href="#">Log in to see quotes</a>
+        <a class="navbar-brand user" href="#">Log in to see quotes</a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="sign-up-form" id="bs-example-navbar-collapse-1">
@@ -32,26 +32,23 @@
             <ul class="dropdown-menu">
               <li>
                 <form class="sign-up-form" id="sign-up">
-                  <p>Sign Up</p>
+                  <p><b>Sign Up</b></p>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="sign-up-email" placeholder="Email" name="credentials[email]">
+                    <input type="email" id="sign-up-email" placeholder="Email" name="credentials[email]">
+                    <input type="password" placeholder="Password" name="credentials[password]">
+                    <input type="password" placeholder="Password Confirmation" name="credentials[password_confirmation]">
+                    <button type="submit" class="btn btn-success btn-sm">Sign Up</button>
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" placeholder="Password" name="credentials[password]">
-                    <input type="password" class="form-control" placeholder="Password Confirmation" name="credentials[password_confirmation]">
-                  </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </form>
               </li>
               <li>
                 <form class="sign-in-form" id="sign-in">
                   <p>Sign In</p>
+                  <div class="form-group">
                   <input name="credentials[email]" type="text" value="" placeholder="email">
                   <input name="credentials[password]" type="password" value="" placeholder="password, bro">
-                  <input type="submit" name="submit" value="Sign in!">
+                  <button type="submit" class="btn btn-inverse btn-sm">Sign Up</button>
+                </div>
                 </form>
               </li>
               <li>
@@ -59,13 +56,14 @@
                   <p>Change Password</p>
                   <input type="password" name="passwords[old]" value="" placeholder="Old Password">
                   <input type="password" name="passwords[new]" value="" placeholder="New Password">
-                  <input type="submit" name="submit" value="Change Password">
+
+                  <button type="submit" class="btn btn-sm" value="Change Password">Change Password</button>
                 </form>
               </li>
               <li role="separator" class="divider"></li>
               <li>
                 <form id="sign-out">
-                  <input type="submit" name="submit" value="Sign out!">
+                  <button type="submit" class="btn btn-sm btn-inverse" name="submit" value="Sign out!">Sign Out!</button>
                 </form>
               </li>
             </ul>
@@ -98,11 +96,12 @@
   <form class="create-quote-form text-center" id="create-quote">
     <h2>Create Quote</h2>
     <input name="quote[quoteText]" type="text" value="" placeholder="quote">
-    <input name="quote[author]" type="text" value="" placeholder="Original author/unknown">
-
-    <input type="submit" name="submit" value="Create Quote">
+    <input name="quote[author]" type="text" value="" placeholder="Original author">
+    <div>
+      <button type="submit" class="btn btn-default" name="submit" value="Create Quote">Create Quote</button>
+    </div>
   </form>
-  <h6 class='text-center'>Log in before creating your content</h6>
+  <h6 class='text-center'>Log in before <br> creating your content and <br> viewing quotes.</h6>
 
 
 

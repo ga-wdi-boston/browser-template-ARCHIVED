@@ -12,7 +12,7 @@ const failure = (error) => {
 const signInSuccess = (data) => {
   console.log(data);
   store.user = data.user;
-
+  $(".user").text(data.user.email);
 };
 
 const signInFailure = (error) => {
