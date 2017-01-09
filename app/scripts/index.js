@@ -2,7 +2,7 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
-const main = require('./index.hbs')
+const main = require('../templates/index.hbs')
 
 $(() => {
   $('title').text('For example')
