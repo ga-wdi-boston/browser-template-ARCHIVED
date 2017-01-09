@@ -1,6 +1,6 @@
 'use strict'
 
-const example = require('../assets/scripts/example')
+const example = require('../app/scripts/example')
 
 describe('Example', function () {
   it('is true', function () {

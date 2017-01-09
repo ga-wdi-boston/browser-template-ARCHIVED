@@ -1,7 +1,7 @@
 {
   "src": {
     "all": [
-      "assets/**/*.js",
+      "app/**/*.js",
       "grunt/**/*.js",
       "lib/**/*.js",
       "spec/**/*.spec.js"
@@ -23,7 +23,7 @@
 
   "json": {
     "all": [
-      "assets/scripts/**/*.json",
+      "app/scripts/**/*.json",
       "spec/**/*.json",
       "grunt/*.json"
     ]
