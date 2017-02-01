@@ -8,7 +8,7 @@ const ghPagesList = [
 
 module.exports = {
   'git-is-clean': {
-    // `$(git status --porcelain)` will evaluate to the empty string if the 
+    // `$(git status --porcelain)` will evaluate to the empty string if the
     // working directory is clean.
     // `test -z` will exit 0 (true) if its argument is an empty string.
     // If it doesn't exit true, `(git status && false)` will show why the
