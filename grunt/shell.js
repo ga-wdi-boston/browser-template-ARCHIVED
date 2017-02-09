@@ -18,9 +18,11 @@ module.exports = {
   'git-push-master': {
     command: 'git push origin master',
   },
+  'git-checkout-master': {
+    command: 'git checkout master',
+  },
   'deploy-prepare': {
     command: [
-      'git checkout master',
       'git branch -D gh-pages || echo "so not removed"',
       'git checkout --orphan gh-pages',
       'git rm --cached \'*\'',
