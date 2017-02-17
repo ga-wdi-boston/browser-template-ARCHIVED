@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
 const config = {
   apiOrigins: {
-    production: 'https://ga-wdi-boston.herokuapp.com',
-  },
-};
+    production: 'https://ga-wdi-boston.herokuapp.com'
+  }
+}
 
-module.exports = config;
+module.exports = config
