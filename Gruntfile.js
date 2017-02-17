@@ -5,8 +5,6 @@
 // discuss how to break up gruntfiles
 
 module.exports = function(grunt) {
-
   require('time-grunt')(grunt)
   require('load-grunt-config')(grunt)
-
 }

@@ -1,11 +1,15 @@
 {
-  "scripts": {
+  "src": {
     "all": [
-      "assets/scripts/**/*.js",
+      "bin/**/*.js",
+      "lib/**/*.js",
       "spec/**/*.spec.js"
     ],
-    "src": [
-      "assets/scripts/**/*.js"
+    "spec": [
+      "spec/**/*.spec.js"
+    ],
+    "lib": [
+      "lib/**/*.js"
     ]
   },
 
