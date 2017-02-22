@@ -2,18 +2,26 @@
 
 // load manifests
 
-const setAPIOrigin = require('./lib/set-api-origin');
-const config = require('./app/config');
-const main = require('./app/templates/index.hbs');
-
 $(() => {
-  $('title').text('For example');
-  $('body').append(main);
-  setAPIOrigin(location, config);
-});
+  // load styling
+  require('./app/styles/index.scss')
 
-// scripts
-require('./app/scripts/index.js')
+  // load configurations for the SPA
+  const config = require('./app/config')
+  const application = config.application || {}
 
-// styles
-require('./app/styles/index.scss')
+  // set the SPA title
+  const title = application.title || ''
+  $('title').text(title)
+
+  // load the SPA body
+  const body = require('./app/templates/index.hbs')
+  $('body').append(body)
+
+  // set `config.apiOrigin` for use in AJAX requests
+  const setAPIOrigin = require('./lib/set-api-origin')
+  setAPIOrigin(location, config)
+
+  // load SPA logic
+  require('./app/scripts/index.js')
+})
