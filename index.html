@@ -1,25 +1,182 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags unless you know what you are doing -->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
 
-      <!-- Do not add `script` tags unless you know what you are doing -->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+  <title>Bear Contree Trail Rater</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
-    </body>
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet"> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700|Gloria+Hallelujah" rel="stylesheet">
+
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+
+
+<body>
+
+  <div class="container-fluid headertop">
+    <h1 class="titlesize">Bear Country Trail Rater</h1>
+    <h3 class="subtitle">By Scott Landry</h3>
+  </div>
+
+
+
+  <!---->
+
+  <nav class="navbar navbar-inverse topmenu" role="navigation">
+    <div class="container-fluid">
+
+
+      <ul class="nav navbar-nav">
+        <li id="sign-up-btb" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>First timers</b> </a>
+          <ul id="sign-up1" class="dropdown-menu topdropdownmenu">
+            <li>
+              <div class="row">
+                <div class="col-md-12">
+
+
+                  <form id="sign-up">
+                    <fieldset>
+                      <label>
+                          Yer electric name
+                          <input type="text" name="credentials[email]">
+                      </label>
+                      <label>
+                          Yer secret code
+                          <input type="password" name="credentials[password]">
+                      </label>
+                      <label>
+                          Jusitn case doit a-gin
+                          <input type="password" name="credentials[password_confirmation]">
+                      </label>
+                      <input id="startGame" type="submit" name="submit" value="Lets go!" button="color-change">
+                    </fieldset>
+                  </form>
+
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+
+        <li class="dropdown signinhide">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Returnin folks</b> </a>
+          <ul id="sign-in1" class="dropdown-menu topdropdownmenu">
+            <li>
+              <div class="row">
+                <div class="col-md-12">
+
+
+                  <form id="sign-in">
+                    <fieldset>
+
+                      <label>
+                          Yer electric name<br>
+                          <input type="text" name="credentials[email]">
+                        </label>
+                      <label>
+                          Secrit codie-thing<br>
+                          <input type="password" name="credentials[password]">
+                        </label>
+                      <input type="submit" name="submit" value="lets go!" button="color-change">
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+
+        <li class="dropdown changebtn">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Change Yer secret codie</b> </a>
+          <ul id="change-password1" class="dropdown-menu topdropdownmenu">
+            <li>
+              <div class="row">
+                <div id="hidePass" class="col-md-12">
+
+
+                  <form id="change-password">
+                    <fieldset>
+
+                      <label>
+                        The one you gots<br>
+                        <input type="password" name="passwords[old]">
+                      </label><br>
+                      <label>
+                        the one y'gonna 'member<br>
+                        <input type="password" name="passwords[new]">
+                      </label>
+
+                      <input type="submit" name="submit" value="u gonna change it t'that?" button="color-change">
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <!---->
+        <li>
+          <a href="#" id="sign-out" class="  "><b>M'out</b> </a>
+        </li>
+
+
+        <!---->
+
+      </ul>
+
+    </div>
+
+  </nav>
+<div class="container">
+    <h3>Trails</h3>
+    <div class="row">
+        <div class="form-group form-group-multiple-selectsp col-xs-11 col-sm-8 col-md-4">
+    		<div class="input-group input-group-multiple-selectp col-xs-8">
+                <select class="form-control" name="values[]">
+                    <option value="">Select t'one Yer gonna wanna pick</option>
+                    <option value="1">Long Trail</option>
+                    <option value="2">Short Trail</option>
+                    <option value="3">Just Right trail</option>
+                    <option value="4">The road less traveled</option>
+                </select>
+    			<span class="input-group-addon input-group-addon-remove">
+    				<!-- <span class="glyphicon glyphicon-remove"></span> -->
+    			</span>
+    		</div>
+      </div>
+
+      <div class="col-xs-2">
+            <!-- <button type="button" class="btn btn-default addButton"><i class="fa fa-plus"></i></button> -->
+      </div>
+
+    </div>
+</div>
+<div class="container">
+	<h3>Welp, tell me what y'think b'out the trail</h3>
+    <div class="row">
+        <div class="form-group form-group-optionsp col-xs-11 col-sm-8 col-md-4">
+    		<div class="input-group input-group-optionp col-xs-12">
+    			<input type="text" name="optionp[]" class="form-control" placeholder="tipity tyep yer musin's here">
+    			<!--span class="input-group-addon input-group-addon-remove">
+    				<span class="glyphicon glyphicon-remove"></span>
+    			</span-->
+    		</div>
+    	</div>
+    </div>
+</div>
+
+
+  <!-- <link rel="stylesheet" type="text/css" href="assets/styles/style.css"> -->
+</body>
+
 </html>
