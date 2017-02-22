@@ -1,2 +1,143 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+/*#wrapper {
+	display: block !important;
+}*/
+body {
+	font-family: 'Gloria Hallelujah', cursive;
+}
+.row {
+	font-size: inherit;
+	width: auto;
+}
+.headertop {
+    background: rgba(0,0,0,0.3); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)); /* Standard syntax */
+}
+.headertop .titlesize {
+	margin: 0;
+	padding: 20px 0 10px 0;
+}
+.headertop .subtitle {
+	margin: 0;
+	padding: 10px 0 15px 0;
+}
+.topmenu {
+	border-radius: 0;
+}
+.topdropdownmenu {
+	width: 250px;
+	padding: 10px 0 15px 0;
+}
+.topdropdownmenu label {
+	width: 100%;
+}
+.topdropdownmenu input {
+	width: 100%;
+	margin-bottom: 5px;
+}
+.topdropdownmenu .row {
+	margin: 0;
+}
+.gameboard {
+	max-width: 600px;
+	background-image: url('board.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	padding: 20px;
+	color: #000;
+	margin-top: 20px;
+}
+.gameboard .row {
+	margin: 0;ind
+}
+.box {
+	font-family: 'Oleo Script', cursive;
+	text-align: center;
+	border: none;
+	border-right: 6px solid #000;
+	border-bottom: 6px solid #000;
+	line-height: 2;
+	padding: 0;
+	font-size: 4em;
+	height: 50px;
+	text-shadow: 2px 2px 0px #fff;
+}
+.gameboard .row:last-child .box {
+	border-bottom: none;
+}
+.gameboard .row .box:last-child {
+	border-right: none;
+}
+@media(max-width:991px) {
+	.headertop .titlesize {
+		padding: 15px 0 10px 0;
+		font-size: 28px;
+	}
+	.headertop .subtitle {
+		font-size: 20px;
+		padding: 0px 0 10px 0;
+	}
+}
+@media(max-width:767px) {
+	.headertop .titlesize {
+		padding: 10px 0 10px 0;
+		font-size: 20px;
+	}
+	.headertop .subtitle {
+		font-size: 16px;
+	}
+	.topmenu .navbar-nav {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	.topdropdownmenu input {
+		color: #333333;
+	}
+	.topdropdownmenu label {
+		color: #9d9d9d;
+	}
+}
+/*
+    Text fields
+*/
+div.input-group-option:last-child span.input-group-addon-remove{
+    display: none;
+}
+
+div.input-group-option:last-child input.form-control{
+    border-bottom-right-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+div.input-group-option span.input-group-addon-remove{
+	cursor: pointer;
+}
+
+div.input-group-option{
+    margin-bottom: 3px;
+}
+
+/*
+    Selects
+*/
+
+div.input-group-multiple-select:last-child span.input-group-addon-remove{
+	display: none;
+}
+
+div.input-group-multiple-select:last-child input.form-control{
+	border-bottom-right-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+div.input-group-multiple-select span.input-group-addon-remove{
+	cursor: pointer;
+    background: none;
+    border: none;
+}
