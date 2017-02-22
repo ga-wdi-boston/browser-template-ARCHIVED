@@ -1,7 +1,7 @@
 {{title section 2}}
-<ul>
+<ul id="book-list">
   {{#each books as |book|}}
-    <li>
+    <li data-book-id="{{book.id}}">
       {{> book book=book}}
     </li>
   {{/each}}
