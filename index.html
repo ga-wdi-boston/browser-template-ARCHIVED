@@ -3,7 +3,7 @@
 
 <head>
 
-  <title>Bear Contree Trail Rater</title>
+  <title>Bear Contry Trail Rater</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags unless you know what you are doing -->
@@ -18,165 +18,180 @@
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 
+<body class="container-fluid">
 
+  <!-- These buttons activate the corresponding modal, except sign out which does not have a modal -->
+  <div class="centered-buttons">
+    <button type="button" class="btn btn-primary account-modal-btn auth-button" id="signUpButton" data-toggle="modal" data-target="#signUpModal">
+          First Timers
+        </button>
+    <button type="button" class="btn btn-primary account-modal-btn auth-button" id="signInButton" data-toggle="modal" data-target="#signInModal">
+          Returnin Folks
+        </button>
+    <button type="button" class="btn btn-primary account-modal-btn hidden auth-button" id="changePassButton" data-toggle="modal" data-target="#changePassModal">
+          Change y' seekret code
+        </button>
+    <button type="button" class="btn btn-primary hidden auth-button" id="sign-out">
+          M'outta here
+        </button>
+  </div>
 
-<body>
+  <!-- Modals for sign up, sign in, and change password -->
+  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signUpModalLabel">Start here</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+        </div>
+        <div class="modal-body">
+          <form id="sign-up">
+            <fieldset>
+              <legend>Ya gotta sign up</legend>
+              <label>
+              E-lectronic mail
+              <input type="text" id="account-name" class="signup-field" name="credentials[email]">
+            </label>
+              <label>
+               Seekret code
+              <input type="password" class="signup-field" name="credentials[password]">
+            </label>
+              <label>
+              Justin case do'it agin
+              <input type="password" class="signup-field" name="credentials[password_confirmation]">
+            </label>
+              <input type="submit" name="submit" value="Let's Go!">
+            </fieldset>
+            <div class="form-message" id="sign-up-message"></div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <div class="container-fluid headertop">
-    <h1 class="titlesize">Bear Country Trail Rater</h1>
-    <h3 class="subtitle">By Scott Landry</h3>
+  <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signInModalLabel">Enter Yer info</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="sign-in">
+            <fieldset>
+              <legend>Yer Cree-dentials</legend>
+              <label>
+                  E-lectronic mail
+                <input type="text" class="signin-field" id="account-name-signin" name="credentials[email]">
+              </label>
+              <label>
+                Seekret code
+                <input type="password" class="signin-field" name="credentials[password]">
+              </label>
+              <input type="submit" name="submit" value="Let's Go!">
+            </fieldset>
+            <div class="form-message" id="sign-in-message"></div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="changePassModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="changePassModalLabel">Change Your Password!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="change-password">
+            <fieldset>
+              <legend>Change Password!</legend>
+              <label>
+                Current Password
+                <input type="password" class="change-pass-field" name="passwords[old]">
+              </label>
+              <label>
+                New Password
+                <input type="password" class="change-pass-field" name="passwords[new]">
+              </label>
+
+              <input type="submit" name="submit" value="Change Password!">
+            </fieldset>
+            <div class="form-message" id="change-pass-message"></div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
 
 
+        <form class="col-xs-7 new-entry hidden" id="create-entry">
+           <fieldset class="form-group entry-form-container">
+             <legend>Do sum listin' of yer Trails</legend>
+             <div class="col-sm-8 left-column-entry">
+             <label class="col-sm-12 col-form-label form-inline">
+                   Name o'the trail
+                   <input type="text" class="create-field form-control" name="post[name]">
+                 </label>
+             <!-- <label class="col-sm-12 col-form-label form-inline">
+                   Date of Sighting
+                   <input type="date" class="create-field form-control" placeholder="yyyy-mm-dd" name="post[date_seen]">
+                 </label>
+             <label class="col-sm-12 col-form-label form-inline">
+                   Location
+                   <input type="text" class="create-field form-control" name="post[location]">
+                 </label> -->
+               </div>
+               <div class="col-sm-4">
+             <label class="col-sm-12 col-form-label">
+                   So, wudcha think?
+                 </label>
+             <textarea class="create-field form-control trail review" rows="3" name="post[comments]"></textarea>
+           </div>
+             <input type="submit" class="form-control btn-success create-entry-button" id="create-entry-button" name="submit" value="add it t'the list">
+           </fieldset>
+         </form>
 
-  <!---->
-
-  <nav class="navbar navbar-inverse topmenu" role="navigation">
-    <div class="container-fluid">
-
-
-      <ul class="nav navbar-nav">
-        <li id="sign-up-btb" class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>First timers</b> </a>
-          <ul id="sign-up1" class="dropdown-menu topdropdownmenu">
-            <li>
-              <div class="row">
-                <div class="col-md-12">
-
-
-                  <form id="sign-up">
-                    <fieldset>
-                      <label>
-                          Yer electric name
-                          <input type="text" name="credentials[email]">
-                      </label>
-                      <label>
-                          Yer secret code
-                          <input type="password" name="credentials[password]">
-                      </label>
-                      <label>
-                          Jusitn case doit a-gin
-                          <input type="password" name="credentials[password_confirmation]">
-                      </label>
-                      <input id="startGame" type="submit" name="submit" value="Lets go!" button="color-change">
-                    </fieldset>
-                  </form>
-
-                </div>
-              </div>
-            </li>
-          </ul>
-        </li>
-
-        <li class="dropdown signinhide">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Returnin folks</b> </a>
-          <ul id="sign-in1" class="dropdown-menu topdropdownmenu">
-            <li>
-              <div class="row">
-                <div class="col-md-12">
-
-
-                  <form id="sign-in">
-                    <fieldset>
-
-                      <label>
-                          Yer electric name<br>
-                          <input type="text" name="credentials[email]">
-                        </label>
-                      <label>
-                          Secrit codie-thing<br>
-                          <input type="password" name="credentials[password]">
-                        </label>
-                      <input type="submit" name="submit" value="lets go!" button="color-change">
-                    </fieldset>
-                  </form>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </li>
-
-        <li class="dropdown changebtn">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Change Yer secret codie</b> </a>
-          <ul id="change-password1" class="dropdown-menu topdropdownmenu">
-            <li>
-              <div class="row">
-                <div id="hidePass" class="col-md-12">
+         <form class="col-xs-7 new-entry hidden" id="update-entry">
+             <fieldset class="form-group entry-form-container">
+               <legend>Fix what i messed up</legend>
+               <div class="col-sm-8 left-column-entry">
+               <label class="col-sm-12 col-form-label form-inline">
+                 the review ya messed up
+                     <input type="text" id="updateId" placeholder="what it said" class="update-field form-control" name="review[id]">
+                   </label>
+                 </div>
+                 <div class="col-sm-4">
+               <label class="col-sm-12 col-form-label">
+                    What  ja'ment ta'say
+                   </label>
+               <textarea class="update-field form-control trail-description" rows="3" name="post[description]"></textarea>
+             </div>
+             <div class="update-buttons">
+               <input type="submit" class="form-control btn-success update-entry-button form-inline" id="update-entry-button" name="submit" value="Fixit">
+             </div>
+             </fieldset>
+           </form>
+<div id="message-box" class="message-box"></div>
 
 
-                  <form id="change-password">
-                    <fieldset>
-
-                      <label>
-                        The one you gots<br>
-                        <input type="password" name="passwords[old]">
-                      </label><br>
-                      <label>
-                        the one y'gonna 'member<br>
-                        <input type="password" name="passwords[new]">
-                      </label>
-
-                      <input type="submit" name="submit" value="u gonna change it t'that?" button="color-change">
-                    </fieldset>
-                  </form>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </li>
-        <!---->
-        <li>
-          <a href="#" id="sign-out" class="  "><b>M'out</b> </a>
-        </li>
-
-
-        <!---->
-
-      </ul>
-
-    </div>
-
-  </nav>
-<div class="container">
-    <h3>Trails</h3>
-    <div class="row">
-        <div class="form-group form-group-multiple-selectsp col-xs-11 col-sm-8 col-md-4">
-    		<div class="input-group input-group-multiple-selectp col-xs-8">
-                <select class="form-control" name="values[]">
-                    <option value="">Select t'one Yer gonna wanna pick</option>
-                    <option value="1">Long Trail</option>
-                    <option value="2">Short Trail</option>
-                    <option value="3">Just Right trail</option>
-                    <option value="4">The road less traveled</option>
-                </select>
-    			<span class="input-group-addon input-group-addon-remove">
-    				<!-- <span class="glyphicon glyphicon-remove"></span> -->
-    			</span>
-    		</div>
-      </div>
-
-      <div class="col-xs-2">
-            <!-- <button type="button" class="btn btn-default addButton"><i class="fa fa-plus"></i></button> -->
-      </div>
-
-    </div>
-</div>
-<div class="container">
-	<h3>Welp, tell me what y'think b'out the trail</h3>
-    <div class="row">
-        <div class="form-group form-group-optionsp col-xs-11 col-sm-8 col-md-4">
-    		<div class="input-group input-group-optionp col-xs-12">
-    			<input type="text" name="optionp[]" class="form-control" placeholder="tipity tyep yer musin's here">
-    			<!--span class="input-group-addon input-group-addon-remove">
-    				<span class="glyphicon glyphicon-remove"></span>
-    			</span-->
-    		</div>
-    	</div>
-    </div>
-</div>
-
-
-  <!-- <link rel="stylesheet" type="text/css" href="assets/styles/style.css"> -->
-</body>
+    </body>
 
 </html>
