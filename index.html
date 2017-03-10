@@ -1,25 +1,197 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags unless you know what you are doing -->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
 
-      <!-- Do not add `script` tags unless you know what you are doing -->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+  <title>Bear Contry Trail Rater</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet"> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700|Gloria+Hallelujah" rel="stylesheet">
+
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+
+  <!-- These buttons activate the corresponding modal, except sign out which does not have a modal -->
+  <div class="centered-buttons">
+    <button type="button" class="btn btn-primary account-modal-btn auth-button" id="signUpButton" data-toggle="modal" data-target="#signUpModal">
+          First Timers
+        </button>
+    <button type="button" class="btn btn-primary account-modal-btn auth-button" id="signInButton" data-toggle="modal" data-target="#signInModal">
+          Returnin Folks
+        </button>
+    <button type="button" class="btn btn-primary account-modal-btn hidden auth-button" id="changePassButton" data-toggle="modal" data-target="#changePassModal">
+          Change y' seekret code
+        </button>
+    <button type="button" class="btn btn-primary hidden auth-button" id="sign-out">
+          M'outta here
+        </button>
+  </div>
+
+  <!-- Modals for sign up, sign in, and change password -->
+  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signUpModalLabel">Start here</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+        </div>
+        <div class="modal-body">
+          <form id="sign-up">
+            <fieldset>
+              <legend>Ya gotta sign up</legend>
+              <label>
+              E-lectronic mail
+              <input type="text" id="account-name" class="signup-field" name="credentials[email]">
+            </label>
+              <label>
+               Seekret code
+              <input type="password" class="signup-field" name="credentials[password]">
+            </label>
+              <label>
+              Justin case do'it agin
+              <input type="password" class="signup-field" name="credentials[password_confirmation]">
+            </label>
+              <input type="submit" name="submit" value="Let's Go!">
+            </fieldset>
+            <div class="form-message" id="sign-up-message"></div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signInModalLabel">Enter Yer info</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="sign-in">
+            <fieldset>
+              <legend>Yer Cree-dentials</legend>
+              <label>
+                  E-lectronic mail
+                <input type="text" class="signin-field" id="account-name-signin" name="credentials[email]">
+              </label>
+              <label>
+                Seekret code
+                <input type="password" class="signin-field" name="credentials[password]">
+              </label>
+              <input type="submit" name="submit" value="Let's Go!">
+            </fieldset>
+            <div class="form-message" id="sign-in-message"></div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="changePassModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="changePassModalLabel">Change Your Password!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="change-password">
+            <fieldset>
+              <legend>Change Password!</legend>
+              <label>
+                Current Password
+                <input type="password" class="change-pass-field" name="passwords[old]">
+              </label>
+              <label>
+                New Password
+                <input type="password" class="change-pass-field" name="passwords[new]">
+              </label>
+
+              <input type="submit" name="submit" value="Change Password!">
+            </fieldset>
+            <div class="form-message" id="change-pass-message"></div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+        <form class="col-xs-7 new-entry hidden" id="create-entry">
+           <fieldset class="form-group entry-form-container">
+             <legend>Do sum listin' of yer Trails</legend>
+             <div class="col-sm-8 left-column-entry">
+             <label class="col-sm-12 col-form-label form-inline">
+                   Name o'the trail
+                   <input type="text" class="create-field form-control" name="post[name]">
+                 </label>
+             <!-- <label class="col-sm-12 col-form-label form-inline">
+                   Date of Sighting
+                   <input type="date" class="create-field form-control" placeholder="yyyy-mm-dd" name="post[date_seen]">
+                 </label>
+             <label class="col-sm-12 col-form-label form-inline">
+                   Location
+                   <input type="text" class="create-field form-control" name="post[location]">
+                 </label> -->
+               </div>
+               <div class="col-sm-4">
+             <label class="col-sm-12 col-form-label">
+                   So, wudcha think?
+                 </label>
+             <textarea class="create-field form-control trail review" rows="3" name="post[comments]"></textarea>
+           </div>
+             <input type="submit" class="form-control btn-success create-entry-button" id="create-entry-button" name="submit" value="add it t'the list">
+           </fieldset>
+         </form>
+
+         <form class="col-xs-7 new-entry hidden" id="update-entry">
+             <fieldset class="form-group entry-form-container">
+               <legend>Fix what i messed up</legend>
+               <div class="col-sm-8 left-column-entry">
+               <label class="col-sm-12 col-form-label form-inline">
+                 the review ya messed up
+                     <input type="text" id="updateId" placeholder="what it said" class="update-field form-control" name="review[id]">
+                   </label>
+                 </div>
+                 <div class="col-sm-4">
+               <label class="col-sm-12 col-form-label">
+                    What  ja'ment ta'say
+                   </label>
+               <textarea class="update-field form-control trail-description" rows="3" name="post[description]"></textarea>
+             </div>
+             <div class="update-buttons">
+               <input type="submit" class="form-control btn-success update-entry-button form-inline" id="update-entry-button" name="submit" value="Fixit">
+             </div>
+             </fieldset>
+           </form>
+<div id="message-box" class="message-box"></div>
+
+
     </body>
+
 </html>
