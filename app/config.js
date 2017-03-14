@@ -2,7 +2,7 @@
 
 const config = {
   application: {
-    title: 'My SPA',
+    title: 'My SPA'
   },
   apiOrigins: {
     production: 'https://ga-wdi-boston.herokuapp.com'

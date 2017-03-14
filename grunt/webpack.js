@@ -62,7 +62,7 @@ module.exports = {
           loader: 'handlebars-loader',
           query: {
             helperDirs: [
-              path.join(__dirname, '../app/scripts/templates/helpers')
+              path.join(__dirname, '/../app/templates/helpers')
             ]
           }
         }
