@@ -1,7 +1,8 @@
 {
   "src": {
     "all": [
-      "bin/**/*.js",
+      "assets/**/*.js",
+      "grunt/**/*.js",
       "lib/**/*.js",
       "spec/**/*.spec.js"
     ],
