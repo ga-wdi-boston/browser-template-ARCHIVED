@@ -1,9 +1,9 @@
 'use strict'
 
-let clone = require('clone')
+const clone = require('clone')
 
 // clone the webpack config to separate configuration of webpack and dev server
-let webpackConfig = clone(require('./webpack').options)
+const webpackConfig = clone(require('./webpack').options)
 
 // port for development server
 const port = +('GA'.split('').reduce((p, c) => p + c.charCodeAt(), ''))

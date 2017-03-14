@@ -1,7 +1,7 @@
 'use strict'
 
-let webpack = require('webpack')
-let path = require('path')
+const webpack = require('webpack')
+const path = require('path')
 
 module.exports = {
   options: {
@@ -13,7 +13,7 @@ module.exports = {
 
     output: {
       filename: '[name].js',
-      path: __dirname + '/../public',
+      path: path.join(__dirname, '/../public'),
       publicPath: 'public/'
     },
 
@@ -62,7 +62,7 @@ module.exports = {
           loader: 'handlebars-loader',
           query: {
             helperDirs: [
-              __dirname + '/../assets/scripts/templates/helpers'
+              path.join(__dirname, '/../assets/scripts/templates/helpers')
             ]
           }
         }
