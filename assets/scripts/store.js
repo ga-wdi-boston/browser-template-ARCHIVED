@@ -1,6 +1,6 @@
-'use strict';
+'use strict'
 
 const store = {
-};
+}
 
-module.exports = store;
+module.exports = store

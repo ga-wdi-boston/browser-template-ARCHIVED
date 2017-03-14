@@ -13,7 +13,7 @@
   "server": ["webpack-dev-server:start"],
   "serve": ["server"],
   "s": ["server"],
-  "nag": ["jshint", "jsonlint:all", "jscs:status"],
-  "reformat": ["jscs:write"],
+  "make-standard": ["eslint:fix"],
+  "nag": ["eslint:all", "jsonlint:all"],
   "test": ["build", "jasmine"]
 }
