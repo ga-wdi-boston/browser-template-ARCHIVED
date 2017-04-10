@@ -1,5 +1,7 @@
 'use strict'
 
+/* eslint-env jquery */
+
 // load manifests
 
 $(() => {
@@ -20,7 +22,7 @@ $(() => {
 
   // set `config.apiOrigin` for use in AJAX requests
   const setAPIOrigin = require('./lib/set-api-origin')
-  setAPIOrigin(location, config)
+  setAPIOrigin(window.location, config)
 
   // load SPA logic
   require('./app/scripts/index.js')

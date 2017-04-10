@@ -1,6 +1,8 @@
 {
   "src": {
     "all": [
+      "Gruntfile.js",
+      "index.js",
       "app/**/*.js",
       "grunt/**/*.js",
       "lib/**/*.js",
